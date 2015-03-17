@@ -1,0 +1,14 @@
+/*
+background-color: #FFC200
+color: 
+*/
+
+
+.skin-yellow .z-listitem.z-listitem-selected >.z-listcell,
+.skin-yellow .z-listitem.z-listitem-selected:hover >.z-listcell,
+.skin-yellow .z-comboitem-selected,
+.skin-yellow .z-calendar-selected,
+.skin-yellow .z-progressmeter-image  {
+	border-color: #FFC200 !important;
+	background: #FFC200 !important;
+}

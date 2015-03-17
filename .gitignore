@@ -1,0 +1,8 @@
+.classpath
+.project
+pom.xml.versionsBackup
+.directory
+.settings/
+target/
+tmp/
+logs/

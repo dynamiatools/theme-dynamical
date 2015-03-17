@@ -1,0 +1,14 @@
+/*
+background-color: #605ca8
+color: 
+*/
+
+
+.skin-purple .z-listitem.z-listitem-selected >.z-listcell,
+.skin-purple .z-listitem.z-listitem-selected:hover >.z-listcell,
+.skin-purple .z-comboitem-selected,
+.skin-purple .z-calendar-selected,
+.skin-purple .z-progressmeter-image  {
+	border-color: #605ca8 !important;
+	background: #605ca8 !important;
+}

@@ -1,0 +1,14 @@
+/*
+background-color: #808080
+color: 
+*/
+
+
+.skin-black .z-listitem.z-listitem-selected >.z-listcell,
+.skin-black .z-listitem.z-listitem-selected:hover >.z-listcell,
+.skin-black .z-comboitem-selected,
+.skin-black .z-calendar-selected,
+.skin-black .z-progressmeter-image  {
+	border-color: #808080 !important;
+	background: #808080 !important;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?page title="${applicationInfo.name} - ${accountContext.account.name}" docType="html"?>
+
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+
+<?meta http-equiv="X-UA-Compatible" content="IE=edge" ?>
+
+<?meta name="description" content="${applicationInfo.description}" ?>
+<?meta name="author" content="${applicationInfo.author}" ?>
+<?meta name="_csrf" content="${_csrf.token}" ?>
+
+<?meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'?>
+<?link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" ?>
+<?link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" ?>
+<!-- Ionicons -->
+<?link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" ?>
+<!-- Theme style -->
+<?link href="~./dynamical/css/AdminLTE.css" rel="stylesheet" type="text/css" ?>
+<?link href="~./dynamical/css/login.css" rel="stylesheet" type="text/css" ?>
+
+
+<?link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" ?>
+
+
+<!-- jQuery 2.0.2 -->
+<?script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"?>
+<!-- Bootstrap -->
+<?script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"?>
+<!-- AdminLTE App -->
+<?script src="~./dynamical/js/AdminLTE/app.js" type="text/javascript"?>
+
+
+<zk xmlns="native" xmlns:z="http://www.zkoss.org/2005/zul">
+
+	<div id="loginForm">
+
+		<div class="logo">
+			<img id="imglogo" src="${contextPath}${applicationInfo.defaultLogo}" class="img-responsive" />
+		</div>
+
+
+		<div class="form-box" id="login-box">
+			<div class="header">${applicationInfo.name} - ${accountContext.account.name}</div>
+
+			<form action="${contextPath}/login" method="post">
+				<div class="body bg-gray">
+					<div class="form-group">
+						<input type="text" name="username" class="form-control" placeholder="Usuario" />
+					</div>
+					<div class="form-group">
+						<input type="password" name="password" class="form-control" placeholder="Password" />
+					</div>
+					<div class="form-group">
+						<input type="checkbox" name="remember-me" />
+						No cerrar sesion
+					</div>
+				</div>
+				<div class="footer">
+					<button type="submit" class="btn bg-primary btn-block">
+						<i class="fa fa-user" />
+						Iniciar Session
+					</button>
+					<p>
+						<z:a>Olvide mi clave de acceso</z:a>
+					</p>
+					<z:div if="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+						<label value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>
+					</z:div>
+				</div>
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			</form>
+
+		</div>
+	</div>
+
+</zk>
