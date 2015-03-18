@@ -152,7 +152,7 @@
 						<li class="header">NAVEGACION PRINCIPAL</li>
 
 						<z:div sclass="sidebar-builder" apply="${navBuilder}">
-							<zk:custom-attributes builderClass="tools.dynamia.app.dynamical.DynamicalMenuBuilder" />
+							<zk:custom-attributes builderClass="tools.dynamia.themes.dynamical.DynamicalMenuBuilder" />
 						</z:div>
 
 						<li class="header">ACERCA DE</li>

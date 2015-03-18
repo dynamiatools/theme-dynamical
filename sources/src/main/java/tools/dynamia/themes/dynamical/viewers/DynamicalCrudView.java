@@ -17,13 +17,10 @@ import tools.dynamia.actions.ActionRenderer;
 import tools.dynamia.commons.StringUtils;
 import tools.dynamia.crud.CrudState;
 import tools.dynamia.crud.actions.CancelAction;
-import tools.dynamia.integration.Containers;
 import tools.dynamia.ui.icons.Icon;
 import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.ui.icons.IconType;
 import tools.dynamia.ui.icons.IconsTheme;
-import tools.dynamia.viewers.Field;
-import tools.dynamia.viewers.ViewFactory;
 import tools.dynamia.web.util.HttpUtils;
 import tools.dynamia.zk.actions.ButtonActionRenderer;
 import tools.dynamia.zk.actions.MenuitemActionRenderer;
@@ -32,9 +29,6 @@ import tools.dynamia.zk.crud.CrudView;
 import tools.dynamia.zk.crud.CrudViewRenderer;
 import tools.dynamia.zk.crud.actions.FindAction;
 import tools.dynamia.zk.util.ZKUtil;
-import tools.dynamia.zk.viewers.form.FormView;
-import tools.dynamia.zk.viewers.mv.MultiView;
-import tools.dynamia.zk.viewers.ui.Viewer;
 
 public class DynamicalCrudView<T> extends CrudView<T> {
 
@@ -54,10 +48,9 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 	@Override
 	protected void buildGeneralView() {
 		super.buildGeneralView();
-		setZclass("crudview");
+		
 
 		borderlayout = (Borderlayout) layout;
-
 
 		Div header = new Div();
 		header.setZclass("crudview-header");
@@ -69,7 +62,6 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		body.setHeight("100%");
 		body.setZclass("crudview-body");
 		body.setParent(borderlayout.getCenter());
-		
 
 		footer = new Div();
 		footer.setZclass("crudview-footer row");
@@ -106,26 +98,6 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 	@Override
 	protected ActionRenderer getDefaultActionRenderer() {
 		return new ToolbarbuttonActionRenderer();
-	}
-
-	protected void buildFormView() {
-		System.out.println("Bulding FormView");		
-
-		ViewFactory viewFactory = Containers.get().findObject(ViewFactory.class);
-
-		formView = (FormView) viewFactory.getView("form", getValue(), getViewDescriptor().getBeanClass());
-		formViewContainer = new DynamicalMultiView<>();
-		formViewContainer.addView("Datos Generales", formView);
-		formViewContainer.setParentView(this);
-		formViewContainer.setVflex("1");
-		// Find collection and viewers fields
-		for (Field field : formView.getViewDescriptor().getFields()) {
-			if (field.isCollection() && field.getComponentClass() == CrudView.class) {
-				addSubCrudView(field);
-			} else if (field.getComponentClass() == Viewer.class) {
-				addSubGenericView(field);
-			}
-		}
 	}
 
 	@Override
@@ -246,12 +218,12 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 
 		if (showFooter) {
 			borderlayout.getCenter().getChildren().clear();
-			formViewContainer.setParent(body);			
-			
+			formViewContainer.setParent(body);
+
 			footer.setParent(formViewContainer.getSelectedPanel());
 			footer2.setParent(formViewContainer.getSelectedPanel());
 			body.setParent(borderlayout.getCenter());
-			
+
 		}
 
 	}

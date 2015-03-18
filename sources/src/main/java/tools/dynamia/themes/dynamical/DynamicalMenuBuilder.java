@@ -11,27 +11,58 @@ import org.zkoss.zhtml.Ul;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
+import org.zkoss.zul.Menuitem;
+import org.zkoss.zul.Menupopup;
 
 import tools.dynamia.navigation.Module;
 import tools.dynamia.navigation.NavigationViewBuilder;
 import tools.dynamia.navigation.Page;
 import tools.dynamia.navigation.PageGroup;
 import tools.dynamia.ui.icons.IconSize;
-import tools.dynamia.web.util.HttpUtils;
 import tools.dynamia.zk.navigation.ZKNavigationManager;
 import tools.dynamia.zk.util.ZKUtil;
 
-public class DynamicalMenuBuilder implements NavigationViewBuilder {
+public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 
 	private transient Ul sidebar;
 	private transient Map<Module, Component> modulesContent = new HashMap<Module, Component>();
 	private transient Map<PageGroup, Component> pgContent = new HashMap<PageGroup, Component>();
 	private transient Map<Page, Component> pageContent = new HashMap<Page, Component>();
+	private Menupopup contextMenu;
+	private Page selectedPage;
 
 	public DynamicalMenuBuilder() {
 		System.out.println("Starting " + getClass().getName());
 		sidebar = new Ul();
 		sidebar.setSclass("sidebar-menu");
+		buildContextMenu();
+	}
+
+	protected void buildContextMenu() {
+		contextMenu = new Menupopup();
+		contextMenu.setParent(sidebar);
+		Menuitem item = new Menuitem("Abrir en nueva pestaña");
+		ZKUtil.configureComponentIcon("fa-external-link", item, IconSize.SMALL);
+		item.setParent(contextMenu);
+		item.addEventListener(Events.ON_CLICK, evt -> {
+			if (selectedPage != null) {
+				String path = "'/page/" + selectedPage.getPrettyVirtualPath() + "'";
+				path = "getContextPath()+" + path;
+				Clients.evalJavaScript("openURL(" + path + ")");
+			}
+		});
+
+		item = new Menuitem("Ver direccion de enlace");
+		ZKUtil.configureComponentIcon("fa-link", item, IconSize.SMALL);
+		item.setParent(contextMenu);
+		item.addEventListener(Events.ON_CLICK, evt -> {
+			if (selectedPage != null) {
+				String path = "'/page/" + selectedPage.getPrettyVirtualPath() + "'";
+				path = "getFullContextPath()+" + path;
+				Clients.evalJavaScript("copyToClipboard(" + path + ")");
+			}
+		});
+
 	}
 
 	@Override
@@ -129,8 +160,10 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder {
 		Li pageli = new Li();
 		pageContent.put(page, pageli);
 		org.zkoss.zul.A pageitem = new org.zkoss.zul.A();
+		pageitem.setContext(contextMenu);
 		pageitem.getAttributes().put("page", page);
 		pageitem.addEventListener(Events.ON_CLICK, evt -> {
+
 			Li currentPageLi = (Li) pageContent.get(ZKNavigationManager.getInstance().getCurrentPage());
 			if (currentPageLi != null) {
 				currentPageLi.setSclass(null);
@@ -139,9 +172,8 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder {
 			ZKNavigationManager.getInstance().setCurrentPage(page);
 			pageli.setSclass("active");
 
-			Clients.evalJavaScript("changeHash('" + page.getPrettyVirtualPath() + "');");
-
 		});
+		pageitem.addEventListener(Events.ON_RIGHT_CLICK, evt -> selectedPage = page);
 
 		I pageicon = new I();
 		pageicon.setSclass("fa fa-circle-o");
@@ -149,8 +181,6 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder {
 
 		Text label = new Text(page.getName());
 		label.setParent(pageitem);
-
-		String context = HttpUtils.getCurrentRequest().getContextPath();
 
 		pageitem.setParent(pageli);
 
