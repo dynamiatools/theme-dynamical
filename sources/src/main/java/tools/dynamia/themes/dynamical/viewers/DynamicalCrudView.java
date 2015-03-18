@@ -15,6 +15,7 @@ import tools.dynamia.actions.Action;
 import tools.dynamia.actions.ActionGroup;
 import tools.dynamia.actions.ActionRenderer;
 import tools.dynamia.commons.StringUtils;
+import tools.dynamia.crud.ChangedStateEvent;
 import tools.dynamia.crud.CrudState;
 import tools.dynamia.crud.actions.CancelAction;
 import tools.dynamia.ui.icons.Icon;
@@ -29,6 +30,7 @@ import tools.dynamia.zk.crud.CrudView;
 import tools.dynamia.zk.crud.CrudViewRenderer;
 import tools.dynamia.zk.crud.actions.FindAction;
 import tools.dynamia.zk.util.ZKUtil;
+import tools.dynamia.zk.viewers.ZKWrapperView;
 
 public class DynamicalCrudView<T> extends CrudView<T> {
 
@@ -36,19 +38,17 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1773528227238113127L;
-	private Div footer;
+	private Div formLeftActions;
 
-	private Div footer2;
+	private Div formRightActions;
 	private Menupopup actionsMenu;
 	private Button actionsButton;
 	private final boolean SMARTPHONE = HttpUtils.isSmartphone();
 	private Borderlayout borderlayout;
-	private Div body;
 
 	@Override
 	protected void buildGeneralView() {
 		super.buildGeneralView();
-		
 
 		borderlayout = (Borderlayout) layout;
 
@@ -58,17 +58,12 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		header.setParent(borderlayout.getNorth());
 		toolbarContainer = header;
 
-		this.body = new Div();
-		body.setHeight("100%");
-		body.setZclass("crudview-body");
-		body.setParent(borderlayout.getCenter());
+		formLeftActions = new Div();
+		formLeftActions.setZclass("crudview-footer row");
 
-		footer = new Div();
-		footer.setZclass("crudview-footer row");
-
-		footer2 = new Div();
-		footer2.setZclass("crudview-footer row");
-		footer2.setStyle("text-align: right");
+		formRightActions = new Div();
+		formRightActions.setZclass("crudview-footer row");
+		formRightActions.setStyle("text-align: right");
 
 		String menuId = "actionMenu" + StringUtils.randomString().substring(0, 4);
 		actionsMenu = new Menupopup();
@@ -79,6 +74,9 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		actionsButton.setPopup(menuId + ", after_start");
 		ZKUtil.configureComponentIcon("process", actionsButton, IconSize.NORMAL);
 
+		addCrudStateChangedListener(evt -> {
+			controlChangedState(evt);
+		});
 	}
 
 	@Override
@@ -95,6 +93,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		toolbarContainer.appendChild(rightDiv);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	protected ActionRenderer getDefaultActionRenderer() {
 		return new ToolbarbuttonActionRenderer();
@@ -172,9 +171,9 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 
 		if ("right".equals(group.getAlign())) {
 			btnGroup.setSclass("pull-right");
-			footer2.appendChild(btnGroup);
+			formRightActions.appendChild(btnGroup);
 		} else {
-			footer.appendChild(btnGroup);
+			formLeftActions.appendChild(btnGroup);
 		}
 
 	}
@@ -196,38 +195,37 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		}
 	}
 
-	@Override
-	public void setState(CrudState crudState) {
-		body.getChildren().clear();
-		boolean showFooter = false;
+	private void controlChangedState(ChangedStateEvent evt) {
+		CrudState crudState = evt.getNewState();
+
 		switch (crudState) {
+
 		case READ:
 			borderlayout.getNorth().setVisible(true);
-			actionsMenu.getChildren().clear();
-			footer.getChildren().clear();
-			footer2.getChildren().clear();
 			break;
-
 		default:
 			borderlayout.getNorth().setVisible(false);
-			showFooter = true;
 			break;
 		}
-
-		super.setState(crudState);
-
-		if (showFooter) {
-			borderlayout.getCenter().getChildren().clear();
-			formViewContainer.setParent(body);
-
-			footer.setParent(formViewContainer.getSelectedPanel());
-			footer2.setParent(formViewContainer.getSelectedPanel());
-			body.setParent(borderlayout.getCenter());
-
-		}
-
 	}
 
+	@Override
+	public void clearActions() {
+		super.clearActions();
+		actionsMenu.getChildren().clear();
+		formLeftActions.getChildren().clear();
+		formRightActions.getChildren().clear();
+	}
+
+	@Override
+	protected void addFormViewToContainer(String formViewTitle) {
+		ZKWrapperView<Object> wrapperView = new ZKWrapperView<Object>(formView);
+		formLeftActions.setParent(wrapperView);
+		formRightActions.setParent(wrapperView);
+		formViewContainer.addView(formViewTitle, wrapperView);
+	}
+
+	@SuppressWarnings("rawtypes")
 	@Override
 	protected CrudViewRenderer getCrudViewRenderer() {
 		return new DynamicalCrudViewRenderer<>();

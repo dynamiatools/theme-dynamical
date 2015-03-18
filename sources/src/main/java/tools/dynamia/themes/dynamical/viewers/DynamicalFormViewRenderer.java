@@ -14,7 +14,6 @@ import org.zkoss.zhtml.H3;
 import org.zkoss.zhtml.I;
 import org.zkoss.zhtml.Label;
 import org.zkoss.zhtml.Text;
-import org.zkoss.zhtml.impl.AbstractTag;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zul.Bandbox;
@@ -45,7 +44,7 @@ import tools.dynamia.zk.viewers.form.FormViewRenderer;
 public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 
 	@Override
-	protected void renderRows(FormView<T> view, ViewDescriptor viewDesc, int realCols, T value) {
+	protected Component renderRows(FormView<T> view, ViewDescriptor viewDesc, int realCols, T value) {
 
 		Div row = null;
 		Binder binder = ZKBindingUtil.createBinder();
@@ -66,20 +65,21 @@ public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 
 		Collections.sort(viewDesc.getFieldGroups(), new IndexableComparator());
 		for (FieldGroup fieldGroup : viewDesc.getFieldGroups()) {
-			Component group = createGroup(fieldGroup, realCols, view);
+			renderGroup(fieldGroup, realCols, view);
 			row = newRow();
-			row.setParent(group);
+			row.setParent(view);
 			for (Field field : fieldGroup.getFields()) {
 				if (field.isVisible()) {
 					if (!hasSpace(row, realCols, field)) {
 						row = newRow();
-						row.setParent(group);
+						row.setParent(view);
 					}
 					renderField(row, field, binder, view, value, realCols);
 				}
 			}
 		}
 		view.setBinder(binder);
+		return view;
 	}
 
 	private Div newRow() {
@@ -90,6 +90,7 @@ public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 
 	protected void renderField(Component row, Field field, Binder binder, FormView<T> view, T value, int realCols) {
 		boolean showLabel = true;
+		Viewers.customizeField("form", field);
 		Object sl = field.getParams().get(Viewers.PARAM_SHOW_LABEL);
 		if (sl != null && (sl == Boolean.FALSE || sl.toString().equalsIgnoreCase("false"))) {
 			showLabel = false;
@@ -237,7 +238,8 @@ public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 		}
 	}
 
-	protected Component createGroup(FieldGroup fieldGroup, int realCols, Component rows) {
+	@Override
+	protected void renderGroup(FieldGroup fieldGroup, int realCols, Component rows) {
 		String styleClass = (String) fieldGroup.getParams().get(Viewers.PARAM_STYLE_CLASS);
 		if (styleClass == null) {
 			styleClass = "";
@@ -264,18 +266,6 @@ public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 			ZKUtil.configureComponentIcon(IconsTheme.get().getIcon(fieldGroup.getIcon()), icon, IconSize.NORMAL);
 		}
 		title.appendChild(new Text(label));
-
-		return rows;
-
-	}
-
-	private <TAG extends AbstractTag> TAG tag(Class<TAG> tagClass, String content, String styleClass) {
-		AbstractTag tag = BeanUtils.newInstance(tagClass);
-		tag.appendChild(new Text(content));
-		if (styleClass != null) {
-			tag.setSclass(styleClass);
-		}
-		return (TAG) tag;
 	}
 
 	@Override

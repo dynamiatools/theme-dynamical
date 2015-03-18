@@ -151,13 +151,13 @@ li.title-menu a span {
 	float: right;
 }
 
-.crudview-body .table-view .z-listbox-body {
-	height: auto !important;
-}
-
 .multiview-panel {
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+.form-view{
+	min-height: 0 !important;
 }
 
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {
