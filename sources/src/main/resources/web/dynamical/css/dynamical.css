@@ -93,6 +93,26 @@ li.title-menu a span {
 	width: auto !important;
 }
 
+.form-group .z-label{
+	display: block
+}
+
+.form-group .conv-zero, .form-group .conv-positive, .form-group .conv-negative{
+	font-size: 20px;
+	color: gray;
+	border: 1px solid silver;
+	padding: 3px;
+	text-align: right;
+}
+
+.form-group .conv-positive{
+	color: #62B300;
+}
+
+.form-group .conv-negative{
+	color: maroon;
+}
+
 .z-checkbox-content {
 	font-family: inherit !important;
 	font-weight: inherit !important;
