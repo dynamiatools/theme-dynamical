@@ -93,11 +93,12 @@ li.title-menu a span {
 	width: auto !important;
 }
 
-.form-group .z-label{
+.form-group .z-label {
 	display: block
 }
 
-.form-group .conv-zero, .form-group .conv-positive, .form-group .conv-negative{
+.form-group .conv-zero, .form-group .conv-positive, .form-group .conv-negative
+	{
 	font-size: 20px;
 	color: gray;
 	border: 1px solid silver;
@@ -105,11 +106,11 @@ li.title-menu a span {
 	text-align: right;
 }
 
-.form-group .conv-positive{
+.form-group .conv-positive {
 	color: #62B300;
 }
 
-.form-group .conv-negative{
+.form-group .conv-negative {
 	color: maroon;
 }
 
@@ -176,7 +177,7 @@ li.title-menu a span {
 	overflow-x: hidden;
 }
 
-.form-view{
+.form-view {
 	min-height: 0 !important;
 }
 
@@ -207,8 +208,7 @@ li.title-menu a span {
 	background: none !important;
 }
 
-.z-north, .z-south, .z-west, .z-center, .z-east, .z-north-body,
-	.z-center-body {
+.z-north, .z-south, .z-center, .z-north-body, .z-center-body {
 	width: 100% !important;
 }
 
