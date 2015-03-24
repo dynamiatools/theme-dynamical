@@ -23,6 +23,11 @@ html, body {
 	height: 40px;
 }
 
+.pageContent {
+	height: 100%;
+	overflow: auto;
+}
+
 .logo .imglogo {
 	vertical-align: middle;
 	text-align: center;
