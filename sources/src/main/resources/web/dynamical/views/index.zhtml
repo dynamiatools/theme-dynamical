@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>${applicationInfo.name} ${accountContext.account.name} | ${navManager.currentPage.name}</title>
+		
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
 		<!-- Bootstrap 3.3.2 -->
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
@@ -92,10 +93,9 @@
 									<!-- Menu Footer-->
 									<li class="user-footer">
 										<div class="pull-left">
-											<a href="#" class="btn btn-default btn-flat">
-												<i class="fa fa-user" />
-												Perfil
-											</a>
+											<z:a zclass="btn btn-default btn-flat" label=" Perfil" iconSclass="fa fa-user"
+												onClick='navManager.navigateTo("system/seguridad/miPerfil")' />
+
 										</div>
 										<div class="pull-right">
 											<form action="${contextPath}/logout" method="POST">
@@ -166,13 +166,14 @@
 						<li>
 							<a href="http://www.dynamiasoluciones.com">
 								<i class="fa fa-circle-o text-danger"></i>
-								 <b>Version</b>  ${applicationInfo.version}
+								<b>Version</b>
+								${applicationInfo.version}
 							</a>
 						</li>
 						<li>
 							<a href="http://www.dynamiasoluciones.com">
 								<i class="fa fa-circle-o text-success"></i>
-								  2015
+								2015
 							</a>
 						</li>
 

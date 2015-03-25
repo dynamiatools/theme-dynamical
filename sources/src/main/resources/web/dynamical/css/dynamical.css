@@ -184,6 +184,7 @@ li.title-menu a span {
 
 .form-view {
 	min-height: 0 !important;
+	overflow-x: hidden;
 }
 
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {

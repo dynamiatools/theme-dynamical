@@ -99,7 +99,7 @@ public class DynamicalFormViewRenderer<T> extends FormViewRenderer<T> {
 		Div column = new Div();
 		column.setParent(row);
 
-		String labelText = field.getLocalizedLabel(Locales.getCurrent());
+		String labelText = field.getLocalizedLabel();
 		if (isExpression(labelText)) {
 			labelText = $s(labelText);
 		}
