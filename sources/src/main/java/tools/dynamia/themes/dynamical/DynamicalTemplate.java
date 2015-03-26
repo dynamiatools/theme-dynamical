@@ -30,6 +30,11 @@ import tools.dynamia.viewers.ViewTypeFactory;
 @InstallTemplate
 public class DynamicalTemplate implements ApplicationTemplate {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8646000381813253072L;
+
 	private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin");
 
 	@Autowired
