@@ -9,6 +9,7 @@ import org.zkoss.zhtml.Li;
 import org.zkoss.zhtml.Text;
 import org.zkoss.zhtml.Ul;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Menuitem;
@@ -101,6 +102,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 			Ul submenu = new Ul();
 			submenu.setSclass("treeview-menu");
 			submenu.setParent(menu);
+			
 
 			modulesContent.put(module, submenu);
 		}
