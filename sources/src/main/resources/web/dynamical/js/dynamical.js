@@ -5,3 +5,7 @@ function applyJqueryStuff() {
 	// Enable sidebar tree view controls
 	$.AdminLTE.tree('.sidebar');
 }
+
+$('a.sidebar-toggle').click(function() {	
+	zWatch.fireDown("onSize", '');	
+});

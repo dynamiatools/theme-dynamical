@@ -208,14 +208,10 @@ li.title-menu a span {
 	height: 50px;
 }
 
-.z-north, .z-south, .z-west, .z-center, .z-east, .z-row-inner {
+.z-north, .z-south, .z-center, .z-row-inner {
 	border: none !important;
 	border-left: none !important;
 	background: none !important;
-}
-
-.z-north, .z-south, .z-center, .z-north-body, .z-center-body {
-	width: 100% !important;
 }
 
 .z-listitem .z-listcell {
