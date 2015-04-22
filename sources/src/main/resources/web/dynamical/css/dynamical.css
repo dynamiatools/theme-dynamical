@@ -1,6 +1,6 @@
 html, body {
-	margin: 0;
-	padding: 0;
+	margin: 0 !important;
+	padding: 0 !important;
 	height: 100% !important;
 }
 
@@ -265,4 +265,14 @@ input[type=checkbox] {
 
 .progress-success .z-progressmeter-image {
 	background-color: #00a65a !important;
+}
+
+/*Mobile CSS */
+@media ( max-width :767px) {
+	.z-toolbar {
+		padding: 0 !important;
+	}
+	.crudview-header {
+		margin-bottom: 5px;
+	}
 }
