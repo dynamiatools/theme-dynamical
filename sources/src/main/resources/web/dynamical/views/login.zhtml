@@ -5,6 +5,11 @@
 		<meta charset="UTF-8" />
 		<title>${applicationInfo.name} - ${accountContext.account.name} | Login</title>
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+		<link rel="shortcut icon" href="${contextPath}/favicon.ico" />
+		<link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico" />
+
+
 		<!-- Bootstrap 3.3.2 -->
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<!-- Font Awesome Icons -->

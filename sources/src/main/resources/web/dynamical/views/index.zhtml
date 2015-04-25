@@ -6,6 +6,10 @@
 		<title>${applicationInfo.name} ${accountContext.account.name} | ${navManager.currentPage.name}</title>
 
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+		<link rel="shortcut icon" href="${contextPath}/favicon.ico" />
+		<link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico" />
+
+
 		<!-- Bootstrap 3.3.2 -->
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
 		<!-- Font Awesome Icons -->
@@ -45,7 +49,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-				
+
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
 							<li class="dropdown visible-xs">
@@ -144,12 +148,7 @@
 					<!-- search form -->
 					<form action="#" method="get" class="sidebar-form">
 						<div class="input-group">
-							<input type="text" name="q" class="form-control" placeholder="Buscar..." />
-							<span class="input-group-btn">
-								<button type='submit' name='seach' id='search-btn' class="btn btn-flat">
-									<i class="fa fa-search"></i>
-								</button>
-							</span>
+							<z:combobox placeholder="Buscar" sclass="form-zcontrol" use="tools.dynamia.app.ui.GlobalSearchBox" />
 						</div>
 					</form>
 					<!-- /.search form -->

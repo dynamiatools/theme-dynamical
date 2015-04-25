@@ -94,6 +94,11 @@ li.title-menu a span {
 	line-height: 24px;
 }
 
+.sidebar-form .form-zcontrol a {
+	background-color: #374850;
+	border: 1px solid #5C5C5C;
+}
+
 .form-zcontrol .z-bandbox-popup {
 	width: auto !important;
 }
@@ -265,6 +270,15 @@ input[type=checkbox] {
 
 .progress-success .z-progressmeter-image {
 	background-color: #00a65a !important;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 /*Mobile CSS */
