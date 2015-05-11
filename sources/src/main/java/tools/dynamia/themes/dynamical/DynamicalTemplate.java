@@ -51,7 +51,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 				AUTHOR, "Mario Serrano",
 				DATE, "2015",
 				COPYRIGHT, "Dynamia Soluciones IT 2015",
-				VERSION, "2.0",
+				VERSION, "3.0.0",
 				ORIGINAL_AUTHOR, "Almsaeed Studio");
 
 	}
