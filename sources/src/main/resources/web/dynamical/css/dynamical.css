@@ -20,7 +20,7 @@ html, body {
 }
 
 .content-header {
-	height: 40px;
+	height: 30px;
 }
 
 .pageContent {
@@ -75,6 +75,16 @@ li.title-menu a span {
 
 .form-zcontrol input {
 	width: calc(100% - 25px) !important;
+	padding: 6px 12px;
+	height: 34px;
+	font-size: 14px;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	box-shadow: none;
+}
+
+.zcontrol input {	
 	padding: 6px 12px;
 	height: 34px;
 	font-size: 14px;

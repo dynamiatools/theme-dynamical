@@ -307,7 +307,7 @@ a:hover, a:active, a:focus {
 
 .content-header {
 	position: relative;
-	padding: 15px 15px 0 15px;
+	
 }
 
 .content-header>h1 {
@@ -323,16 +323,11 @@ a:hover, a:active, a:focus {
 }
 
 .content-header>.breadcrumb {
-	float: right;
-	background: transparent;
-	margin-top: 0px;
-	margin-bottom: 0;
-	font-size: 12px;
-	padding: 7px 5px;
-	position: absolute;
-	top: 15px;
-	right: 10px;
-	border-radius: 2px;
+		position: relative;
+		top: 0;
+		right: 0;
+		float: none;
+				padding-left: 10px;
 }
 
 .content-header>.breadcrumb>li>a {
