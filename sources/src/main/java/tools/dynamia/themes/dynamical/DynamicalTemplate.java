@@ -16,11 +16,11 @@ import tools.dynamia.app.template.ApplicationTemplate;
 import tools.dynamia.app.template.InstallTemplate;
 import tools.dynamia.app.template.Skin;
 import tools.dynamia.app.template.TemplateContext;
+import tools.dynamia.app.ui.bootstrap.BootstrapConfigViewRender;
+import tools.dynamia.app.ui.bootstrap.BootstrapFormViewRenderer;
+import tools.dynamia.app.ui.bootstrap.BootstrapTableViewRenderer;
 import tools.dynamia.commons.MapBuilder;
-import tools.dynamia.themes.dynamical.viewers.DynamicalConfigViewRender;
 import tools.dynamia.themes.dynamical.viewers.DynamicalCrudViewRenderer;
-import tools.dynamia.themes.dynamical.viewers.DynamicalFormViewRenderer;
-import tools.dynamia.themes.dynamical.viewers.DynamicalTableViewRenderer;
 import tools.dynamia.viewers.ViewTypeFactory;
 
 /**
@@ -70,9 +70,9 @@ public class DynamicalTemplate implements ApplicationTemplate {
 	public void init(TemplateContext context) {
 		Library.setProperty("org.zkoss.theme.preferred", "dynamical");
 		viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("table", DynamicalTableViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("form", DynamicalFormViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("config", DynamicalConfigViewRender.class);
+		viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
+		viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
+		viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
 	}
 
 	@Override

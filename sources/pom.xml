@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.0.0.Beta</version>
+	<version>3.0.0.Final</version>
 	<name>Dynamia Tools - Theme Dynamical (${project.version})</name>
 	<url>http://maven.apache.org</url>
 
 
 	<properties>
-		<dynatools.version>3.0.0.Beta</dynatools.version>
-		<app.version>3.0.0.Beta</app.version>
+		<dynatools.version>3.0.0.Final</dynatools.version>
+		<app.version>3.0.0.Final</app.version>
 
 
 		<java.version>1.8</java.version>
@@ -58,4 +59,11 @@
 			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://server.dynamiasoluciones.com:8081/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
 </project>

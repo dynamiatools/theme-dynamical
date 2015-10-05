@@ -60,90 +60,15 @@ li.title-menu a span {
 	
 }
 
-.form-zcontrol {
-	display: block !important;
-	line-height: 1.42857143;
-}
 
-.form-zcontrol .z-combobox-popup {
-	display: none !important;
-}
-
-.form-zcontrol .z-combobox-readonly {
-	background-color: white;
-}
-
-.form-zcontrol input {
-	width: calc(100% - 25px) !important;
-	padding: 6px 12px;
-	height: 34px;
-	font-size: 14px;
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-	box-shadow: none;
-}
-
-.zcontrol input {	
-	padding: 6px 12px;
-	height: 34px;
-	font-size: 14px;
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-	box-shadow: none;
-}
-
-.form-zcontrol input:focus {
-	border-color: #3c8dbc !important;
-	box-shadow: none;
-}
-
-.form-zcontrol a {
-	height: 34px;
-	line-height: 24px;
-}
 
 .sidebar-form .form-zcontrol a {
 	background-color: #374850;
 	border: 1px solid #5C5C5C;
 }
 
-.form-zcontrol .z-bandbox-popup {
-	width: auto !important;
-}
 
-.form-group .z-label {
-	display: block
-}
 
-.form-group .conv-zero, .form-group .conv-positive, .form-group .conv-negative
-	{
-	font-size: 20px;
-	color: gray;
-	border: 1px solid silver;
-	padding: 3px;
-	text-align: right;
-}
-
-.form-group .conv-positive {
-	color: #62B300;
-}
-
-.form-group .conv-negative {
-	color: maroon;
-}
-
-.z-checkbox-content {
-	font-family: inherit !important;
-	font-weight: inherit !important;
-	font-size: inherit !important;
-	padding-left: 3px;
-}
-
-.form-group .z-radiogroup {
-	display: block;
-}
 
 .z-menupopup-separator {
 	background: none !important;
@@ -246,25 +171,6 @@ input[type=checkbox] {
 	font-size: 14px;
 }
 
-.spacer, .spacer-top {
-	margin-top: 40px;
-}
-
-.spacer-bottom {
-	margin-bottom: 40px;
-}
-
-.pd5 {
-	padding: 5px;
-}
-
-.pd10 {
-	padding: 10px;
-}
-
-.pd20 {
-	padding: 20px;
-}
 
 .progress-primary .z-progressmeter-image {
 	background-color: #3c8dbc !important;
@@ -282,14 +188,6 @@ input[type=checkbox] {
 	background-color: #00a65a !important;
 }
 
-.noselect {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
 
 /*Mobile CSS */
 @media ( max-width :767px) {
