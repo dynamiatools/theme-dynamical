@@ -43,8 +43,13 @@
 			rel="stylesheet" type="text/css" />
 
 		<link
+			href="${contextPath}/zkau/web/dynamical/css/jquery.growl.css"
+			rel="stylesheet" type="text/css" />
+
+		<link
 			href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css"
 			rel="stylesheet" type="text/css" />
+
 
 		<link href="${contextPath}/zkau/web/dynamical/css/dynamical.css"
 			rel="stylesheet" type="text/css" />
@@ -121,6 +126,7 @@
 									</li>
 								</ul>
 							</li>
+						
 
 
 							<!-- User Account: style can be found in dropdown.less -->
@@ -299,6 +305,9 @@
 		<!-- jQuery 2.1.3 -->
 		<script
 			src="${contextPath}/zkau/web/dynamical/js/jquery-2.1.3.min.js">
+		</script>
+		<script
+			src="${contextPath}/zkau/web/dynamical/js/jquery.growl.js">
 		</script>
 		<!-- Bootstrap 3.3.2 JS -->
 		<script
