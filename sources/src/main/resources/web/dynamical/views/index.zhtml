@@ -50,6 +50,8 @@
 			href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css"
 			rel="stylesheet" type="text/css" />
 
+		<link href="${contextPath}/zkau/web/dynamical/css/tooltipster.css"
+			rel="stylesheet" type="text/css" />
 
 		<link href="${contextPath}/zkau/web/dynamical/css/dynamical.css"
 			rel="stylesheet" type="text/css" />
@@ -126,7 +128,7 @@
 									</li>
 								</ul>
 							</li>
-						
+
 
 
 							<!-- User Account: style can be found in dropdown.less -->
@@ -331,6 +333,11 @@
 		<script src="${contextPath}/zkau/web/dynamical/js/app.js"
 			type="text/javascript">
 		</script>
+		<!-- Tooltipster -->
+		<script src="${contextPath}/zkau/web/dynamical/js/jquery.tooltipster.min.js"
+			type="text/javascript">
+		</script>
+		
 
 		<script>applyJqueryStuff();</script>
 

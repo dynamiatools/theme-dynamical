@@ -279,8 +279,7 @@ $.AdminLTE.pushMenu = function (toggleBtn) {
         $("body").addClass('sidebar-open');
       }
     }
-    console.log("resize this..");
-    zWatch.fireDown("onSize", '');	
+  
   });
 
   $(".content-wrapper").click(function () {

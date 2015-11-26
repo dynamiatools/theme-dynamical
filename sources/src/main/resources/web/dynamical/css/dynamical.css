@@ -11,6 +11,10 @@ html, body {
 	padding: 0;
 }
 
+.workspace {
+	margin-top: -10px;
+}
+
 .content-wrapper, .content-wrapper>.content, .workspace {
 	height: 100%;
 }
@@ -60,15 +64,10 @@ li.title-menu a span {
 	
 }
 
-
-
 .sidebar-form .form-zcontrol a {
 	background-color: #374850;
 	border: 1px solid #5C5C5C;
 }
-
-
-
 
 .z-menupopup-separator {
 	background: none !important;
@@ -84,8 +83,7 @@ li.title-menu a span {
 }
 
 .crudview {
-	padding-left: 10px;
-	padding-right: 10px;
+	
 }
 
 .crudview-header .z-toolbar {
@@ -171,7 +169,6 @@ input[type=checkbox] {
 	font-size: 14px;
 }
 
-
 .progress-primary .z-progressmeter-image {
 	background-color: #3c8dbc !important;
 }
@@ -188,6 +185,38 @@ input[type=checkbox] {
 	background-color: #00a65a !important;
 }
 
+.crudview-header, .actiontb {
+	height: 40px  !important;
+	background: #666 !important;
+
+
+}
+
+
+.actiontb-container input {
+	height: 30px;
+}
+
+.actiontb-a.z-toolbarbutton {
+	background: #d7d7d7;
+	height: 30px !important;
+	min-width: 30px;
+	text-align: center;
+}
+
+.actiontb-a .z-toolbarbutton-content {
+	text-shadow: none;
+	line-height: 26px;
+}
+
+.breadcrumb{
+	background: #374850 !important;
+	color: white;
+	border-radius: 0px !important;
+}
+.breadcrumb a{
+	color: white !important;
+}
 
 /*Mobile CSS */
 @media ( max-width :767px) {

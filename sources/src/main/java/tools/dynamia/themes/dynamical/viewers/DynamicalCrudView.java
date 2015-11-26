@@ -1,10 +1,11 @@
 package tools.dynamia.themes.dynamical.viewers;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import javax.tools.Tool;
 
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zul.Bandbox;
 import org.zkoss.zul.Borderlayout;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Div;
@@ -16,6 +17,7 @@ import tools.dynamia.actions.ActionGroup;
 import tools.dynamia.actions.ActionRenderer;
 import tools.dynamia.commons.StringUtils;
 import tools.dynamia.crud.ChangedStateEvent;
+import tools.dynamia.crud.CrudAction;
 import tools.dynamia.crud.CrudState;
 import tools.dynamia.crud.actions.CancelAction;
 import tools.dynamia.ui.icons.Icon;
@@ -23,6 +25,7 @@ import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.ui.icons.IconType;
 import tools.dynamia.ui.icons.IconsTheme;
 import tools.dynamia.web.util.HttpUtils;
+import tools.dynamia.zk.actions.ActionToolbar;
 import tools.dynamia.zk.actions.ButtonActionRenderer;
 import tools.dynamia.zk.actions.MenuitemActionRenderer;
 import tools.dynamia.zk.actions.ToolbarbuttonActionRenderer;
@@ -53,7 +56,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 		borderlayout = (Borderlayout) layout;
 
 		Div header = new Div();
-		header.setZclass("crudview-header");
+		header.setZclass("crudview-header " + ActionToolbar.CONTAINER_SCLASS);
 		header.setSclass("clearfix");
 		header.setParent(borderlayout.getNorth());
 		toolbarContainer = header;
@@ -91,6 +94,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 
 		rightDiv.appendChild(toolbarRight);
 		toolbarContainer.appendChild(rightDiv);
+
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -100,45 +104,52 @@ public class DynamicalCrudView<T> extends CrudView<T> {
 	}
 
 	@Override
-	protected Component renderAction(Action action) {
+	protected void loadActions(CrudState state) {
+		actionsMenu.getChildren().clear();
+		super.loadActions(state);
+
+		if (SMARTPHONE && state == CrudState.READ) {
+			toolbarLeft.appendChild(actionsButton);
+		}
+	}
+
+	@Override
+	protected void showActionGroup(ActionGroup actionGroup) {
+		if (SMARTPHONE && getState() == CrudState.READ) {
+			MenuitemActionRenderer renderer = new MenuitemActionRenderer();			
+			for (Action action : actionGroup.getActions()) {
+				if (action.getRenderer() == null || action.getRenderer() instanceof ToolbarbuttonActionRenderer) {
+					Menuitem menuitem = renderer.render(action, this);
+					actionsMenu.appendChild(menuitem);
+				} else {
+					showAction(actionGroup, action);
+				}
+			}
+		} else {
+			super.showActionGroup(actionGroup);
+		}
+	}
+
+	@Override
+	protected void showAction(ActionGroup actionGroup, Action action) {
 		if ((getState() == CrudState.CREATE || getState() == CrudState.UPDATE) &&
 				(action.getRenderer() == null || action.getRenderer() instanceof ToolbarbuttonActionRenderer)) {
 			ButtonActionRenderer renderer = new ButtonActionRenderer();
 			Button button = renderer.render(action, this);
 			button.setAttribute(ACTION, action);
-
 			applyButtonStyle(button, action);
-			return button;
-
+			addButton(actionGroup, button);
 		} else {
-			Component component = super.renderAction(action);
-			fixFindAction(action, component);
-			return component;
+			fixFindAction(action);
+			super.showAction(actionGroup, action);
 		}
 	}
 
-	private void fixFindAction(Action action, Component component) {
+	private void fixFindAction(Action action) {
 		if (SMARTPHONE) {
-			if (action instanceof FindAction && component instanceof Bandbox) {
-				Bandbox bandbox = (Bandbox) component;
-				bandbox.setSclass("form-zcontrol");
-				bandbox.setStyle("text-align: right");
-			}
-		}
-	}
-
-	@Override
-	protected void displayAction(ActionGroup group, List<Component> actionComponents) {
-
-		if (getState() == CrudState.CREATE || getState() == CrudState.UPDATE) {
-			actionComponents.stream().filter(c -> c instanceof Button).forEach(btn -> addButton(group, btn));
-			super.displayAction(group, actionComponents.stream().filter(c -> !(c instanceof Button)).collect(Collectors.toList()));
-		} else {
-			if (SMARTPHONE) {
-				displayMenuActions(actionComponents.stream().filter(c -> c instanceof Button).collect(Collectors.toList()));
-				super.displayAction(group, actionComponents.stream().filter(c -> !(c instanceof Button)).collect(Collectors.toList()));
-			} else {
-				super.displayAction(group, actionComponents);
+			if (action instanceof FindAction) {
+				action.setAttribute("sclass", "form-zcontrol");
+				action.setAttribute("style", "text-align: right");
 			}
 		}
 	}
