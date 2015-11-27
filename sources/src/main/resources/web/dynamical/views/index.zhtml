@@ -305,9 +305,7 @@
 		<!-- ./wrapper -->
 
 		<!-- jQuery 2.1.3 -->
-		<script
-			src="${contextPath}/zkau/web/dynamical/js/jquery-2.1.3.min.js">
-		</script>
+
 		<script
 			src="${contextPath}/zkau/web/dynamical/js/jquery.growl.js">
 		</script>

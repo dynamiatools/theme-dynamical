@@ -43,28 +43,20 @@
 			</div>
 			<!-- /.login-logo -->
 			<div class="login-box-body">
-				<p class="login-box-msg">Inicio de Sesion</p>
-				<form action="${contextPath}/login" method="post">
+				<p class="login-box-msg">Recuperacion de Password</p>
+				<form action="${contextPath}/login/recovery" method="post">
 					<div class="form-group has-feedback">
-						<input type="text" class="form-control" name="username" placeholder="Usuario" />
-						<span class="glyphicon glyphicon-user form-control-feedback"></span>
+						<input type="text" class="form-control" name="email" placeholder="Email" />
+						<span class="glyphicon glyphicons-message-lock form-control-feedback"></span>
 					</div>
-					<div class="form-group has-feedback">
-						<input type="password" class="form-control" name="password" placeholder="Password" />
-						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-					</div>
+					
 					<div class="row">
 						<div class="col-xs-8">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="remember-me" value="0" onclick="$(this).val(this.checked ? 1 : 0)" />
-									Recuerdame
-								</label>
-							</div>
+							
 						</div>
 						<!-- /.col -->
 						<div class="col-xs-4">
-							<button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+							<button type="submit" class="btn btn-success btn-block btn-flat">Enviar</button>
 						</div>
 						<!-- /.col -->
 					</div>
@@ -73,11 +65,14 @@
 
 
 				<!-- /.social-auth-links -->
-
-				<a href="${contextPath}/login/recovery">No recuerdo mi clave</a>
+				<p>Se generara un nuevo password y se enviara a su cuenta de correo</p>
+				<a href="${contextPath}/login">Regresar a inicio de sesion</a>
 				<p>
-					<z:div sclass="callout callout-danger" if="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-						<p>${SPRING_SECURITY_LAST_EXCEPTION.localizedMessage}</p>
+					<z:div sclass="callout callout-danger" if="${not empty errormessage}">
+						<p>${errormessage}</p>
+					</z:div>
+					<z:div sclass="callout callout-success" if="${not empty message}">
+						<p>${message}</p>
 					</z:div>
 				</p>
 
