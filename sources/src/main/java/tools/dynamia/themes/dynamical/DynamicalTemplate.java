@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zkoss.lang.Library;
+import org.zkoss.zul.Messagebox;
 
 import tools.dynamia.app.template.ApplicationTemplate;
 import tools.dynamia.app.template.InstallTemplate;
@@ -73,6 +74,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 		viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
 		viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
 		viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
+		Messagebox.setTemplate("~./templates/bootstrap/views/messagebox.zul");
 	}
 
 	@Override
