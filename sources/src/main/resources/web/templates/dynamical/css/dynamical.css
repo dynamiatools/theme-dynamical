@@ -190,8 +190,14 @@ input[type=checkbox] {
 	background: #999999 !important;
 }
 
-.actiontb-container input {
+.actiontb-container input, .actiontb-container .z-datebox-button,
+	.actiontb-container .z-combobox-button {
 	height: 30px;
+}
+
+.actiontb-container .z-datebox-button, .actiontb-container .z-combobox-button
+	{
+	line-height: 20px;
 }
 
 .actiontb-a.z-toolbarbutton {
@@ -247,13 +253,12 @@ input[type=checkbox] {
 		!important;
 }
 
-
 /*Mobile CSS */
 @media ( max-width :767px) {
 	.z-toolbar {
 		padding: 0 !important;
 	}
 	.crudview-header {
-		margin-bottom: 5px;
+		margin-top: 3px;
 	}
 }

@@ -12,3 +12,11 @@ color:
 	border-color: #00a65a !important;
 	background: #00a65a !important;
 }
+
+.baseBackgroundColor{
+	background-color: #00a65a
+}
+
+.baseColor{
+	color: #00a65a
+}

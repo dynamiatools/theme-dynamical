@@ -12,3 +12,11 @@ color:
 	border-color: #dd4b39 !important;
 	background: #dd4b39 !important;
 }
+
+.baseBackgroundColor{
+	background-color: #dd4b39
+}
+
+.baseColor{
+	color: #dd4b39
+}
