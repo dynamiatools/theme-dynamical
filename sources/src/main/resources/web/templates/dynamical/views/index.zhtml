@@ -6,9 +6,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<!-- Chrome, Firefox OS and Opera -->
-		<meta name="theme-color" content="${appTemplate.skin.baseColor}" />
+		<meta name="theme-color"
+			content="${appTemplate.skin.baseColor}" />
 		<!-- Windows Phone -->
-		<meta name="msapplication-navbutton-color" content="${appTemplate.skin.baseColor}" />
+		<meta name="msapplication-navbutton-color"
+			content="${appTemplate.skin.baseColor}" />
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style"
 			content="${appTemplate.skin.baseColor}" />
@@ -247,28 +249,34 @@
 						</z:div>
 
 						<li class="header">ACERCA DE</li>
-
 						<li>
 							<a href="${applicationInfo.url}">
 								<i class="fa fa-circle-o text-info"></i>
+								${applicationInfo.name}
+							</a>
+						</li>
+						<li>
+							<a href="${applicationInfo.url}">
+								<i
+									class="fa fa-circle-o text-success">
+								</i>
 								${applicationInfo.author}
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<i class="fa fa-circle-o text-danger"></i>
-								<b>Version</b>
-								${applicationInfo.version}
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i
-									class="fa fa-circle-o text-success">
+								<i class="fa fa-circle-o text-danger">
 								</i>
-								${applicationInfo.build}
+								<b>Version</b>
+								<br />
+								<span>
+									${applicationInfo.version} 
+									${applicationInfo.build}
+								</span>
 							</a>
 						</li>
+
+
 
 					</ul>
 				</section>
