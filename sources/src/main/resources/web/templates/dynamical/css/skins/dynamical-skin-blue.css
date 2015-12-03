@@ -5,3 +5,7 @@
 .baseColor{
 	color: #367fa9
 }
+
+.z-listheader-content{
+	color: #367fa9 !important;
+}

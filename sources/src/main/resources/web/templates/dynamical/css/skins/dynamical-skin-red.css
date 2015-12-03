@@ -20,3 +20,7 @@ color:
 .baseColor{
 	color: #dd4b39
 }
+
+.z-listheader-content{
+	color: #dd4b39 !important;
+}

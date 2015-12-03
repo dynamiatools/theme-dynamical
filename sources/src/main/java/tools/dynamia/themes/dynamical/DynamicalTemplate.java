@@ -36,7 +36,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 	 */
 	private static final long serialVersionUID = -8646000381813253072L;
 
-	private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin");
+	private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin","#367fa9");
 
 	@Autowired
 	private ViewTypeFactory viewTypeFactory;
@@ -89,18 +89,21 @@ public class DynamicalTemplate implements ApplicationTemplate {
 
 	private void createSkins() {
 		skins.add(DEFAULT_SKIN);
-		skins.add(newSkin("Black", null));
-		skins.add(newSkin("Green", null));
-		skins.add(newSkin("Purple", null));
-		skins.add(newSkin("Red", null));
-		skins.add(newSkin("Yellow", null));
-		skins.add(newSkin("Orange", null));
-		skins.add(newSkin("Olive", null));
+		skins.add(newSkin("Black", null,"#808080"));
+		skins.add(newSkin("Green", null,"#00a65a"));
+		skins.add(newSkin("Purple", null,"#605ca8"));
+		skins.add(newSkin("Red", null,"#dd4b39"));
+		skins.add(newSkin("Yellow", null,"#FFC200"));
+		skins.add(newSkin("Orange", null,"#f39c12"));
+		skins.add(newSkin("Olive", null,"#8FB442"));
 	}
 
-	private static Skin newSkin(String name, String description) {
+	private static Skin newSkin(String name, String description, String color) {
 
 		String n = name.toLowerCase();
-		return new Skin("skin-" + n, name, "skin-" + n + ".min.css", description);
+		Skin skin = new Skin("skin-" + n, name, "skin-" + n + ".min.css", description);
+		skin.setBaseBackgroundColor(color);
+		skin.setBaseColor(color);
+		return skin;
 	}
 }
