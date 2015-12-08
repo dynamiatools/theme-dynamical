@@ -12,3 +12,15 @@ color:
 	border-color: #605ca8 !important;
 	background: #605ca8 !important;
 }
+
+.baseBackgroundColor{
+	background-color: #605ca8
+}
+
+.baseColor{
+	color: #605ca8
+}
+
+.z-listheader-content{
+	color: #605ca8 !important;
+}
