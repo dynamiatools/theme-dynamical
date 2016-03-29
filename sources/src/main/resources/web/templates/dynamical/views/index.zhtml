@@ -234,7 +234,7 @@
 						<div class="input-group">
 							<z:combobox placeholder="Buscar"
 								sclass="form-zcontrol"
-								use="tools.dynamia.app.ui.GlobalSearchBox" />
+								use="tools.dynamia.zk.app.GlobalSearchBox" />
 						</div>
 					</form>
 					<!-- /.search form -->

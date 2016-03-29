@@ -1,69 +1,66 @@
 <?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>tools.dynamia.themes</groupId>
-	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.0.0.Final</version>
-	<name>Dynamia Tools - Theme Dynamical (${project.version})</name>
-	<url>http://maven.apache.org</url>
-
-
-	<properties>
-		<dynatools.version>3.0.0.Final</dynatools.version>
-		<app.version>3.0.0.Final</app.version>
+    <groupId>tools.dynamia.themes</groupId>
+    <artifactId>tools.dynamia.themes.dynamical</artifactId>
+    <version>3.0.0.Final</version>
+    <name>Themes - ZK Dynamical (${project.version})</name>
+    <url>http://maven.apache.org</url>
 
 
-		<java.version>1.8</java.version>
-		<maven.compiler>2.3.2</maven.compiler>
-		<source.encoding>UTF-8</source.encoding>
-	</properties>
+    <properties>
+        <dynamiatools.version>3.0.0.Final</dynamiatools.version>
+        <java.version>1.8</java.version>
+        <maven.compiler>2.3.2</maven.compiler>
+        <source.encoding>UTF-8</source.encoding>
+    </properties>
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler}</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${source.encoding}</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${source.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>tools.dynamia</groupId>
-			<artifactId>tools.dynamia.app</artifactId>
-			<version>${app.version}</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tools.dynamia</groupId>
+            <artifactId>tools.dynamia.zk.app</artifactId>
+            <version>${dynamiatools.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.zkoss.theme</groupId>
-			<artifactId>dynamical</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.zkoss.theme</groupId>
+            <artifactId>dynamical</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
-	<distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<url>http://server.dynamiasoluciones.com:8081/nexus/content/repositories/releases</url>
-		</repository>
-	</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://server.dynamiasoluciones.com:8081/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
 </project>
