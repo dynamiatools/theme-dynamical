@@ -31,79 +31,79 @@ import tools.dynamia.viewers.ViewTypeFactory;
 @InstallTemplate
 public class DynamicalTemplate implements ApplicationTemplate {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8646000381813253072L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -8646000381813253072L;
 
-	private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin","#367fa9");
+    private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin", "#367fa9");
 
-	@Autowired
-	private ViewTypeFactory viewTypeFactory;
+    @Autowired
+    private ViewTypeFactory viewTypeFactory;
 
-	private List<Skin> skins = new ArrayList<Skin>();
+    private List<Skin> skins = new ArrayList<Skin>();
 
-	private Map<String, Object> properties;
+    private Map<String, Object> properties;
 
-	public DynamicalTemplate() {
-		createSkins();
+    public DynamicalTemplate() {
+        createSkins();
 
-		properties = MapBuilder.put(
-				AUTHOR, "Mario Serrano",
-				DATE, "2015",
-				COPYRIGHT, "Dynamia Soluciones IT 2015",
-				VERSION, "3.0.0",
-				ORIGINAL_AUTHOR, "Almsaeed Studio");
+        properties = MapBuilder.put(
+                AUTHOR, "Mario Serrano",
+                DATE, "2015",
+                COPYRIGHT, "Dynamia Soluciones IT 2015",
+                VERSION, "3.0.0",
+                ORIGINAL_AUTHOR, "Almsaeed Studio");
 
-	}
+    }
 
-	@Override
-	public String getName() {
-		return "Dynamical";
-	}
+    @Override
+    public String getName() {
+        return "Dynamical";
+    }
 
-	@Override
-	public Map<String, Object> getProperties() {
-		return properties;
-	}
+    @Override
+    public Map<String, Object> getProperties() {
+        return properties;
+    }
 
-	@Override
-	public void init(TemplateContext context) {
-		Library.setProperty("org.zkoss.theme.preferred", "dynamical");
-		viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
-		viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
-		Messagebox.setTemplate("~./templates/bootstrap/views/messagebox.zul");
-	}
+    @Override
+    public void init(TemplateContext context) {
+        Library.setProperty("org.zkoss.theme.preferred", "dynamical");
+        viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
+        viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
+        viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
+        viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
+        Messagebox.setTemplate("~./templates/bootstrap/views/messagebox.zul");
+    }
 
-	@Override
-	public List<Skin> getSkins() {
-		return skins;
-	}
+    @Override
+    public List<Skin> getSkins() {
+        return skins;
+    }
 
-	@Override
-	public Skin getDefaultSkin() {
-		return DEFAULT_SKIN;
-	}
+    @Override
+    public Skin getDefaultSkin() {
+        return DEFAULT_SKIN;
+    }
 
-	private void createSkins() {
-		skins.add(DEFAULT_SKIN);
-		skins.add(newSkin("Black", null,"#808080"));
-		skins.add(newSkin("Green", null,"#00a65a"));
-		skins.add(newSkin("Purple", null,"#605ca8"));
-		skins.add(newSkin("Red", null,"#dd4b39"));
-		skins.add(newSkin("Yellow", null,"#FFC200"));
-		skins.add(newSkin("Orange", null,"#f39c12"));
-		skins.add(newSkin("Olive", null,"#8FB442"));
-	}
+    private void createSkins() {
+        skins.add(DEFAULT_SKIN);
+        skins.add(newSkin("Black", null, "#808080"));
+        skins.add(newSkin("Green", null, "#00a65a"));
+        skins.add(newSkin("Purple", null, "#605ca8"));
+        skins.add(newSkin("Red", null, "#dd4b39"));
+        skins.add(newSkin("Yellow", null, "#FFC200"));
+        skins.add(newSkin("Orange", null, "#f39c12"));
+        skins.add(newSkin("Olive", null, "#8FB442"));
+    }
 
-	private static Skin newSkin(String name, String description, String color) {
+    private static Skin newSkin(String name, String description, String color) {
 
-		String n = name.toLowerCase();
-		Skin skin = new Skin("skin-" + n, name, "skin-" + n + ".min.css", description);
-		skin.setBaseBackgroundColor(color);
-		skin.setBaseColor(color);
-		return skin;
-	}
+        String n = name.toLowerCase();
+        Skin skin = new Skin("skin-" + n, name, "skin-" + n + ".min.css", description);
+        skin.setBaseBackgroundColor(color);
+        skin.setBaseColor(color);
+        return skin;
+    }
 }
