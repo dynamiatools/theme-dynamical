@@ -1,9 +1,7 @@
 package tools.dynamia.themes.dynamical.viewers;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.tools.Tool;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Borderlayout;
@@ -17,7 +15,6 @@ import tools.dynamia.actions.ActionGroup;
 import tools.dynamia.actions.ActionRenderer;
 import tools.dynamia.commons.StringUtils;
 import tools.dynamia.crud.ChangedStateEvent;
-import tools.dynamia.crud.CrudAction;
 import tools.dynamia.crud.CrudState;
 import tools.dynamia.crud.actions.CancelAction;
 import tools.dynamia.ui.icons.Icon;

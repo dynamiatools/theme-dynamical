@@ -10,24 +10,24 @@ import tools.dynamia.zk.util.ZKUtil;
 @Listener
 public class DynamicalPageListener implements NavigationListener {
 
-	@Override
-	public void onPageLoad(PageEvent evt) {
-		if (ZKUtil.isInEventListener()) {
-			System.out.println("New page loaded " + evt.getPage());
-			Clients.evalJavaScript("onPageLoaded();");
-		}
-	}
+    @Override
+    public void onPageLoad(PageEvent evt) {
+        if (ZKUtil.isInEventListener()) {
+            System.out.println("New page loaded " + evt.getPage());
+            Clients.evalJavaScript("onPageLoaded();");
+        }
+    }
 
-	@Override
-	public void onPageUnload(PageEvent evt) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onPageUnload(PageEvent evt) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public void onPageClose(PageEvent evt) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onPageClose(PageEvent evt) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
 }
