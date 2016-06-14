@@ -115,33 +115,7 @@
                                 </a>
                             </li>
 
-                            <!-- Messages: style can be found in dropdown.less-->
-                            <li class="dropdown messages-menu">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="label label-success">
-                                        0
-                                    </span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">
-                                        Tienes 0 mensajes
-                                    </li>
-                                    <li>
-                                        <!-- inner menu: contains the actual data -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- start message -->
-                                            </li>
-                                            <!-- end message -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">Ver todos</a>
-                                    </li>
-                                </ul>
-                            </li>
+                      
 
 
 
@@ -149,27 +123,22 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown">
-                                    <z:entityfileImage
-                                        value="${usuarioActual.foto}"
-                                        noPhotoPath="classpath:/web/tools/images/no-user-photo.jpg"
-                                        thumbnailHeight="90" thumbnailWidth="90" thumbnail="true"
-                                        sclass="user-image" />
+                                    <img src="${userInfo.image}"                                     
+                                         class="user-image" />
                                     <span class="hidden-xs">
-                                        ${usuarioActual.nombreReal}
+                                        ${userInfo.fullName}
                                     </span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <z:entityfileImage
-                                            value="${usuarioActual.foto}" thumbnailHeight="90"
-                                            thumbnailWidth="90" thumbnail="true" sclass="img-circle"
-                                            noPhotoPath="classpath:/web/tools/images/no-user-photo.jpg" />
+                                        <img src="${userInfo.image}"                                        
+                                             class="img-circle" />
                                         <p>
-                                            ${usuarioActual.nombreReal}
+                                            ${userInfo.fullName}
                                             <small>
                                                 Miembro desde
-                                                ${usuarioActual.usuario.creationDate}
+                                                ${usuarioInfo.date}
                                             </small>
                                         </p>
                                     </li>
@@ -180,7 +149,7 @@
                                             <z:a
                                                 zclass="btn btn-success btn-flat" label=" Perfil"
                                                 iconSclass="fa fa-user"
-                                                onClick='navManager.navigateTo("system/seguridad/miPerfil")' />
+                                                onClick='navManager.navigateTo(userInfo.profilePath)' />
 
                                         </div>
                                         <div class="pull-right">
@@ -214,13 +183,12 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <z:entityfileImage
-                                value="${usuarioActual.foto}" thumbnailHeight="160"
-                                thumbnailWidth="160" thumbnail="true" sclass="img-circle"
-                                noPhotoPath="classpath:/web/tools/images/no-user-photo.jpg" />
+                            <img src="${userInfo.image}"                                      
+                                 class="img-circle" />
+                         
                         </div>
                         <div class="pull-left info">
-                            <p>${usuarioActual.nombreReal}</p>
+                            <p>${userInfo.fullName}</p>
 
                             <a href="#">
                                 <i class="fa fa-circle text-success"></i>
@@ -288,33 +256,13 @@
             <!-- Content Wrapper. Contains page content -->
             <z:div zclass="content-wrapper" apply="${navComposer}">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="${contextPath}">
-                                <i class="fa fa-dashboard"></i>
-                                ${applicationInfo.name}
-                            </a>
-                        </li>
-                        <li>
-                            <z:span class="moduleTitle">
-                                ${navManager.activeModule.name}
-                            </z:span>
-                        </li>
-                        <li class="active">
-                            <z:a sclass="pageTitle"
-                                 onClick="navManager.setCurrentPage(navManager.getLastPage())">
-                                ${navManager.currentPage.name}
-                            </z:a>
-                        </li>
-                    </ol>
-                </section>
+            
 
                 <!-- Main content -->
                 <section class="content">
                     <z:div id="workspace" class="row workspace">
                         <zk:custom-attributes
-                            builderClass="workspace.builders.Basic" />
+                            builderClass="workspace.builders.TabPanel" />
                     </z:div>
                 </section>
                 <!-- /.content -->
