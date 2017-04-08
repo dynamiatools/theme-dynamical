@@ -260,7 +260,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    <z:div id="workspace" class="row workspace">
+                    <z:div id="workspace" class="row workspace width100">
                         <zk:custom-attributes
                             builderClass="workspace.builders.TabPanel" />
                     </z:div>

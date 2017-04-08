@@ -1,9 +1,10 @@
 .login-page {
-	background-color: gray;
+	background-color: #f9f9f9;
 }
 
 .login-page .logo {
 	padding: 4px;
+	margin: 10px;
 }
 
 .login-page .logo .imglogo {

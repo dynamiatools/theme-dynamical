@@ -36,7 +36,7 @@ html, body {
 .logo .imglogo {
     vertical-align: middle;
     text-align: center;
-    padding-top: 4px;
+    padding-top: 12px;
     margin-left: auto;
     margin-right: auto;
     max-height: 45px;
@@ -124,6 +124,7 @@ li.title-menu a span {
 .form-view {
     min-height: 0 !important;
     overflow-x: hidden;
+    padding-top: 10px;
 }
 
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {
@@ -257,6 +258,91 @@ input[type=checkbox] {
 .z-tabpanel{
     padding: 0px !important;
     overflow: auto;
+}
+
+.card-box {
+    padding: 20px;
+    border: 1px solid rgba(54, 64, 74, 0.08);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-clip: padding-box;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.pageContent .z-window-content{
+	padding: 10px;
+	background: #ecf0f5;
+}
+
+.panel-danger{
+	border-color: #d9534f !important;
+}
+
+.panel-danger>.panel-heading{
+	color: #fff !important;
+	background-color: #d9534f !important;
+	border-color: #d9534f !important;
+}
+
+
+.panel-warning{
+	border-color: #f0ad4e !important;
+}
+
+.panel-warning>.panel-heading{
+	color: #fff !important;
+	background-color: #f0ad4e !important;
+	border-color: #f0ad4e !important;
+}
+
+
+.panel-success{
+	border-color: #5cb85c !important;
+}
+
+.panel-success>.panel-heading{
+	color: #fff !important;
+	background-color: #5cb85c !important;
+	border-color: #5cb85c !important;
+}
+
+.DeleteAction {
+	background-color: #ef5350 !important;
+}
+
+.NewAction {
+	background-color: #00b19d !important;
+}
+
+.EditAction {
+	background-color: #ffaa00 !important;
+}
+
+.ViewDataAction {
+	background-color: #3bafda !important;
+}
+
+.NewAction i, .DeleteAction i, .EditAction i, .ViewDataAction i {
+	color: white !important;
+}
+
+.FindAction {
+	
+}
+
+.FindAction input {
+	background: none;
+	border: 1px solid silver;
+	border-radius: 30px;
+	padding-left: 15px;
+	width: 220px !important;
+}
+
+.FindAction input:focus {
+	outline: none;
+	border: 0;
 }
 
 /*Mobile CSS */
