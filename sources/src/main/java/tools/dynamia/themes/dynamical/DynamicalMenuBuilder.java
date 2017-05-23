@@ -102,7 +102,6 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 			Ul submenu = new Ul();
 			submenu.setSclass("treeview-menu");
 			submenu.setParent(menu);
-			
 
 			modulesContent.put(module, submenu);
 		}
@@ -111,7 +110,8 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 	@Override
 	public void createPageGroupView(PageGroup pageGroup) {
 		boolean submenus = true;
-		if (pageGroup.getParentModule() != null && pageGroup.getParentModule().getProperty("submenus") == Boolean.FALSE) {
+		if (pageGroup.getParentModule() != null
+				&& pageGroup.getParentModule().getProperty("submenus") == Boolean.FALSE) {
 			submenus = false;
 		}
 		if (submenus) {
@@ -182,6 +182,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 		pageicon.setParent(pageitem);
 
 		Text label = new Text(page.getName());
+	
 		label.setParent(pageitem);
 
 		pageitem.setParent(pageli);

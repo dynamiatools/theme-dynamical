@@ -49,7 +49,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 		createSkins();
 
 		properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2015", COPYRIGHT, "Dynamia Soluciones IT 2015",
-				VERSION, "3.0.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
+				VERSION, "3.1.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
 	}
 
