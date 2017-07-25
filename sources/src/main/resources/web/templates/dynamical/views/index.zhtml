@@ -211,7 +211,7 @@
 						class="sidebar-form">
 						<div class="input-group">
 							<z:combobox placeholder="Buscar"
-								sclass="form-zcontrol"
+								sclass="form-zcontrol" style="margin: 10px"
 								use="tools.dynamia.zk.app.GlobalSearchBox" />
 						</div>
 					</form>
