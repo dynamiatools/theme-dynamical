@@ -67,7 +67,7 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<url>http://server.dynamiasoluciones.com:8081/nexus/content/repositories/releases</url>
+			<url>http://mde.dynamiaweb.com:8081/repository/releases/</url>
 		</repository>
 	</distributionManagement>
 </project>

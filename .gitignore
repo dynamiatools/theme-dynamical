@@ -6,3 +6,5 @@ pom.xml.versionsBackup
 target/
 tmp/
 logs/
+*.iml
+.idea/
