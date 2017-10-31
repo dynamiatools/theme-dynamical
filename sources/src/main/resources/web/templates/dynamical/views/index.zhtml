@@ -316,5 +316,15 @@
 
 <script>applyJqueryStuff();</script>
 
+<script>
+    $('a.sidebar-toggle').click(function () {
+        setTimeout(function () {
+            zWatch.fireDown("onSize", '');
+        }, 500)
+
+    });
+
+</script>
+
 </body>
 </html>
