@@ -16,7 +16,7 @@ html, body {
     margin-top: 0;
 }
 
-.content-wrapper, .content-wrapper>.content, .workspace {
+.content-wrapper, .content-wrapper > .content, .workspace {
     height: 100%;
 }
 
@@ -197,8 +197,7 @@ input[type=checkbox] {
     height: 30px;
 }
 
-.actiontb-container .z-datebox-button, .actiontb-container .z-combobox-button
-{
+.actiontb-container .z-datebox-button, .actiontb-container .z-combobox-button {
     line-height: 20px;
 }
 
@@ -207,10 +206,8 @@ input[type=checkbox] {
     height: 30px !important;
     min-width: 30px;
     text-align: center;
-   
+
 }
-
-
 
 .actiontb-a .z-toolbarbutton-content {
     text-shadow: none;
@@ -232,30 +229,22 @@ input[type=checkbox] {
 }
 
 .z-messagebox-information {
-    background-image:
-        url("../../../../../zkau/web/templates/bootstrap/img/info-icon.png")
-        !important;
+    background-image: url("../../../../../zkau/web/templates/bootstrap/img/info-icon.png") !important;
 }
 
 .z-messagebox-question {
-    background-image:
-        url("../../../../../zkau/web/templates/bootstrap/img/question-icon.png")
-        !important;
+    background-image: url("../../../../../zkau/web/templates/bootstrap/img/question-icon.png") !important;
 }
 
 .z-messagebox-error {
-    background-image:
-        url("../../../../../zkau/web/templates/bootstrap/img/error-icon.png")
-        !important;
+    background-image: url("../../../../../zkau/web/templates/bootstrap/img/error-icon.png") !important;
 }
 
 .z-messagebox-exclamation {
-    background-image:
-        url("../../../../../zkau/web/templates/bootstrap/img/exclamation-icon.png")
-        !important;
+    background-image: url("../../../../../zkau/web/templates/bootstrap/img/exclamation-icon.png") !important;
 }
 
-.z-tabpanel{
+.z-tabpanel {
     padding: 0px !important;
     overflow: auto;
 }
@@ -271,86 +260,105 @@ input[type=checkbox] {
     background-color: #fff;
 }
 
-.pageContent .z-window-content{
-	padding: 10px;
-	background: #ecf0f5;
+.pageContent .z-window-content {
+    padding: 10px;
+    background: #ecf0f5;
 }
 
-.panel-danger{
-	border-color: #d9534f !important;
+.panel-danger {
+    border-color: #d9534f !important;
 }
 
-.panel-danger>.panel-heading{
-	color: #fff !important;
-	background-color: #d9534f !important;
-	border-color: #d9534f !important;
+.panel-danger > .panel-heading {
+    color: #fff !important;
+    background-color: #d9534f !important;
+    border-color: #d9534f !important;
 }
 
-
-.panel-warning{
-	border-color: #f0ad4e !important;
+.panel-warning {
+    border-color: #f0ad4e !important;
 }
 
-.panel-warning>.panel-heading{
-	color: #fff !important;
-	background-color: #f0ad4e !important;
-	border-color: #f0ad4e !important;
+.panel-warning > .panel-heading {
+    color: #fff !important;
+    background-color: #f0ad4e !important;
+    border-color: #f0ad4e !important;
 }
 
-
-.panel-success{
-	border-color: #5cb85c !important;
+.panel-success {
+    border-color: #5cb85c !important;
 }
 
-.panel-success>.panel-heading{
-	color: #fff !important;
-	background-color: #5cb85c !important;
-	border-color: #5cb85c !important;
+.panel-success > .panel-heading {
+    color: #fff !important;
+    background-color: #5cb85c !important;
+    border-color: #5cb85c !important;
 }
 
 .DeleteAction {
-	background-color: #ef5350 !important;
+    background-color: #ef5350 !important;
 }
 
 .NewAction {
-	background-color: #00b19d !important;
+    background-color: #00b19d !important;
 }
 
 .EditAction {
-	background-color: #ffaa00 !important;
+    background-color: #ffaa00 !important;
 }
 
 .ViewDataAction {
-	background-color: #3bafda !important;
+    background-color: #3bafda !important;
 }
 
 .NewAction i, .DeleteAction i, .EditAction i, .ViewDataAction i {
-	color: white !important;
+    color: white !important;
 }
 
 .FindAction {
-	
+
 }
 
 .FindAction input {
-	background: none;
-	border: 1px solid silver;
-	border-radius: 30px;
-	padding-left: 15px;
-	width: 220px !important;
+    background: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    padding-left: 15px;
+    width: 220px !important;
 }
 
 .FindAction input:focus {
-	outline: none;
-	border: 0;
+    outline: none;
+    border: 0;
 }
 
 /*Mobile CSS */
-@media ( max-width :767px) {
+@media ( max-width: 767px) {
     .z-toolbar {
         padding: 0 !important;
     }
+
     .crudview-header {
         margin-top: 3px;
     }
+}
+
+.z-comboitem-selected .z-comboitem-text {
+    color: #fff;
+    text-shadow: none;
+}
+
+.card-box:empty {
+    display: none;
+}
+
+.z-menuitem-text {
+    font-size: 14px;
+}
+
+.form-view-title {
+    margin-left: 8px;
+    margin-bottom: 5px;
+    color: #848484;
+    margin-top: 3px;
 }
