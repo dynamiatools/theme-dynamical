@@ -6,13 +6,13 @@
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.1.0.Beta</version>
+	<version>3.1.0.RC</version>
 	<name>Themes - ZK Dynamical (${project.version})</name>
 	<url>http://maven.apache.org</url>
 
 
 	<properties>
-		<dynamiatools.version>3.1.0.Beta</dynamiatools.version>
+		<dynamiatools.version>3.1.0.RC</dynamiatools.version>
 		<java.version>1.8</java.version>
 		<maven.compiler>2.3.2</maven.compiler>
 		<source.encoding>UTF-8</source.encoding>
