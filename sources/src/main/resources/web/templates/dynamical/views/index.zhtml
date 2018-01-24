@@ -81,7 +81,7 @@
 <div class="wrapper">
 
     <header class="main-header">
-        <a href="${contextPath}" class="logo hidden-xs">
+        <a href="${contextPath}" class="logo hidden-xs" style="background-color: white">
             <img src="${appTemplate.logoURL}"
                  class="imglogo img-responsive"
                  title="${applicationInfo.name} - ${accountContext.account.name}"/>
