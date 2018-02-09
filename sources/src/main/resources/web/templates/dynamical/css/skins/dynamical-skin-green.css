@@ -8,9 +8,19 @@ color:
 .skin-green .z-listitem.z-listitem-selected:hover >.z-listcell,
 .skin-green .z-comboitem-selected,
 .skin-green .z-calendar-selected,
-.skin-green .z-progressmeter-image  {
+.skin-green .z-progressmeter-image,
+.skin-green .z-paging-selected{
 	border-color: #00a65a !important;
 	background: #00a65a !important;
+}
+
+.skin-green .z-listitem.z-listitem-selected .z-label,
+.skin-green .z-listitem.z-listitem-selected a:link {
+	color: white;
+}
+
+.skin-green .z-listitem.z-listitem-selected a:link {
+	text-decoration: underline;
 }
 
 .baseBackgroundColor{

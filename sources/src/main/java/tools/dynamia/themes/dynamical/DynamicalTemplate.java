@@ -91,6 +91,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 		skins.add(newSkin("Red", null, "#dd4b39"));
 		skins.add(newSkin("Yellow", null, "#FFC200"));
 		skins.add(newSkin("Orange", null, "#f39c12"));
+		skins.add(newSkin("DarkOrange", null, "#ff5722"));
 		skins.add(newSkin("Olive", null, "#8FB442"));
 	}
 

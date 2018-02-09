@@ -1,0 +1,31 @@
+/*
+background-color: #f39c12
+color: 
+*/
+
+.skin-darkorange .z-listitem.z-listitem-selected > .z-listcell,
+.skin-darkorange .z-listitem.z-listitem-selected:hover > .z-listcell,
+.skin-darkorange .z-comboitem-selected,
+.skin-darkorange .z-calendar-selected,
+.skin-darkorange .z-progressmeter-image,
+.skin-darkorange .z-paging-selected {
+    border-color: #ff5722 !important;
+    background: #ff5722 !important;
+}
+
+.skin-darkorange .z-listitem.z-listitem-selected .z-label,
+.skin-darkorange .z-listitem.z-listitem-selected a:link {
+    color: white;
+}
+
+.skin-darkorange .z-listitem.z-listitem-selected a:link {
+    text-decoration: underline;
+}
+
+.baseBackgroundColor {
+    background-color: #ff5722
+}
+
+.baseColor {
+    color: #ff5722
+}
