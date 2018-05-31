@@ -31,7 +31,7 @@
 
 <?link href="${contextPath}/css/dynamical-3.1.0.Final.css" rel="stylesheet" type="text/css"?>
 
-<zk xmlns:n="http://www.zkoss.org/2005/zk/native">
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
 
     <n:div class="wrapper">
         <n:header class="main-header">
@@ -63,14 +63,14 @@
                         <zk forEach="${applicationInfo.globalActions}">
                             <n:li class="dropdown visible-sm visible-md visible-lg visible-xl">
                                 <a label=" ${each.name}" tooltiptext="${each.description}"
-                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']}"
+                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']} tooltipstered"
                                    onClick="applicationInfo.execute(ga)">
                                     <custom-attributes ga="${each}"/>
                                 </a>
                             </n:li>
                             <n:li class="dropdown visible-xs">
                                 <a tooltiptext=" ${each.name} ${each.description}"
-                                   iconSclass="fa fa-${each.image}" zclass="none" onClick="applicationInfo.execute(ga)">
+                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']}" onClick="applicationInfo.execute(ga)">
                                     <custom-attributes ga="${each}"/>
                                 </a>
                             </n:li>

@@ -476,6 +476,11 @@ input[type=checkbox] {
     display: none;
 }
 
+.btn img {
+    padding: 1px;
+}
+
+
 @media (max-width: 767px) {
     .fixed .content-wrapper, .fixed .right-side {
         padding-top: 48px;
