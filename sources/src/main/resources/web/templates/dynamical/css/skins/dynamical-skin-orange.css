@@ -22,10 +22,27 @@ color:
     text-decoration: underline;
 }
 
-.baseBackgroundColor{
+.baseBackgroundColor {
     background-color: #f39c12
 }
 
-.baseColor{
+.baseColor {
     color: #f39c12
+}
+
+.skin-orange .table-view .z-listheader,
+.skin-orange .table-view .z-listbox-header,
+.skin-orange .tree-view .z-treecol,
+.skin-orange .tree-view .z-tree-header {
+    background: #324348 !important;
+}
+
+.skin-orange .table-view .z-listheader-hover,
+.skin-orange .tree-view .z-treecol-hover {
+    background: #f39c12 !important;
+}
+
+.skin-orange .table-view .z-listheader-content,
+.skin-orange .tree-view .z-treecol-content {
+    color: white !important;
 }

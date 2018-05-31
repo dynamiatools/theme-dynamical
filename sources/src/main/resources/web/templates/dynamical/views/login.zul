@@ -1,6 +1,6 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 
-<?page title="Login ${applicationInfo.name} - ${accountContext.account.name}"?>
+<?page title="${applicationInfo.name} - ${accountContext.account.name}"?>
 
 <?meta charset="utf-8"?>
 <?meta http-equiv="X-UA-Compatible" content="IE=edge"?>
@@ -46,11 +46,65 @@
         </n:div>
         <!-- /.login-logo -->
         <n:div class="login-box-body">
-            <n:h1>Esta cuenta no ha sido cancelada</n:h1>
-            <n:h2>${statusDescription}</n:h2>
+            <n:p class="login-box-msg">Inicio de Sesion</n:p>
+            <n:form action="${contextPath}/login" method="post">
+
+                <n:div class="input-group" style="margin-bottom: 10px">
+                    <n:input type="text" class="form-control"
+                             name="username" placeholder="Usuario"/>
+                    <n:span class="input-group-addon">
+                        <n:i class="fa fa-user fa-fw"/>
+                    </n:span>
+                </n:div>
+
+                <n:div class="input-group" style="margin-bottom: 10px">
+                    <n:input type="password" class="form-control"
+                             name="password" placeholder="Password"/>
+                    <n:span class="input-group-addon">
+                        <n:i class="fa fa-lock fa-fw"/>
+                    </n:span>
+                </n:div>
+
+
+                <n:div class="row">
+                    <n:div class="col-xs-8">
+                        <n:div>
+                            <n:label>
+                                <n:input type="checkbox" name="remember-me"/>
+                                Recuerdame
+                            </n:label>
+                        </n:div>
+                    </n:div>
+                    <!-- /.col -->
+                    <n:div class="col-xs-4">
+                        <n:button type="submit"
+                                  class="btn btn-primary btn-block btn-flat">
+                            Entrar
+                        </n:button>
+                    </n:div>
+                    <!-- /.col -->
+                </n:div>
+                <n:input type="hidden"
+                         name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </n:form>
+
+
+            <!-- /.social-auth-links -->
+
+            <n:a href="${contextPath}/login/recovery">
+                No recuerdo mi clave
+            </n:a>
+            <n:p>
+                <div sclass="callout callout-danger"
+                     if="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+                    <n:p>
+                        ${SPRING_SECURITY_LAST_EXCEPTION.localizedMessage}
+                    </n:p>
+                </div>
+            </n:p>
+
         </n:div>
         <!-- /.login-box-body -->
-
     </n:div>
     <!-- /.login-box -->
 
@@ -73,9 +127,4 @@
     <!-- Tooltipster -->
     <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
 
-    <script>
-        $(document).ready(function () {
-        $("body").attr("class", "login-page");
-        });
-    </script>
 </zk>

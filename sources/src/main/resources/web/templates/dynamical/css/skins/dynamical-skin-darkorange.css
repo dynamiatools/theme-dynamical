@@ -29,3 +29,20 @@ color:
 .baseColor {
     color: #ff5722
 }
+
+.skin-darkorange .table-view .z-listheader,
+.skin-darkorange .table-view .z-listbox-header,
+.skin-darkorange .tree-view .z-treecol,
+.skin-darkorange .tree-view .z-tree-header {
+    background: #91331b !important;
+}
+
+.skin-darkorange .table-view .z-listheader-hover,
+.skin-darkorange .tree-view .z-treecol-hover {
+    background: #ff5722 !important;
+}
+
+.skin-darkorange .table-view .z-listheader-content,
+.skin-darkorange .tree-view .z-treecol-content {
+    color: white !important;
+}

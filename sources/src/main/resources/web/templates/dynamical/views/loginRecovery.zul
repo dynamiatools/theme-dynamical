@@ -46,8 +46,39 @@
         </n:div>
         <!-- /.login-logo -->
         <n:div class="login-box-body">
-            <n:h1>Esta cuenta no ha sido cancelada</n:h1>
-            <n:h2>${statusDescription}</n:h2>
+            <n:p class="login-box-msg">Recuperacion de Password</n:p>
+            <n:form action="${contextPath}/login/recovery" method="post">
+                <n:div class="form-group has-feedback">
+                    <n:input type="text" class="form-control" name="email" placeholder="Email" />
+                    <n:span class="glyphicon glyphicons-message-lock form-control-feedback"></n:span>
+                </n:div>
+
+                <n:div class="row">
+                    <n:div class="col-xs-8">
+
+                    </n:div>
+                    <!-- /.col -->
+                    <n:div class="col-xs-4">
+                        <n:button type="submit" class="btn btn-success btn-block btn-flat">Enviar</n:button>
+                    </n:div>
+                    <!-- /.col -->
+                </n:div>
+                <n:input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </n:form>
+
+
+            <!-- /.social-auth-links -->
+            <n:p>Se generara un nuevo password y se enviara a su cuenta de correo</n:p>
+            <n:a href="${contextPath}/login">Regresar a inicio de sesion</n:a>
+            <n:p>
+                <div sclass="callout callout-danger" if="${not empty errormessage}">
+                    <n:p>${errormessage}</n:p>
+                </div>
+                <div sclass="callout callout-success" if="${not empty message}">
+                    <n:p>${message}</n:p>
+                </div>
+            </n:p>
+
         </n:div>
         <!-- /.login-box-body -->
 

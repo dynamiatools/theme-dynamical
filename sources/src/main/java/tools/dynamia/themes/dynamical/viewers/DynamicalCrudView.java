@@ -1,6 +1,7 @@
 package tools.dynamia.themes.dynamical.viewers;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.HtmlBasedComponent;
 import org.zkoss.zul.*;
 import tools.dynamia.actions.Action;
 import tools.dynamia.actions.ActionGroup;
@@ -24,21 +25,28 @@ import tools.dynamia.zk.crud.actions.FindAction;
 import tools.dynamia.zk.util.ZKUtil;
 import tools.dynamia.zk.viewers.ZKWrapperView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DynamicalCrudView<T> extends CrudView<T> {
+
 
     /**
      *
      */
     private static final long serialVersionUID = 1773528227238113127L;
     private Div formLeftActions;
-
     private Div formRightActions;
+    private Div formActions;
+    private Component leftActions;
+    private Component rightActions;
     private Menupopup actionsMenu;
     private Button actionsButton;
-    private final boolean SMARTPHONE = HttpUtils.isSmartphone();
+
     private Borderlayout borderlayout;
+    private Map<ActionGroup, Div> actionGroupContainers;
+    private ButtonActionRenderer defaultActionRenderer;
 
     @Override
     protected void buildGeneralView() {
@@ -52,19 +60,24 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         header.setParent(borderlayout.getNorth());
         toolbarContainer = header;
 
+        formActions = new Div();
+        formActions.setZclass("crudview-footer row");
+
         formLeftActions = new Div();
-        formLeftActions.setZclass("crudview-footer row");
+        formLeftActions.setZclass("col-xs-12 col-md-8");
+        formLeftActions.setParent(formActions);
 
         formRightActions = new Div();
-        formRightActions.setZclass("crudview-footer row");
+        formRightActions.setZclass("col-xs-12 col-md-4");
         formRightActions.setStyle("text-align: right");
+        formRightActions.setParent(formActions);
 
         String menuId = "actionMenu" + StringUtils.randomString().substring(0, 4);
         actionsMenu = new Menupopup();
         actionsMenu.setId(menuId);
         actionsMenu.setParent(this);
         actionsButton = new Button();
-        actionsButton.setZclass("btn btn-primary");
+        actionsButton.setZclass("btn btn-primary actions");
         actionsButton.setPopup(menuId + ", after_start");
         ZKUtil.configureComponentIcon("process", actionsButton, IconSize.NORMAL);
 
@@ -74,39 +87,88 @@ public class DynamicalCrudView<T> extends CrudView<T> {
     }
 
     @Override
+    protected void buildToolbars() {
+        if (!HttpUtils.isSmartphone()) {
+            Div toolbar = new Div();
+            toolbar.setZclass("btn-toolbar");
+
+            leftActions = toolbar;
+
+            toolbar = new Div();
+            toolbar.setZclass("btn-toolbar");
+            toolbar.setSclass("actiontb-right");
+            rightActions = toolbar;
+        }
+    }
+
+    @Override
     protected void buildToolbarContainer() {
-        Div leftDiv = new Div();
-        leftDiv.setZclass("pull-left");
-        leftDiv.appendChild(toolbarLeft);
-        toolbarContainer.appendChild(leftDiv);
-
-        Div rightDiv = new Div();
-        rightDiv.setZclass("pull-right");
-
-        rightDiv.appendChild(toolbarRight);
-        toolbarContainer.appendChild(rightDiv);
+        if (!HttpUtils.isSmartphone()) {
+            toolbarContainer.appendChild(leftActions);
+            toolbarContainer.appendChild(rightActions);
+        }
 
     }
 
     @SuppressWarnings("rawtypes")
     @Override
     protected ActionRenderer getDefaultActionRenderer() {
-        return new ToolbarbuttonActionRenderer();
+        if (defaultActionRenderer == null) {
+            defaultActionRenderer = new ButtonActionRenderer();
+            defaultActionRenderer.setZclass("btn btn-default");
+            defaultActionRenderer.setShowLabels(false);
+
+        }
+        return defaultActionRenderer;
     }
 
     @Override
     protected void loadActions(CrudState state) {
         actionsMenu.getChildren().clear();
-        super.loadActions(state);
 
-        if (SMARTPHONE && state == CrudState.READ) {
-            toolbarLeft.appendChild(actionsButton);
+        if (HttpUtils.isSmartphone()) {
+
+            toolbarContainer.getChildren().clear();
+            if (state == CrudState.READ) {
+
+                toolbarContainer.appendChild(actionsButton);
+            } else {
+                borderlayout.getNorth().setVisible(false);
+            }
         }
+
+        super.loadActions(state);
+    }
+
+    protected Component renderAction(Action action) {
+        ActionRenderer actionRenderer = action.getRenderer();
+        if (actionRenderer == null) {
+            actionRenderer = getDefaultActionRenderer();
+        }
+        Component component = (Component) actionRenderer.render(action, this);
+
+        String actionId = action.getId();
+        if (action.getAttribute("internalId") != null) {
+            actionId = action.getAttribute("internalId").toString();
+        }
+        if (component instanceof HtmlBasedComponent) {
+            HtmlBasedComponent hcom = (HtmlBasedComponent) component;
+            hcom.setSclass("actiontb-a " + actionId);
+            hcom.setTooltiptext(action.getName());
+            if (HttpUtils.isSmartphone()) {
+                if (!(component instanceof Button)) {
+                    hcom.setSclass(hcom.getSclass() + " flexit");
+                }
+            }
+        }
+
+        return component;
+
     }
 
     @Override
     protected void showActionGroup(ActionGroup actionGroup) {
-        if (SMARTPHONE && getState() == CrudState.READ) {
+        if (HttpUtils.isSmartphone() && getState() == CrudState.READ) {
             MenuitemActionRenderer renderer = new MenuitemActionRenderer();
             for (Action action : actionGroup.getActions()) {
                 if (action.getRenderer() == null || action.getRenderer() instanceof ToolbarbuttonActionRenderer) {
@@ -117,14 +179,17 @@ public class DynamicalCrudView<T> extends CrudView<T> {
                 }
             }
         } else {
-            super.showActionGroup(actionGroup);
+
+            actionGroup.getActions().forEach(a -> {
+                showAction(actionGroup, a);
+            });
         }
     }
 
     @Override
     protected void showAction(ActionGroup actionGroup, Action action) {
-        if ((getState() == CrudState.CREATE || getState() == CrudState.UPDATE) &&
-                (action.getRenderer() == null || action.getRenderer() instanceof ToolbarbuttonActionRenderer)) {
+        if ((getState() == CrudState.CREATE || getState() == CrudState.UPDATE)
+                && (action.getRenderer() == null || action.getRenderer() instanceof ToolbarbuttonActionRenderer)) {
             ButtonActionRenderer renderer = new ButtonActionRenderer();
             Button button = renderer.render(action, this);
             button.setAttribute(ACTION, action);
@@ -132,22 +197,48 @@ public class DynamicalCrudView<T> extends CrudView<T> {
             addButton(actionGroup, button);
         } else {
             fixFindAction(action);
-            super.showAction(actionGroup, action);
+
+            Component actionComp = renderAction(action);
+            if (!HttpUtils.isSmartphone()) {
+                Component group = getActionGroupContainer(actionGroup);
+                group.appendChild(actionComp);
+                if (group.getParent() == null) {
+                    group.setParent("left".equals(actionGroup.getAlign()) ? leftActions : rightActions);
+                }
+
+            } else {
+                toolbarContainer.appendChild(actionComp);
+            }
         }
     }
 
+    private Component getActionGroupContainer(ActionGroup actionGroup) {
+        if (actionGroupContainers == null) {
+            this.actionGroupContainers = new HashMap<>();
+        }
+
+        Div group = this.actionGroupContainers.get(actionGroup);
+        if (group == null) {
+            group = new Div();
+            group.setZclass("btn-group");
+            this.actionGroupContainers.put(actionGroup, group);
+        }
+
+        return group;
+    }
+
     private void fixFindAction(Action action) {
-        if (SMARTPHONE) {
+        if (HttpUtils.isSmartphone()) {
             if (action instanceof FindAction) {
-                action.setAttribute("sclass", "form-zcontrol");
-                action.setAttribute("style", "text-align: right");
+                action.setAttribute("zclass", "form-control");
+
             }
         }
     }
 
     private void displayMenuActions(List<Component> actionComponents) {
 
-        toolbarLeft.appendChild(actionsButton);
+        toolbarContainer.appendChild(actionsButton);
         MenuitemActionRenderer menuRenderer = new MenuitemActionRenderer();
         for (Component component : actionComponents) {
             System.out.println("MENU ACTION: " + component);
@@ -164,7 +255,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
     private void addButton(ActionGroup group, Component btn) {
 
         Div btnGroup = new Div();
-        if (SMARTPHONE) {
+        if (HttpUtils.isSmartphone()) {
             btnGroup.setZclass("btn-group col-md-3 col-sm-3 col-xs-12");
         } else {
             btnGroup.setZclass("btn-group");
@@ -183,15 +274,13 @@ public class DynamicalCrudView<T> extends CrudView<T> {
     private void applyButtonStyle(Button button, Action action) {
         if (action instanceof CancelAction) {
             button.setZclass("btn btn-danger");
+        } else if (action.getPosition() <= 1) {
+            button.setZclass("btn btn-primary");
         } else {
-            if (action.getPosition() <= 1) {
-                button.setZclass("btn btn-primary");
-            } else {
-                button.setZclass("btn btn-default");
-            }
+            button.setZclass("btn btn-default");
         }
 
-        if (action.getAttribute("type") != null) {
+        if (action != null && action.getAttribute("type") != null) {
             button.setZclass("btn btn-" + action.getAttribute("type"));
         }
 
@@ -207,10 +296,15 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         switch (crudState) {
 
             case READ:
+
                 borderlayout.getNorth().setVisible(true);
                 break;
             default:
-                borderlayout.getNorth().setVisible(false);
+                if (leftActions != null && rightActions != null) {
+                    if (leftActions.getChildren().isEmpty() && rightActions.getChildren().isEmpty()) {
+                        borderlayout.getNorth().setVisible(false);
+                    }
+                }
                 break;
         }
     }
@@ -221,20 +315,28 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         actionsMenu.getChildren().clear();
         formLeftActions.getChildren().clear();
         formRightActions.getChildren().clear();
+        if (leftActions != null && rightActions != null) {
+            leftActions.getChildren().clear();
+            rightActions.getChildren().clear();
+        }
+        if (actionGroupContainers != null) {
+            this.actionGroupContainers.clear();
+        }
+
     }
 
     @Override
     protected void addFormViewToContainer(String formViewTitle) {
         ZKWrapperView<Object> wrapperView = new ZKWrapperView<Object>(formView);
-        formLeftActions.setParent(wrapperView);
-        formRightActions.setParent(wrapperView);
+        formActions.setParent(wrapperView);
         formViewContainer.addView(formViewTitle, wrapperView);
     }
 
     @SuppressWarnings("rawtypes")
     @Override
     protected CrudViewRenderer getCrudViewRenderer() {
-        return new DynamicalCrudViewRenderer<>();
+        return new DynamicalCrudViewRenderer();
     }
+
 
 }

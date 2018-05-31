@@ -31,3 +31,20 @@ color:
 .baseColor{
 	color: #8FB442
 }
+
+.skin-olive .table-view .z-listheader,
+.skin-olive .table-view .z-listbox-header,
+.skin-olive .tree-view .z-treecol,
+.skin-olive .tree-view .z-tree-header {
+	background: #63863d !important;
+}
+
+.skin-olive .table-view .z-listheader-hover,
+.skin-olive .tree-view .z-treecol-hover {
+	background: #8FB442 !important;
+}
+
+.skin-olive .table-view .z-listheader-content,
+.skin-olive .tree-view .z-treecol-content {
+	color: white !important;
+}

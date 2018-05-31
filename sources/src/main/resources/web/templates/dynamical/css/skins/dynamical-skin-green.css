@@ -31,6 +31,19 @@ color:
 	color: #00a65a
 }
 
-.z-listheader-content{
-	color: #00a65a !important;
+.skin-green .table-view .z-listheader,
+.skin-green .table-view .z-listbox-header,
+.skin-green .tree-view .z-treecol,
+.skin-green .tree-view .z-tree-header {
+	background: #00863d !important;
+}
+
+.skin-green .table-view .z-listheader-hover,
+.skin-green .tree-view .z-treecol-hover {
+	background: #00a65a !important;
+}
+
+.skin-green .table-view .z-listheader-content,
+.skin-green .tree-view .z-treecol-content {
+	color: white !important;
 }

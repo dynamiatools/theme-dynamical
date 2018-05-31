@@ -3,11 +3,13 @@ html, body {
     padding: 0 !important;
     height: 100% !important;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif !important;
+
 }
 
 .wrapper {
-    min-height: 100%;
-    height: 100%;
+    height: 96% !important;
+    min-height: auto !important;
     margin: 0 auto 0 0;
     padding: 0;
 }
@@ -61,7 +63,21 @@ li.title-menu a span {
 
 }
 
-.table-view .z-listbox-body {
+.table-view .z-listheader,
+.tree-view .z-treecol {
+    padding: 8px;
+    border-color: gray;
+}
+
+.table-view .z-listheader-content,
+.tree-view .z-treecol-content {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+.table-view .z-listbox-body, .tree-view .z-tree-body {
     background: white;
 }
 
@@ -158,12 +174,21 @@ li.title-menu a span {
     border-bottom: 1px solid #F2F2F2 !important;
 }
 
+.z-label, .z-radio-content, .z-checkbox-content, .z-loading {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13px !important;
+}
+
 .z-grid {
     border: none !important;
 }
 
 .z-row .z-row-inner, .z-row .z-cell {
     border-left: none !important;
+}
+
+.z-listbox-footer {
+    border-top: 0;
 }
 
 input[type=checkbox] {
@@ -200,12 +225,29 @@ input[type=checkbox] {
     line-height: 20px;
 }
 
+.crudview-header .actiontb-container {
+    display: flex;
+}
+
+.actiontb-left {
+
+}
+
+.actiontb-right {
+    justify-content: flex-end;
+    display: flex;
+    flex: 1;
+}
+
 .actiontb-a.z-toolbarbutton {
     background: #ededed;
     height: 30px !important;
     min-width: 30px;
     text-align: center;
+}
 
+.actiontb-a.btn {
+    padding: 5px 7px;
 }
 
 .actiontb-a .z-toolbarbutton-content {
@@ -241,11 +283,6 @@ input[type=checkbox] {
 
 .z-messagebox-exclamation {
     background-image: url("../../../../../zkau/web/templates/bootstrap/img/exclamation-icon.png") !important;
-}
-
-.z-tabpanel {
-    padding: 0px !important;
-    overflow: auto;
 }
 
 .card-box {
@@ -360,4 +397,112 @@ input[type=checkbox] {
     margin-bottom: 5px;
     color: #848484;
     margin-top: 3px;
+}
+
+.z-tabpanel {
+    background: #fbfbfb;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 0 !important;
+    padding: 8px;
+}
+
+.z-tabs-content {
+    border: 0 !important;
+}
+
+.z-tab {
+    border: 1px solid #ebebeb !important;
+    background: #fdfdfd;
+    margin-right: 2px !important;
+}
+
+.z-tab-selected .z-tab-text {
+    font-weight: normal;
+}
+
+.z-toolbar.z-toolbar-tabs {
+    background-color: none !important;
+    border: 0 !important;
+}
+
+.tabpage .z-tab-text {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+.tabpage.z-tab {
+    background: rgba(245, 245, 245, 0.59) !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    border-radius: 0px;
+}
+
+.tabpage.z-tab:hover {
+    background: #ffffff !important;
+}
+
+.tabpage.z-tab-selected {
+    background: #fbfbfb !important;
+    border-bottom: 1px solid #fbfbfb !important;
+}
+
+.z-tabbox-top > .z-tabs .tabpage.z-tab:first-child.z-tab-selected + .z-tab,
+.z-tabbox-top > .z-tabs .z-tab:first-child.z-tab-selected + .z-tab,
+.z-tabbox-top > .z-tabs .z-tab.z-tab-selected {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.main-header .icon {
+    display: none;
+}
+
+.sidebar-collapse .main-header .icon {
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    float: left;
+    display: inline;
+}
+
+.sidebar-collapse .main-header .logo {
+    display: none;
+}
+
+.sidebar-expanded-on-hover .main-header .icon {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .fixed .content-wrapper, .fixed .right-side {
+        padding-top: 48px;
+    }
+
+    .main-sidebar {
+        padding-top: 55px;
+    }
+
+    .z-tabpanel {
+        padding: 0;
+    }
+
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .wrapper {
+        height: 100%;
+    }
+
+    .crudview-header, .actiontb {
+        height: auto !important;
+    }
 }
