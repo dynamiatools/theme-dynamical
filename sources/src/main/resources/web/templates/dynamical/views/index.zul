@@ -18,6 +18,7 @@
 <?link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css"?>
 <!-- Custom styles for this template-->
 <?link href="${contextPath}/css/AdminLTE.min.css" rel="stylesheet"?>
+<?link href="${contextPath}/css/components.css" rel="stylesheet"?>
 
 <?link rel="shortcut icon" href="${contextPath}/favicon.ico"?>
 <?link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico"?>
@@ -30,6 +31,7 @@
 <?link href="${contextPath}/css/jquery.growl.css" rel="stylesheet" type="text/css"?>
 
 <?link href="${contextPath}/css/dynamical-3.1.0.Final.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/dynamical-mobile-3.1.0.Final.css" rel="stylesheet" type="text/css"?>
 
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 
@@ -63,14 +65,16 @@
                         <zk forEach="${applicationInfo.globalActions}">
                             <n:li class="dropdown visible-sm visible-md visible-lg visible-xl">
                                 <a label=" ${each.name}" tooltiptext="${each.description}"
-                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']} tooltipstered"
+                                   iconSclass="fa fa-${each.image}"
+                                   zclass="${each.attributes['background']} tooltipstered"
                                    onClick="applicationInfo.execute(ga)">
                                     <custom-attributes ga="${each}"/>
                                 </a>
                             </n:li>
                             <n:li class="dropdown visible-xs">
                                 <a tooltiptext=" ${each.name} ${each.description}"
-                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']}" onClick="applicationInfo.execute(ga)">
+                                   iconSclass="fa fa-${each.image}" zclass="${each.attributes['background']}"
+                                   onClick="applicationInfo.execute(ga)">
                                     <custom-attributes ga="${each}"/>
                                 </a>
                             </n:li>

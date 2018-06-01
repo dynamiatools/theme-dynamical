@@ -480,10 +480,9 @@ input[type=checkbox] {
     padding: 1px;
 }
 
-
 @media (max-width: 767px) {
     .fixed .content-wrapper, .fixed .right-side {
-        padding-top: 48px;
+        padding-top: 15px;
     }
 
     .main-sidebar {
