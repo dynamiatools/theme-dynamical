@@ -13,6 +13,8 @@ public class DynamicalMessageDisplayer extends MessageDialog {
     public void showMessage(String message, String title, MessageType type) {
 
         String method = "notice";
+        String size = "large";
+        String location = "br";
         if (title == null) {
             title = "Message";
             if (type != MessageType.NORMAL) {
@@ -27,13 +29,16 @@ public class DynamicalMessageDisplayer extends MessageDialog {
             case WARNING:
                 method = "warning";
                 break;
-
+            case CRITICAL:
+                method = "error";
+                location = "tc";
+                break;
             default:
                 break;
         }
 
         String script = "$.growl." + method + "({ title: '" + title + "', message: '" + message
-                + "', size: 'large', location: 'br'  });";
+                + "', size: '" + size + "', location: '" + location + "'  });";
         Clients.evalJavaScript(script);
 
     }

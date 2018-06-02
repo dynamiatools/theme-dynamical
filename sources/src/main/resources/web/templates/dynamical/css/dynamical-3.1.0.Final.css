@@ -65,7 +65,7 @@ li.title-menu a span {
 
 .table-view .z-listheader,
 .tree-view .z-treecol {
-    padding: 8px;
+
     border-color: gray;
 }
 
@@ -458,6 +458,11 @@ input[type=checkbox] {
 
 .main-header .icon {
     display: none;
+}
+
+.main-footer {
+    padding: 10px !important;
+    border: 0 !important;
 }
 
 .sidebar-collapse .main-header .icon {

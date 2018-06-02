@@ -6,12 +6,8 @@ import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Menuitem;
 import org.zkoss.zul.Menupopup;
-import tools.dynamia.navigation.Module;
-import tools.dynamia.navigation.NavigationViewBuilder;
-import tools.dynamia.navigation.Page;
-import tools.dynamia.navigation.PageGroup;
+import tools.dynamia.navigation.*;
 import tools.dynamia.ui.icons.IconSize;
-import tools.dynamia.zk.navigation.ZKNavigationManager;
 import tools.dynamia.zk.util.ZKUtil;
 
 import java.util.HashMap;
@@ -162,12 +158,12 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
         pageitem.getAttributes().put("page", page);
         pageitem.addEventListener(Events.ON_CLICK, evt -> {
 
-            Li currentPageLi = (Li) pageContent.get(ZKNavigationManager.getInstance().getCurrentPage());
+            Li currentPageLi = (Li) pageContent.get(NavigationManager.getCurrent().getCurrentPage());
             if (currentPageLi != null) {
                 currentPageLi.setSclass(null);
             }
 
-            ZKNavigationManager.getInstance().setCurrentPage(page);
+            NavigationManager.getCurrent().setCurrentPage(page);
             pageli.setSclass("active");
 
         });

@@ -18,8 +18,8 @@
 <!-- Custom styles for this template-->
 <?link href="${contextPath}/css/AdminLTE.min.css" rel="stylesheet"?>
 
-<?link rel="shortcut icon" href="${contextPath}/favicon.ico"?>
-<?link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico"?>
+<?link rel="shortcut icon" href="${contextPath}/zkau/web/favicon.ico"?>
+<?link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/zkau/web/favicon.ico"?>
 
 <?link href="${contextPath}/css/skins/${appTemplate.skin.filename}" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/css/skins/dynamical-${appTemplate.skin.id}.css" rel="stylesheet" type="text/css"?>
