@@ -1,5 +1,6 @@
 package tools.dynamia.themes.dynamical;
 
+import org.zkoss.util.Locales;
 import org.zkoss.zhtml.*;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
@@ -11,16 +12,18 @@ import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.zk.util.ZKUtil;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 
-    private transient Ul sidebar;
-    private transient Map<Module, Component> modulesContent = new HashMap<Module, Component>();
-    private transient Map<PageGroup, Component> pgContent = new HashMap<PageGroup, Component>();
-    private transient Map<Page, Component> pageContent = new HashMap<Page, Component>();
+    private Ul sidebar;
+    private Map<Module, Component> modulesContent = new HashMap<Module, Component>();
+    private Map<PageGroup, Component> pgContent = new HashMap<PageGroup, Component>();
+    private Map<Page, Component> pageContent = new HashMap<Page, Component>();
     private Menupopup contextMenu;
     private Page selectedPage;
+    private Locale locale = Locales.getCurrent();
 
     public DynamicalMenuBuilder() {
         System.out.println("Starting " + getClass().getName());
@@ -75,15 +78,16 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
             A a = new A();
             a.setDynamicProperty("href", "#");
             a.setParent(menu);
+            a.setTitle(module.getLocalizedDescription(locale));
 
             I icon = new I();
             icon.setParent(a);
 
             if (module.getIcon() != null && !module.getIcon().isEmpty()) {
-                ZKUtil.configureComponentIcon(module.getIcon(), icon, IconSize.SMALL);
+                ZKUtil.configureComponentIcon(module.getLocalizedIcon(locale), icon, IconSize.SMALL);
             }
 
-            Text label = new Text(" " + module.getName());
+            Text label = new Text(" " + module.getLocalizedName(locale));
             label.setParent(a);
 
             I angle = new I();
@@ -116,7 +120,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
             pgIcon.setSclass("fa fa-circle-o");
             pgIcon.setParent(pgItem);
 
-            Text label = new Text(" " + pageGroup.getName());
+            Text label = new Text(" " + pageGroup.getLocalizedName(locale));
             label.setParent(pgItem);
 
             I pgAngle = new I();
@@ -173,7 +177,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
         pageicon.setSclass("fa fa-circle-o");
         pageicon.setParent(pageitem);
 
-        Text label = new Text(page.getName());
+        Text label = new Text(page.getLocalizedName(locale));
 
         label.setParent(pageitem);
 
