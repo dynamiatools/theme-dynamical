@@ -106,24 +106,6 @@
     border: 1px solid #28a5d4 !important;
 }
 
-.btn-success {
-    background-color: #2E7D32 !important;
-    border: 1px solid #2E7D32 !important;
-}
-
-.btn-success:hover,
-.btn-success:focus,
-.btn-success:active,
-.btn-success.active,
-.btn-success.focus,
-.btn-success:active,
-.btn-success:focus,
-.btn-success:hover,
-.open > .dropdown-toggle.btn-success {
-    background-color: #1B5E20 !important;
-    border: 1px solid #1B5E20 !important;
-}
-
 .btn-info {
     background-color: #3ddcf7 !important;
     border: 1px solid #3ddcf7 !important;
@@ -296,11 +278,11 @@
 }
 
 .panel .panel-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 .panel .panel-body p {
-    margin: 0px;
+    margin: 0;
 }
 
 .panel .panel-body p + p {
