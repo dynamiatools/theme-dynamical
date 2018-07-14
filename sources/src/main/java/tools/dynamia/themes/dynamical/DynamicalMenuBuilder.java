@@ -1,6 +1,6 @@
 package tools.dynamia.themes.dynamical;
 
-import org.zkoss.util.Locales;
+import tools.dynamia.commons.Messages;
 import org.zkoss.zhtml.*;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
@@ -23,7 +23,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
     private Map<Page, Component> pageContent = new HashMap<Page, Component>();
     private Menupopup contextMenu;
     private Page selectedPage;
-    private Locale locale = Locales.getCurrent();
+    private Locale locale = Messages.getDefaultLocale();
 
     public DynamicalMenuBuilder() {
         System.out.println("Starting " + getClass().getName());
