@@ -11,8 +11,7 @@ public class DynamicalCrudViewRenderer<T> extends CrudViewRenderer<T> {
 
     @Override
     protected CrudView<T> newCrudView() {
-        CrudView<T> crudView = new DynamicalCrudView<>();
-        return crudView;
+        return new DynamicalCrudView<>();
     }
 
 }
