@@ -67,7 +67,10 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         formLeftActions.setZclass("col-xs-12 col-md-12");
         formLeftActions.setParent(formActions);
 
-        formRightActions = formLeftActions;
+        formRightActions = new Div();
+        formRightActions.setZclass("col-xs-12 col-md-12");
+        formRightActions.setStyle("text-align: right");
+        formRightActions.setParent(formActions);
 
         String menuId = "actionMenu" + StringUtils.randomString().substring(0, 4);
         actionsMenu = new Menupopup();
