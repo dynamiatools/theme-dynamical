@@ -12,7 +12,7 @@
 
 
 	<properties>
-		<dynamiatools.version>3.1.0.Final</dynamiatools.version>
+		<dynamiatools.version>3.2.0.Final</dynamiatools.version>
 		<java.version>1.8</java.version>
 		<maven.compiler>2.3.2</maven.compiler>
 		<source.encoding>UTF-8</source.encoding>
