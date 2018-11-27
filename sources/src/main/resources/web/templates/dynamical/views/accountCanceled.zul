@@ -46,7 +46,7 @@
         </n:div>
         <!-- /.login-logo -->
         <n:div class="login-box-body">
-            <n:h1>Esta cuenta no ha sido cancelada</n:h1>
+            <n:h3>Esta cuenta ha sido cancelada</n:h3>
             <n:h2>${statusDescription}</n:h2>
         </n:div>
         <!-- /.login-box-body -->
