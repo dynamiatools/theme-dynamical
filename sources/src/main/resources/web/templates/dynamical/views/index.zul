@@ -13,7 +13,7 @@
 <?meta name="skin" content="${appTemplate.skin.id}"?>
 
 <?link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-3.2.0.css" rel="stylesheet" type="text/css"?>
 <!-- Custom fonts for this template-->
 <?link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css"?>
 <!-- Custom styles for this template-->

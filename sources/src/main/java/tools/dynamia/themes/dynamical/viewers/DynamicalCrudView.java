@@ -154,6 +154,11 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         if (component instanceof HtmlBasedComponent) {
             HtmlBasedComponent hcom = (HtmlBasedComponent) component;
             hcom.setSclass("actiontb-a " + actionId);
+            if (hcom instanceof Toolbarbutton) {
+                hcom.setZclass("none");
+                hcom.setSclass("btn btn-default " + hcom.getSclass());
+            }
+
             hcom.setTooltiptext(action.getName());
             if (HttpUtils.isSmartphone()) {
                 if (!(component instanceof Button)) {
