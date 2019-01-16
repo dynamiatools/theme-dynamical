@@ -6,7 +6,7 @@
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.1.0.Final</version>
+	<version>3.2.0.Final</version>
 	<name>Themes - ZK Dynamical (${project.version})</name>
 	<url>http://maven.apache.org</url>
 

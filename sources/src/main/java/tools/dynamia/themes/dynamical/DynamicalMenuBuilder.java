@@ -1,12 +1,12 @@
 package tools.dynamia.themes.dynamical;
 
-import tools.dynamia.commons.Messages;
 import org.zkoss.zhtml.*;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Menuitem;
 import org.zkoss.zul.Menupopup;
+import tools.dynamia.commons.Messages;
 import tools.dynamia.navigation.*;
 import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.zk.util.ZKUtil;
@@ -24,9 +24,9 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
     private Menupopup contextMenu;
     private Page selectedPage;
     private Locale locale = Messages.getDefaultLocale();
+    private Module firstModule;
 
     public DynamicalMenuBuilder() {
-        System.out.println("Starting " + getClass().getName());
         sidebar = new Ul();
         sidebar.setSclass("sidebar-menu");
         sidebar.setClientDataAttribute("widget", "tree");
@@ -69,11 +69,20 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
     @Override
     public void createModuleView(Module module) {
 
+        if (firstModule == null) {
+            firstModule = module;
+        }
+
         if (module.getProperty("submenus") != Boolean.FALSE) {
 
             Li menu = new Li();
             menu.setSclass("treeview");
             menu.setParent(sidebar);
+
+            if (firstModule == module) {
+                menu.setSclass("active treeview");
+            }
+
 
             A a = new A();
             a.setDynamicProperty("href", "#");
@@ -117,7 +126,8 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
             pgItem.setDynamicProperty("href", "#");
 
             I pgIcon = new I();
-            pgIcon.setSclass("fa fa-circle-o");
+
+
             pgIcon.setParent(pgItem);
 
             Text label = new Text(" " + pageGroup.getLocalizedName(locale));
@@ -174,8 +184,15 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
         pageitem.addEventListener(Events.ON_RIGHT_CLICK, evt -> selectedPage = page);
 
         I pageicon = new I();
-        pageicon.setSclass("fa fa-circle-o");
+
         pageicon.setParent(pageitem);
+
+
+        if (page.getIcon() != null && !page.getIcon().isEmpty()) {
+            ZKUtil.configureComponentIcon(page.getLocalizedIcon(locale), pageicon, IconSize.SMALL);
+        } else {
+            pageicon.setSclass("fa fa-circle-o fa-fw");
+        }
 
         Text label = new Text(page.getLocalizedName(locale));
 
