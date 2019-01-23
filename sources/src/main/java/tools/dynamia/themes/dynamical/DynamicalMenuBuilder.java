@@ -127,7 +127,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 
             I pgIcon = new I();
 
-
+            pgIcon.setSclass("fa fa-plus-square-o  fa-fw");
             pgIcon.setParent(pgItem);
 
             Text label = new Text(" " + pageGroup.getLocalizedName(locale));
