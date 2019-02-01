@@ -64,6 +64,7 @@
 .btn-default {
     background-color: #dae6ec;
     border-color: #dae6ec;
+    color: #444444 !important;
 }
 
 .btn-default:focus {
