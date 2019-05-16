@@ -43,8 +43,8 @@ public class DynamicalTemplate implements ApplicationTemplate {
     public DynamicalTemplate() {
         createSkins();
 
-        properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2015", COPYRIGHT, "Dynamia Soluciones IT 2015",
-                VERSION, "3.1.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
+        properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2017", COPYRIGHT, "Dynamia Soluciones IT 2017",
+                VERSION, "3.6.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
     }
 
@@ -61,7 +61,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
     @Override
     public void init(TemplateContext context) {
 
-        Library.setProperty("org.zkoss.theme.preferred", "dynamical");
+        Library.setProperty("org.zkoss.theme.preferred", "iceblue_c");
 
         viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);

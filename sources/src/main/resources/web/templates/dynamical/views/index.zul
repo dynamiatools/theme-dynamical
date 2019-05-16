@@ -30,8 +30,8 @@
 <?link href="${contextPath}/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/css/jquery.growl.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/css/dynamical-3.1.0.Final.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/dynamical-mobile-3.1.0.Final.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/dynamical-3.6.0.Final.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/dynamical-mobile-3.6.0.Final.css" rel="stylesheet" type="text/css"?>
 
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 

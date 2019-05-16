@@ -6,13 +6,40 @@
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.2.0.Final</version>
-	<name>Themes - ZK Dynamical (${project.version})</name>
-	<url>http://maven.apache.org</url>
+	<version>3.6.0.Final</version>
+	<name>Themes - ZK Dynamical</name>
+	<url>http://www.dynamia.tools/theme-dynamical</url>
+	<description>Boostrap theme for DynamiaTools apps</description>
+	<inceptionYear>2017</inceptionYear>
 
+	<organization>
+		<name>Dynamia Soluciones IT SAS</name>
+		<url>http://www.dynamiasoluciones.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>Mario Serrano Leones</name>
+			<email>mario@dynamiasoluciones.com</email>
+			<organization>Dynamia Soluciones IT</organization>
+			<organizationUrl>https://www.dynamiasoluciones.com</organizationUrl>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License (LGPL v3)</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/dynamia-projects/theme-dynamical</url>
+	</scm>
 
 	<properties>
-		<dynamiatools.version>3.2.0.Final</dynamiatools.version>
+		<dynamiatools.version>3.6.0.Final</dynamiatools.version>
 		<java.version>1.8</java.version>
 		<maven.compiler>2.3.2</maven.compiler>
 		<source.encoding>UTF-8</source.encoding>
@@ -59,15 +86,49 @@
 
 		<dependency>
 			<groupId>org.zkoss.theme</groupId>
-			<artifactId>dynamical</artifactId>
-			<version>2.0.0</version>
+			<artifactId>iceblue_c</artifactId>
+			<version>8.6.0.1</version>
 		</dependency>
 	</dependencies>
 
 	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<id>nexus</id>
-			<url>http://nexus.dynamiaweb.com/repository/releases/</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
