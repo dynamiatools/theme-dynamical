@@ -17,12 +17,18 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 
 ## Installation
 
+**Maven**
 ```xml
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
   <version>3.6.0.Final</version>
 </dependency>
+```
+
+**Gradle**
+```groovy
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:3.6.0.Final'
 ```
 
 Edit ```META-INF/applicationInfo.properties```
