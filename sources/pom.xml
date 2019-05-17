@@ -6,7 +6,7 @@
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>3.6.0.Final</version>
+	<version>3.6.1.Final</version>
 	<name>Themes - ZK Dynamical</name>
 	<url>http://www.dynamia.tools/theme-dynamical</url>
 	<description>Boostrap theme for DynamiaTools apps</description>
@@ -39,7 +39,7 @@
 	</scm>
 
 	<properties>
-		<dynamiatools.version>3.6.0.Final</dynamiatools.version>
+		<dynamiatools.version>3.6.1.Final</dynamiatools.version>
 		<java.version>1.8</java.version>
 		<maven.compiler>2.3.2</maven.compiler>
 		<source.encoding>UTF-8</source.encoding>
@@ -69,6 +69,17 @@
 						<root>src/main/java</root>
 						<root>src/test</root>
 					</roots>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 		</plugins>
