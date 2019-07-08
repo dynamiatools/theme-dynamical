@@ -29,6 +29,7 @@ import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Menuitem;
 import org.zkoss.zul.Menupopup;
 import tools.dynamia.commons.Messages;
+import tools.dynamia.navigation.Module;
 import tools.dynamia.navigation.*;
 import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.zk.util.ZKUtil;
@@ -40,9 +41,9 @@ import java.util.Map;
 public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 
     private Ul sidebar;
-    private Map<Module, Component> modulesContent = new HashMap<Module, Component>();
-    private Map<PageGroup, Component> pgContent = new HashMap<PageGroup, Component>();
-    private Map<Page, Component> pageContent = new HashMap<Page, Component>();
+    private Map<Module, Component> modulesContent = new HashMap<>();
+    private Map<PageGroup, Component> pgContent = new HashMap<>();
+    private Map<Page, Component> pageContent = new HashMap<>();
     private Menupopup contextMenu;
     private Page selectedPage;
     private Locale locale = Messages.getDefaultLocale();
