@@ -12,7 +12,7 @@
 <?meta name="build" content="${applicationInfo.build}"?>
 
 <?link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-4.0.0b.css" rel="stylesheet" type="text/css"?>
 <!-- Custom fonts for this template-->
 <?link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css"?>
 <!-- Custom styles for this template-->
@@ -113,7 +113,7 @@
     <script src="${contextPath}/js/jquery-3.3.1.min.js"/>
     <script src="${contextPath}/js/jquery.growl.js"/>
 
-    <!-- Bootstrap 3.3.7 -->
+    <!-- Bootstrap 3.4.1 -->
     <script src="${contextPath}/js/bootstrap.min.js"/>
     <!-- SlimScroll -->
     <script src="${contextPath}/js/jquery.slimscroll.min.js"/>
@@ -121,10 +121,13 @@
     <script src="${contextPath}/js/fastclick.min.js"/>
     <!-- AdminLTE App -->
     <script src="${contextPath}/js/adminlte.min.js"/>
-    <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" type="text/javascript"/>
 
     <!-- Tooltipster -->
     <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
+
+    <!-- Dynamical -->
+    <script src="${contextPath}/js/dynamical-login-4.0.0.RC.js" type="text/javascript"/>
+
+
 
 </zk>

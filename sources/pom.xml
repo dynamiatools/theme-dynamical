@@ -6,7 +6,7 @@
 
 	<groupId>tools.dynamia.themes</groupId>
 	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>4.0.0.Beta</version>
+	<version>4.0.0.RC</version>
 	<name>Themes - ZK Dynamical</name>
 	<url>http://www.dynamia.tools/theme-dynamical</url>
 	<description>Boostrap theme for DynamiaTools apps</description>
@@ -39,7 +39,7 @@
 	</scm>
 
 	<properties>
-		<dynamiatools.version>4.0.0.Beta</dynamiatools.version>
+		<dynamiatools.version>4.0.0.RC</dynamiatools.version>
 		<java.version>11</java.version>
 		<maven.compiler>3.8.1</maven.compiler>
 		<source.encoding>UTF-8</source.encoding>

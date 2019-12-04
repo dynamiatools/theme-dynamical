@@ -13,7 +13,7 @@
 <?meta name="skin" content="${appTemplate.skin.id}"?>
 
 <?link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-3.2.0.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-4.0.0b.css" rel="stylesheet" type="text/css"?>
 <!-- Custom fonts for this template-->
 <?link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css"?>
 <!-- Custom styles for this template-->
@@ -30,8 +30,8 @@
 <?link href="${contextPath}/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/css/jquery.growl.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/css/dynamical-3.6.0.Final.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/dynamical-mobile-3.6.0.Final.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/dynamical-4.0.0.RC.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/dynamical-mobile-4.0.0.RC.css" rel="stylesheet" type="text/css"?>
 
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 
@@ -222,7 +222,7 @@
     <script src="${contextPath}/js/jquery-3.3.1.min.js"/>
     <script src="${contextPath}/js/jquery.growl.js"/>
 
-    <!-- Bootstrap 3.3.7 -->
+    <!-- Bootstrap 3.4.1 -->
     <script src="${contextPath}/js/bootstrap.min.js"/>
     <!-- SlimScroll -->
     <script src="${contextPath}/js/jquery.slimscroll.min.js"/>
@@ -230,11 +230,13 @@
     <script src="${contextPath}/js/fastclick.min.js"/>
     <!-- AdminLTE App -->
     <script src="${contextPath}/js/adminlte.min.js"/>
-    <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-3.1.0.Final.js" type="text/javascript"/>
 
     <!-- Tooltipster -->
     <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
+
+    <!-- Dynamical -->
+    <script src="${contextPath}/js/dynamical-4.0.0.RC.js" type="text/javascript"/>
+
 
     <script>applyJqueryStuff();</script>
 
