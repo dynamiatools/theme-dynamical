@@ -1,158 +1,157 @@
 <?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>tools.dynamia.themes</groupId>
-	<artifactId>tools.dynamia.themes.dynamical</artifactId>
-	<version>4.0.0.Final</version>
-	<name>Themes - ZK Dynamical</name>
-	<url>https://www.dynamia.tools/themes/dynamical</url>
-	<description>Boostrap theme for DynamiaTools apps</description>
-	<inceptionYear>2017</inceptionYear>
+    <groupId>tools.dynamia.themes</groupId>
+    <artifactId>tools.dynamia.themes.dynamical</artifactId>
+    <version>4.0.0.Final</version>
+    <name>Themes - ZK Dynamical</name>
+    <url>https://www.dynamia.tools/themes/dynamical</url>
+    <description>Boostrap theme for DynamiaTools apps</description>
+    <inceptionYear>2017</inceptionYear>
 
-	<organization>
-		<name>Dynamia Soluciones IT SAS</name>
-		<url>https://www.dynamiasoluciones.com</url>
-	</organization>
+    <organization>
+        <name>Dynamia Soluciones IT SAS</name>
+        <url>https://www.dynamiasoluciones.com</url>
+    </organization>
 
-	<developers>
-		<developer>
-			<name>Mario Serrano Leones</name>
-			<email>mario@dynamiasoluciones.com</email>
-			<organization>Dynamia Soluciones IT</organization>
-			<organizationUrl>https://www.dynamiasoluciones.com</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Mario Serrano Leones</name>
+            <email>mario@dynamiasoluciones.com</email>
+            <organization>Dynamia Soluciones IT</organization>
+            <organizationUrl>https://www.dynamiasoluciones.com</organizationUrl>
+        </developer>
+    </developers>
 
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License (LGPL v3)</name>
-			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License (LGPL v3)</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<scm>
-		<url>https://github.com/dynamia-projects/theme-dynamical</url>
-	</scm>
+    <scm>
+        <url>https://github.com/dynamia-projects/theme-dynamical</url>
+    </scm>
 
-	<properties>
-		<dynamiatools.version>4.0.0.Final</dynamiatools.version>
-		<java.version>11</java.version>
-		<maven.compiler>3.8.1</maven.compiler>
-		<source.encoding>UTF-8</source.encoding>
-	</properties>
-
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler}</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${source.encoding}</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>license-maven-plugin</artifactId>
-				<version>1.20</version>
-				<configuration>
-					<verbose>false</verbose>
-					<licenseName>lgpl_v3</licenseName>
-					<roots>
-						<root>src/main/java</root>
-						<root>src/test</root>
-					</roots>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.8</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <properties>
+        <dynamiatools.version>4.0.0.Final</dynamiatools.version>
+        <java.version>11</java.version>
+        <maven.compiler>3.8.1</maven.compiler>
+        <source.encoding>UTF-8</source.encoding>
+    </properties>
 
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${source.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.20</version>
+                <configuration>
+                    <verbose>false</verbose>
+                    <licenseName>lgpl_v3</licenseName>
+                    <roots>
+                        <root>src/main/java</root>
+                        <root>src/test</root>
+                    </roots>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>tools.dynamia</groupId>
-			<artifactId>tools.dynamia.zk.app</artifactId>
-			<version>${dynamiatools.version}</version>
-			<scope>provided</scope>
-		</dependency>
 
-		<dependency>
-			<groupId>tools.dynamia</groupId>
-			<artifactId>tools.dynamia.zk</artifactId>
-			<version>${dynamiatools.version}</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tools.dynamia</groupId>
+            <artifactId>tools.dynamia.zk.app</artifactId>
+            <version>${dynamiatools.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.zkoss.theme</groupId>
-			<artifactId>iceblue_c</artifactId>
-			<version>9.5.0</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>tools.dynamia</groupId>
+            <artifactId>tools.dynamia.zk</artifactId>
+            <version>${dynamiatools.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
+        <dependency>
+            <groupId>org.zkoss.theme</groupId>
+            <artifactId>iceblue_c</artifactId>
+            <version>9.5.0.1</version>
+        </dependency>
+    </dependencies>
 
-	<profiles>
-		<profile>
-			<id>release-sign-artifacts</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

@@ -10,12 +10,12 @@ package tools.dynamia.themes.dynamical;
  * it under the terms of the GNU Lesser General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Lesser Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Lesser Public
  * License along with this program.  If not, see
  * <http://www.gnu.org/licenses/lgpl-3.0.html>.
@@ -150,7 +150,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
 
             I pgIcon = new I();
 
-            pgIcon.setSclass("fa fa-plus-square-o  fa-fw");
+            pgIcon.setSclass("fa fa-plus-square  fa-fw");
             pgIcon.setParent(pgItem);
 
             Text label = new Text(" " + pageGroup.getLocalizedName(locale));
@@ -194,12 +194,10 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
         pageitem.setContext(contextMenu);
         pageitem.getAttributes().put("page", page);
         pageitem.addEventListener(Events.ON_CLICK, evt -> {
-
             Li currentPageLi = (Li) pageContent.get(NavigationManager.getCurrent().getCurrentPage());
             if (currentPageLi != null) {
                 currentPageLi.setSclass(null);
             }
-
             NavigationManager.getCurrent().setCurrentPage(page);
             pageli.setSclass("active");
 
@@ -214,7 +212,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
         if (page.getIcon() != null && !page.getIcon().isEmpty()) {
             ZKUtil.configureComponentIcon(page.getLocalizedIcon(locale), pageicon, IconSize.SMALL);
         } else {
-            pageicon.setSclass("fa fa-circle-o fa-fw");
+            pageicon.setSclass("far fa-circle fa-fw");
         }
 
         Text label = new Text(page.getLocalizedName(locale));
