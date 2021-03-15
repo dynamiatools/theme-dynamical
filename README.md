@@ -4,9 +4,6 @@
 
 This template is based on https://adminlte.io/ free (MIT) admin template. Which is a fully responsive admin template. Based on Bootstrap 3.x framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. 
 
-## Screenshot
-
-![Dynamical Theme](https://dynamia.tools/wp-content/uploads/sites/4/2019/05/dynamicalblue.png)
 
 ## Features
 - 10 skins available
@@ -17,12 +14,6 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 - Compact
 - Support for app logo and icon
 
-# Stable Version(s)
-- 3.6.1.Final (Java 8+)
-- 4.0.0.RC (Java 11+)
-
-# Development Version
-- 4.0.0.Final (Java 11+)
 
 ## Installation
 
@@ -31,13 +22,13 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>4.0.0.RC</version>
+  <version>4.0.1</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.0.RC'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.1'
 ```
 
 Edit ```META-INF/applicationInfo.properties```
