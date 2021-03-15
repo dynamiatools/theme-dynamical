@@ -48,3 +48,7 @@ defaultSkin=Blue
 - Yellow
 - Olive
 - Black
+
+## License
+
+Theme Dynamical is available under Apache 2 License
