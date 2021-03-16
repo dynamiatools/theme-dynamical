@@ -1,9 +1,11 @@
 [![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.themes/tools.dynamia.themes.dynamical.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tools.dynamia.themes%22%20AND%20a:%22tools.dynamia.themes.dynamical%22)
+![Java Version Required](https://img.shields.io/badge/java-%3E%3D11-blue)
 
 # Bootstrap theme for DynamiaTools
 
 This template is based on https://adminlte.io/ free (MIT) admin template. Which is a fully responsive admin template. Based on Bootstrap 3.x framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. 
 
+![Screenshot](https://github.com/dynamiatools/theme-dynamical/blob/master/screenshots/screenshot1.png?raw=true)
 
 ## Features
 - 10 skins available
