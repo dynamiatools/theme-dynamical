@@ -24,13 +24,13 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>4.0.2</version>
+  <version>4.0.3</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.2'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.3'
 ```
 
 Edit ```META-INF/applicationInfo.properties```
