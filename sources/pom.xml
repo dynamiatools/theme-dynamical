@@ -23,7 +23,7 @@
 
     <groupId>tools.dynamia.themes</groupId>
     <artifactId>tools.dynamia.themes.dynamical</artifactId>
-    <version>4.0.4</version>
+    <version>4.0.5</version>
     <name>Themes - ZK Dynamical</name>
     <url>https://www.dynamia.tools/themes/dynamical</url>
     <description>Boostrap theme for DynamiaTools apps</description>
@@ -56,7 +56,7 @@
     </scm>
 
     <properties>
-        <dynamiatools.version>4.0.3</dynamiatools.version>
+        <dynamiatools.version>4.0.5</dynamiatools.version>
         <java.version>11</java.version>
         <maven.compiler>3.8.1</maven.compiler>
         <source.encoding>UTF-8</source.encoding>
@@ -105,12 +105,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>tools.dynamia</groupId>
             <artifactId>tools.dynamia.zk.app</artifactId>
             <version>${dynamiatools.version}</version>
@@ -127,7 +121,7 @@
         <dependency>
             <groupId>org.zkoss.theme</groupId>
             <artifactId>iceblue_c</artifactId>
-            <version>9.5.0.2</version>
+            <version>9.6.0.1</version>
         </dependency>
     </dependencies>
 
