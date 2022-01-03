@@ -1,5 +1,5 @@
 [![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.themes/tools.dynamia.themes.dynamical.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tools.dynamia.themes%22%20AND%20a:%22tools.dynamia.themes.dynamical%22)
-![Java Version Required](https://img.shields.io/badge/java-%3E%3D11-blue)
+![Java Version Required](https://img.shields.io/badge/java-11+-blue)
 
 # Bootstrap theme for DynamiaTools
 
@@ -24,13 +24,13 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>4.0.3</version>
+  <version>4.0.5</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.3'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.5'
 ```
 
 Edit ```META-INF/applicationInfo.properties```
