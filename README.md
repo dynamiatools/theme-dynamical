@@ -24,7 +24,7 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>4.0.5</version>
+  <version>4.0.7</version>
 </dependency>
 ```
 
