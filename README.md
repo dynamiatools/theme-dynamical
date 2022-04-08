@@ -30,7 +30,7 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.5'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.0.7'
 ```
 
 Edit ```META-INF/applicationInfo.properties```
