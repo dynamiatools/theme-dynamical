@@ -29,11 +29,12 @@ import tools.dynamia.navigation.*;
 import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.zk.util.ZKUtil;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class DynamicalMenuBuilder implements NavigationViewBuilder<Component> {
+public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, Serializable {
 
     private Ul sidebar;
     private Map<Module, Component> modulesContent = new HashMap<>();
