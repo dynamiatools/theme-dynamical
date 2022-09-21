@@ -611,8 +611,12 @@ input[type=checkbox] {
     height: initial !important;
 }
 
-.z-temp, .z-modal-mask{
+.z-temp, .z-modal-mask {
     background: #393a3e;
+}
+
+.z-grid-emptybody {
+    display: none;
 }
 
 .fade-in-top {
@@ -632,6 +636,7 @@ input[type=checkbox] {
         opacity: 1;
     }
 }
+
 @keyframes fade-in-top {
     0% {
         -webkit-transform: translateY(-50px);
@@ -658,6 +663,7 @@ input[type=checkbox] {
         opacity: 0;
     }
 }
+
 @keyframes fade-out {
     0% {
         opacity: 1;
@@ -666,3 +672,5 @@ input[type=checkbox] {
         opacity: 0;
     }
 }
+
+
