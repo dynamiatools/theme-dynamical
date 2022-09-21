@@ -3,7 +3,7 @@
 
 # Bootstrap theme for DynamiaTools
 
-This template is based on https://adminlte.io/ free (MIT) admin template. Which is a fully responsive admin template. Based on Bootstrap 3.x framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. 
+This template is based on https://adminlte.io/ free (MIT) admin template. Which is a fully responsive admin template. Based on Bootstrap 4.x framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. 
 
 ![Screenshot](https://github.com/dynamiatools/theme-dynamical/blob/master/screenshots/screenshot1.png?raw=true)
 
