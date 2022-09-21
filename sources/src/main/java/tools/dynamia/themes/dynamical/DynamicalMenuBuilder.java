@@ -91,6 +91,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
             if (module.getIcon() != null && !module.getIcon().isEmpty()) {
                 ZKUtil.configureComponentIcon(module.getLocalizedIcon(locale), icon, IconSize.SMALL);
+                icon.setSclass("nav-icon " + icon.getSclass());
             }
 
             P label = new P();
@@ -126,7 +127,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
             I pgIcon = new I();
 
-            pgIcon.setSclass("fa fa-plus-square  fa-fw nav-icon");
+            pgIcon.setSclass("nav-icon fa fa-plus-square");
             pgIcon.setParent(pgItem);
 
             P label = new P();
@@ -176,22 +177,16 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
         pageitem.setZclass("nav-link");
         pageitem.getAttributes().put("page", page);
 
-        pageitem.addEventListener(Events.ON_CLICK, evt -> {
-            Li currentPageLi = (Li) pageContent.get(NavigationManager.getCurrent().getCurrentPage());
-            if (currentPageLi != null) {
-                currentPageLi.setSclass(null);
-            }
-            NavigationManager.getCurrent().setCurrentPage(page);
-
-        });
+        pageitem.addEventListener(Events.ON_CLICK, evt -> NavigationManager.getCurrent().setCurrentPage(page));
 
 
         I pageicon = new I();
         pageicon.setParent(pageitem);
         if (page.getIcon() != null && !page.getIcon().isEmpty()) {
             ZKUtil.configureComponentIcon(page.getLocalizedIcon(locale), pageicon, IconSize.SMALL);
+            pageicon.setSclass("nav-icon " + pageicon.getSclass());
         } else {
-            pageicon.setSclass("far fa-circle fa-fw");
+            pageicon.setSclass("nav-icon far fa-circle");
         }
 
         P label = new P();
