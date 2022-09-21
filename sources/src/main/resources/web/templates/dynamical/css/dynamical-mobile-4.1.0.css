@@ -7,18 +7,56 @@
     .ex-page-content {
         margin-top: 10px;
     }
+
+    .fixed .content-wrapper, .fixed .right-side {
+        padding-top: 15px;
+    }
+
+    .main-sidebar {
+        padding-top: 55px;
+    }
+
+    .z-tabpanel {
+        padding: 0;
+    }
+
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper {
+        height: 100%;
+    }
+
+    .crudview-header, .actiontb {
+        height: auto !important;
+    }
+
+    .global-action{
+        font-size: 0;
+    }
+
+    .global-action i{
+        font-size: initial;
+        line-height: 1.5;
+    }
+
+    .main-footer{
+        font-size: 90%;
+    }
+
+
+    .sidebar {
+        margin-top: 0 !important;
+    }
+
 }
 
 @media ( max-width: 991px) {
     .wrapper {
         height: 100% !important;
         margin: 0;
-        padding-top: 43px;
-        padding-bottom: 24px;
-    }
-
-    footer {
-        display: none;
     }
 
     .container {
@@ -26,7 +64,7 @@
     }
 
     .z-toolbar {
-        padding: 0px !important;
+        padding: 0 !important;
     }
 
     .z-tabpanel {
@@ -118,7 +156,7 @@
 
     .btn.actions {
         padding: 2px 14px;
-        height: 30px;
+
     }
 
     .modal-dialog .z-window-content {

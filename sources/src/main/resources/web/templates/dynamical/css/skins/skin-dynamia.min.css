@@ -1,43 +1,43 @@
-.skin-dynamia .main-header .navbar {
+.skin-dynamia .main-header.navbar {
     background-color: #00709c
 }
 
-.skin-dynamia .main-header .navbar .nav > li > a {
+.skin-dynamia .main-header.navbar .nav > li > a {
     color: #fff
 }
 
-.skin-dynamia .main-header .navbar .nav > li > a:hover, .skin-dynamia .main-header .navbar .nav > li > a:active, .skin-dynamia .main-header .navbar .nav > li > a:focus, .skin-dynamia .main-header .navbar .nav .open > a, .skin-dynamia .main-header .navbar .nav .open > a:hover, .skin-dynamia .main-header .navbar .nav .open > a:focus, .skin-dynamia .main-header .navbar .nav > .active > a {
+.skin-dynamia .main-header.navbar .nav > li > a:hover, .skin-dynamia .main-header.navbar .nav > li > a:active, .skin-dynamia .main-header.navbar .nav > li > a:focus, .skin-dynamia .main-header.navbar .nav .open > a, .skin-dynamia .main-header.navbar .nav .open > a:hover, .skin-dynamia .main-header.navbar .nav .open > a:focus, .skin-dynamia .main-header.navbar .nav > .active > a {
     background: rgba(0, 0, 0, 0.1);
     color: #f6f6f6
 }
 
-.skin-dynamia .main-header .navbar .sidebar-toggle {
+.skin-dynamia .main-header.navbar .sidebar-toggle {
     color: #fff
 }
 
-.skin-dynamia .main-header .navbar .sidebar-toggle:hover {
+.skin-dynamia .main-header.navbar .sidebar-toggle:hover {
     color: #f6f6f6;
     background: rgba(0, 0, 0, 0.1)
 }
 
-.skin-dynamia .main-header .navbar .sidebar-toggle {
+.skin-dynamia .main-header.navbar .sidebar-toggle {
     color: #fff
 }
 
-.skin-dynamia .main-header .navbar .sidebar-toggle:hover {
+.skin-dynamia .main-header.navbar .sidebar-toggle:hover {
     background-color: #00709c
 }
 
 @media (max-width: 767px) {
-    .skin-dynamia .main-header .navbar .dropdown-menu li.divider {
+    .skin-dynamia .main-header.navbar .dropdown-menu li.divider {
         background-color: rgba(255, 255, 255, 0.1)
     }
 
-    .skin-dynamia .main-header .navbar .dropdown-menu li a {
+    .skin-dynamia .main-header.navbar .dropdown-menu li a {
         color: #fff
     }
 
-    .skin-dynamia .main-header .navbar .dropdown-menu li a:hover {
+    .skin-dynamia .main-header.navbar .dropdown-menu li a:hover {
         background: #00709c
     }
 }

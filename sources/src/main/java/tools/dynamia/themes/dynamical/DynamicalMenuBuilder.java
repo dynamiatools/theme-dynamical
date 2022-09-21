@@ -21,7 +21,7 @@ import org.zkoss.zhtml.*;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.Clients;
-import org.zkoss.zul.Menuitem;
+
 import org.zkoss.zul.Menupopup;
 import tools.dynamia.commons.Messages;
 import tools.dynamia.navigation.Module;
@@ -47,37 +47,12 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
     public DynamicalMenuBuilder() {
         sidebar = new Ul();
-        sidebar.setSclass("sidebar-menu");
-        sidebar.setClientDataAttribute("widget", "tree");
-        buildContextMenu();
-    }
-
-    protected void buildContextMenu() {
-        contextMenu = new Menupopup();
-        contextMenu.setParent(sidebar);
-        Menuitem item = new Menuitem("Abrir en nueva pestaña");
-        ZKUtil.configureComponentIcon("fa-external-link", item, IconSize.SMALL);
-        item.setParent(contextMenu);
-        item.addEventListener(Events.ON_CLICK, evt -> {
-            if (selectedPage != null) {
-                String path = "'/page/" + selectedPage.getPrettyVirtualPath() + "'";
-                path = "getContextPath()+" + path;
-                Clients.evalJavaScript("openURL(" + path + ")");
-            }
-        });
-
-        item = new Menuitem("Ver direccion de enlace");
-        ZKUtil.configureComponentIcon("fa-link", item, IconSize.SMALL);
-        item.setParent(contextMenu);
-        item.addEventListener(Events.ON_CLICK, evt -> {
-            if (selectedPage != null) {
-                String path = "'/page/" + selectedPage.getPrettyVirtualPath() + "'";
-                path = "getFullContextPath()+" + path;
-                Clients.evalJavaScript("copyToClipboard(" + path + ")");
-            }
-        });
+        sidebar.setSclass("nav nav-pills nav-sidebar flex-column");
+        sidebar.setClientDataAttribute("widget", "treeview");
+        sidebar.setClientDataAttribute("accordion", "false");
 
     }
+
 
     @Override
     public Component getNavigationView() {
@@ -94,36 +69,40 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
         if (module.getProperty("submenus") != Boolean.FALSE) {
 
+
             Li menu = new Li();
-            menu.setSclass("treeview");
+            menu.setSclass("nav-item");
             menu.setParent(sidebar);
 
             if (firstModule == module) {
-                menu.setSclass("active treeview");
+                menu.setSclass("nav-item menu-is-opening menu-open");
             }
 
 
             A a = new A();
+            a.setSclass("nav-link");
             a.setDynamicProperty("href", "#");
             a.setParent(menu);
             a.setTitle(module.getLocalizedDescription(locale));
 
             I icon = new I();
             icon.setParent(a);
+            icon.setSclass("nav-icon");
 
             if (module.getIcon() != null && !module.getIcon().isEmpty()) {
                 ZKUtil.configureComponentIcon(module.getLocalizedIcon(locale), icon, IconSize.SMALL);
             }
 
-            Text label = new Text(" " + module.getLocalizedName(locale));
+            P label = new P();
+            label.appendChild(new Text(" " + module.getLocalizedName(locale)));
             label.setParent(a);
 
             I angle = new I();
-            angle.setSclass("fa fa-angle-left pull-right");
+            angle.setSclass("right fas fa-angle-left");
             angle.setParent(a);
 
             Ul submenu = new Ul();
-            submenu.setSclass("treeview-menu");
+            submenu.setSclass("nav nav-treeview");
             submenu.setParent(menu);
 
             modulesContent.put(module, submenu);
@@ -139,25 +118,28 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
         }
         if (submenus) {
             Ul menuPg = new Ul();
-            menuPg.setSclass("treeview-menu");
+            menuPg.setSclass("nav nav-treeview");
 
             A pgItem = new A();
             pgItem.setDynamicProperty("href", "#");
+            pgItem.setSclass("nav-link");
 
             I pgIcon = new I();
 
-            pgIcon.setSclass("fa fa-plus-square  fa-fw");
+            pgIcon.setSclass("fa fa-plus-square  fa-fw nav-icon");
             pgIcon.setParent(pgItem);
 
-            Text label = new Text(" " + pageGroup.getLocalizedName(locale));
+            P label = new P();
+            label.appendChild(new Text(" " + pageGroup.getLocalizedName(locale)));
             label.setParent(pgItem);
+
 
             I pgAngle = new I();
             pgAngle.setSclass("fa fa-angle-left pull-right");
             pgAngle.setParent(pgItem);
 
             Li pgLi = new Li();
-            pgLi.setSclass("treeview");
+            pgLi.setSclass("nav-item");
             pgItem.setParent(pgLi);
 
             Component menu = null;
@@ -185,35 +167,37 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
         Component menuPg = pgContent.get(page.getPageGroup());
 
         Li pageli = new Li();
+        pageli.setSclass("nav-item");
+
         pageContent.put(page, pageli);
-        org.zkoss.zul.A pageitem = new org.zkoss.zul.A();
+
+        var pageitem = new org.zkoss.zul.A();
         pageitem.setContext(contextMenu);
+        pageitem.setZclass("nav-link");
         pageitem.getAttributes().put("page", page);
+
         pageitem.addEventListener(Events.ON_CLICK, evt -> {
             Li currentPageLi = (Li) pageContent.get(NavigationManager.getCurrent().getCurrentPage());
             if (currentPageLi != null) {
                 currentPageLi.setSclass(null);
             }
             NavigationManager.getCurrent().setCurrentPage(page);
-            pageli.setSclass("active");
 
         });
-        pageitem.addEventListener(Events.ON_RIGHT_CLICK, evt -> selectedPage = page);
+
 
         I pageicon = new I();
-
         pageicon.setParent(pageitem);
-
-
         if (page.getIcon() != null && !page.getIcon().isEmpty()) {
             ZKUtil.configureComponentIcon(page.getLocalizedIcon(locale), pageicon, IconSize.SMALL);
         } else {
             pageicon.setSclass("far fa-circle fa-fw");
         }
 
-        Text label = new Text(page.getLocalizedName(locale));
-
+        P label = new P();
+        label.appendChild(new Text(" " + page.getLocalizedName(locale)));
         label.setParent(pageitem);
+
 
         pageitem.setParent(pageli);
 

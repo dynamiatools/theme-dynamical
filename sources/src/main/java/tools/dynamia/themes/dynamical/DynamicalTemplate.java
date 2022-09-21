@@ -61,7 +61,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
         createSkins();
 
         properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2017", COPYRIGHT, "Dynamia Soluciones IT 2017",
-                VERSION, "3.6.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
+                VERSION, "4.1.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
     }
 
@@ -84,7 +84,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
         viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
-        Messagebox.setTemplate("~./templates/bootstrap/views/messagebox.zul");
+        Messagebox.setTemplate("~./templates/dynamical/views/messagebox.zul");
 
 
     }

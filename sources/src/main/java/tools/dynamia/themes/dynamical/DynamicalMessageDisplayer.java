@@ -21,6 +21,7 @@ import org.springframework.stereotype.Component;
 import org.zkoss.zk.ui.util.Clients;
 import tools.dynamia.commons.StringUtils;
 import tools.dynamia.ui.MessageType;
+import tools.dynamia.ui.UIMessages;
 import tools.dynamia.zk.ui.MessageDialog;
 
 @Component
@@ -30,8 +31,7 @@ public class DynamicalMessageDisplayer extends MessageDialog {
     public void showMessage(String message, String title, MessageType type) {
 
         String method = "notice";
-        String size = "large";
-        String location = "br";
+
         if (title == null) {
             title = "Message";
             if (type != MessageType.NORMAL) {
@@ -39,23 +39,35 @@ public class DynamicalMessageDisplayer extends MessageDialog {
             }
         }
 
+        title = UIMessages.getLocalizedMessage(title);
+        String icon = "";
+
         switch (type) {
+            case NORMAL:
+                method = "bg-success";
+                icon = "check";
+                break;
+            case INFO:
+                method = "bg-info";
+                icon = "info-circle";
+                break;
             case ERROR:
-                method = "error";
+                method = "bg-danger";
+                icon = "exclamation-circle";
                 break;
             case WARNING:
-                method = "warning";
+                method = "bg-warning";
+                icon = "exclamation-triangle";
                 break;
             case CRITICAL:
-                method = "error";
-                location = "tc";
+                method = "bg-danger";
+                icon = "bomb";
                 break;
             default:
                 break;
         }
 
-        String script = "$.growl." + method + "({ title: '" + title + "', message: '" + message
-                + "', size: '" + size + "', location: '" + location + "'  });";
+        String script = String.format("toast('%s','%s','%s','%s');", method + " m-3", title, message, "fas fa-" + icon);
         Clients.evalJavaScript(script);
 
     }
