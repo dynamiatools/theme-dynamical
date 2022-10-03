@@ -53,7 +53,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
     private ViewTypeFactory viewTypeFactory;
 
 
-    private List<Skin> skins = new ArrayList<Skin>();
+    private List<Skin> skins = new ArrayList<>();
 
     private Map<String, Object> properties;
 
@@ -85,9 +85,9 @@ public class DynamicalTemplate implements ApplicationTemplate {
         viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
         Messagebox.setTemplate("~./templates/dynamical/views/messagebox.zul");
-
-
     }
+
+
 
     @Override
     public List<Skin> getSkins() {
