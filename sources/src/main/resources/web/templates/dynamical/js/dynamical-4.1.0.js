@@ -15,19 +15,6 @@ function applyJqueryStuff() {
 
 function onPageLoaded() {
 
-       $('.tooltip').tooltipster({
-           position: 'bottom',
-           autoClose: true,
-           timer: 2000
-
-       });
-
-       $('.actiontb-a').tooltipster({
-           position: 'bottom',
-           autoClose: true,
-           timer: 2000
-
-       });
 }
 
 
