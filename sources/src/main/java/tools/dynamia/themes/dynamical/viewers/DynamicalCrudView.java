@@ -313,7 +313,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
     }
 
     private void controlChangedState(ChangedStateEvent evt) {
-        CrudState crudState = evt.getNewState();
+        CrudState crudState = evt.newState();
 
         switch (crudState) {
 
