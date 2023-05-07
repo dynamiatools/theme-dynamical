@@ -106,17 +106,11 @@
     <dependencies>
         <dependency>
             <groupId>tools.dynamia</groupId>
-            <artifactId>tools.dynamia.zk.app</artifactId>
-            <version>${dynamiatools.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>tools.dynamia</groupId>
             <artifactId>tools.dynamia.zk</artifactId>
             <version>${dynamiatools.version}</version>
             <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.zkoss.theme</groupId>
