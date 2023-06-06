@@ -177,7 +177,14 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
         pageitem.setZclass("nav-link");
         pageitem.getAttributes().put("page", page);
 
-        pageitem.addEventListener(Events.ON_CLICK, evt -> NavigationManager.getCurrent().setCurrentPage(page));
+        pageitem.addEventListener(Events.ON_CLICK, evt -> {
+            try {
+                NavigationManager.getCurrent().reload();
+                NavigationManager.getCurrent().setCurrentPage(page);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 
 
         I pageicon = new I();
