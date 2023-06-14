@@ -32,12 +32,12 @@
 
 <?link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"?>
 
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-4.0.0.Final.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-5.0.0.css" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/zkau/web/tools/css/listbox-colors.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/static/css/adminlte.min.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.components.min.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.extra-components.min.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.components.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.extra-components.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.3" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.3" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/dynamical.css?v=5.0.3" rel="stylesheet" type="text/css"?>
