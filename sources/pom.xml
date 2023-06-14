@@ -23,7 +23,7 @@
 
     <groupId>tools.dynamia.themes</groupId>
     <artifactId>tools.dynamia.themes.dynamical</artifactId>
-    <version>5.0.3</version>
+    <version>5.0.4</version>
     <name>Themes - ZK Dynamical</name>
     <url>https://www.dynamia.tools/themes/dynamical</url>
     <description>Boostrap theme for DynamiaTools apps</description>

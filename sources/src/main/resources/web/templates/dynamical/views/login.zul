@@ -32,19 +32,19 @@
 <?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-4.0.0.Final.css" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/zkau/web/tools/css/listbox-colors.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/css/adminlte.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/css/adminlte.components.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/css/adminlte.extra-components.min.css" rel="stylesheet"?>
+<?link href="${contextPath}/static/css/adminlte.min.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.components.min.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.extra-components.min.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>
+
 <?link rel="shortcut icon" href="${contextPath}/static/favicon.ico"?>
 <?link rel="apple-touch-icon" sizes="180x180" href="${contextPath}/static/apple-touch-icon.png"?>
 <?link rel="icon" type="image/png" sizes="32x32" href="${contextPath}/static/favicon-32x32.png"?>
 <?link rel="icon" type="image/png" sizes="16x16" href="${contextPath}/static/favicon-16x16.png"?>
-<?link href="${contextPath}/css/skins/${appTemplate.skin.filename}?v=4.1.0" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/skins/dynamical-${appTemplate.skin.id}.css?v=4.1.0" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/dynamical-4.1.0.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/dynamical-mobile-4.1.0.css" rel="stylesheet" type="text/css"?>
-
-<?link href="${contextPath}/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>
 
 <z:zk xmlns="native" xmlns:z="http://www.zkoss.org/2005/zul">
 
@@ -120,11 +120,11 @@
     <!-- /.login-box -->
 
 
-    <script src="${contextPath}/js/jquery.min.js?v=4.1.0"/>
-    <script src="${contextPath}/js/bootstrap.min.js?v=4.1.0"/>
-    <script src="${contextPath}/js/adminlte.min.js?v=4.1.0"/>
+    <script src="${contextPath}/static/js/jquery.min.js?v=5.0.3" type="text/javascript"/>
+    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.0.3" type="text/javascript"/>
+    <script src="${contextPath}/static/js/adminlte.min.js?v=5.0.3" type="text/javascript"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-login-4.1.0.js" type="text/javascript"/>
+    <script src="${contextPath}/static/js/dynamical-login.js?v=5.0.3" type="text/javascript"/>
 
 
     <script>
