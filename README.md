@@ -1,5 +1,5 @@
 [![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.themes/tools.dynamia.themes.dynamical.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tools.dynamia.themes%22%20AND%20a:%22tools.dynamia.themes.dynamical%22)
-![Java Version Required](https://img.shields.io/badge/java-11+-blue)
+![Java Version Required](https://img.shields.io/badge/java-17-blue)
 
 # Bootstrap theme for DynamiaTools
 
@@ -24,19 +24,27 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>4.2.0</version>
+  <version>5.0.4</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:4.2.0'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:5.0.4'
 ```
 
-Edit ```META-INF/applicationInfo.properties```
+Edit Spring Boot properties ```application.properties```
 ```properties
-template=Dynamical
-defaultSkin=Blue
+dynamia.app.template=Dynamical
+dynamia.app.default-skin=Blue
+```
+
+Or application.yml
+```yaml
+dynamia:
+   app:
+     template: Dynamical
+     skin: Blue
 ```
 
 ## Available Skins
