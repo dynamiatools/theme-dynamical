@@ -32,13 +32,13 @@
 <?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-5.0.0.css" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/zkau/web/tools/css/listbox-colors.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/static/css/adminlte.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.components.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.extra-components.min.css?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical.css?v=5.0.3" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.0.3" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.components.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.extra-components.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.0.4" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>
 
 <?link rel="shortcut icon" href="${contextPath}/static/favicon.ico"?>
@@ -120,11 +120,11 @@
     <!-- /.login-box -->
 
 
-    <script src="${contextPath}/static/js/jquery.min.js?v=5.0.3" type="text/javascript"/>
-    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.0.3" type="text/javascript"/>
-    <script src="${contextPath}/static/js/adminlte.min.js?v=5.0.3" type="text/javascript"/>
+    <script src="${contextPath}/static/js/jquery.min.js?v=5.0.4" type="text/javascript"/>
+    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.0.4" type="text/javascript"/>
+    <script src="${contextPath}/static/js/adminlte.min.js?v=5.0.4" type="text/javascript"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/static/js/dynamical-login.js?v=5.0.3" type="text/javascript"/>
+    <script src="${contextPath}/static/js/dynamical-login.js?v=5.0.4" type="text/javascript"/>
 
 
     <script>
