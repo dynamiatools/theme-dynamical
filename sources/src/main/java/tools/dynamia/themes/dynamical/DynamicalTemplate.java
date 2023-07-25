@@ -29,6 +29,7 @@ import tools.dynamia.commons.MapBuilder;
 import tools.dynamia.themes.dynamical.viewers.DynamicalCrudViewRenderer;
 import tools.dynamia.viewers.ViewTypeFactory;
 import tools.dynamia.zk.app.bstemplate.BootstrapConfigViewRender;
+import tools.dynamia.zk.app.bstemplate.BootstrapCrudViewRenderer;
 import tools.dynamia.zk.app.bstemplate.BootstrapFormViewRenderer;
 import tools.dynamia.zk.app.bstemplate.BootstrapTableViewRenderer;
 
@@ -80,13 +81,12 @@ public class DynamicalTemplate implements ApplicationTemplate {
 
         Library.setProperty("org.zkoss.theme.preferred", "iceblue_c");
 
-        viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
+        viewTypeFactory.setCustomViewRenderer("crud", BootstrapCrudViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
         Messagebox.setTemplate("~./templates/dynamical/views/messagebox.zul");
     }
-
 
 
     @Override

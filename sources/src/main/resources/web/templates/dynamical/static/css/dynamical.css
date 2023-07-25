@@ -188,12 +188,6 @@ li.title-menu a span {
     overflow-x: hidden;
 }
 
-.form-view {
-    min-height: 0 !important;
-    overflow-x: hidden;
-    padding-top: 10px;
-}
-
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {
     height: calc(100% - 40px);
 }

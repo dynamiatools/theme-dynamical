@@ -56,7 +56,7 @@
     </scm>
 
     <properties>
-        <dynamiatools.version>5.0.4</dynamiatools.version>
+        <dynamiatools.version>5.0.5</dynamiatools.version>
         <java.version>17</java.version>
         <maven.compiler>3.11.0</maven.compiler>
         <source.encoding>UTF-8</source.encoding>
