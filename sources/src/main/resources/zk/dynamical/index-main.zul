@@ -115,7 +115,7 @@
             <!-- Main content -->
 
             <z:div id="workspace" sclass="workspace" vflex="1">
-                <z:custom-attributes builderClass="workspace.builders.TabPanel"/>
+                <z:custom-attributes builderClass="tools.dynamia.zk.workspace.builders.TabPanel"/>
             </z:div>
 
             <!-- /.content -->

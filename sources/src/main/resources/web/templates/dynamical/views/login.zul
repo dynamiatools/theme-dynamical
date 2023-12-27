@@ -63,12 +63,12 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-box-body">
-                <p class="login-box-msg">Inicio de Sesion</p>
+                <p class="login-box-msg">${labels.loginTitle}</p>
                 <form action="${contextPath}/login" method="post">
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control"
-                               name="username" placeholder="Usuario"/>
+                               name="username" placeholder="${labels.username}"/>
                         <span class="input-group-append">
                             <div class="input-group-text">
                                 <i class="fa fa-user fa-fw"/>
@@ -78,7 +78,7 @@
 
                     <div class="input-group  mb-3">
                         <input type="password" class="form-control"
-                               name="password" placeholder="Password"/>
+                               name="password" placeholder="${labels.password}"/>
                         <span class="input-group-append">
                             <div class="input-group-text">
                                 <i class="fa fa-lock fa-fw"/>
@@ -93,7 +93,7 @@
                         <div class="col">
                             <button type="submit"
                                     class="btn btn-primary btn-block btn-flat mb-5">
-                                Login
+                                ${labels.login}
                             </button>
                         </div>
                         <!-- /.col -->
@@ -103,7 +103,7 @@
                 </form>
 
                 <a href="${contextPath}/login/recovery">
-                    No recuerdo mi clave
+                    ${labels.passwordLost}
                 </a>
                 <p>
                     <div sclass="callout callout-danger"
