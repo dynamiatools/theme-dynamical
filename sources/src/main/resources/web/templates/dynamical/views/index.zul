@@ -32,13 +32,11 @@
 
 <?link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"?>
 
-<?link href="${contextPath}/static/css/adminlte.min.css?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.components.min.css?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.extra-components.min.css?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical.css?v=5.0.7" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.0.7" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.min.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>
 
 <?link rel="shortcut icon" href="${contextPath}/static/favicon.ico"?>
@@ -51,10 +49,10 @@
     <import src="classpath:/zk/dynamical/index-main.zul"/>
 
 
-    <script src="${contextPath}/static/js/jquery.min.js?v=5.0.7" type="text/javascript"/>
-    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.0.7" type="text/javascript"/>
-    <script src="${contextPath}/static/js/adminlte.min.js?v=5.0.7" type="text/javascript"/>
-    <script src="${contextPath}/static/js/dynamical.js?v=5.0.7" type="text/javascript"/>
+    <script src="${contextPath}/static/js/jquery.min.js?v=5.1.0" type="text/javascript"/>
+    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.1.0" type="text/javascript"/>
+    <script src="${contextPath}/static/js/adminlte.min.js?v=5.1.0" type="text/javascript"/>
+    <script src="${contextPath}/static/js/dynamical.js?v=5.1.0" type="text/javascript"/>
 
 
     <script>applyJqueryStuff();</script>
