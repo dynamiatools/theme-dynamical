@@ -189,7 +189,7 @@ li.title-menu a span {
 }
 
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {
-    height: calc(100% - 40px);
+    height: calc(100% - 35px);
 }
 
 .viewer-actions-reg {
@@ -258,13 +258,13 @@ input[type=checkbox] {
 }
 
 .crudview-header, .actiontb {
-    height: 40px !important;
+    height: 35px !important;
     background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .actiontb-container input, .actiontb-container .z-datebox-button,
 .actiontb-container .z-combobox-button {
-    height: 33px;
+    height: 30px;
 }
 
 .actiontb-container .z-datebox-button, .actiontb-container .z-combobox-button {
@@ -293,8 +293,8 @@ input[type=checkbox] {
 }
 
 .actiontb-a.btn {
-    padding: 5px 7px;
-    height: 33px;
+    padding: 2px 7px;
+    height: 30px;
 }
 
 .actiontb-a .z-toolbarbutton-content {
@@ -435,7 +435,7 @@ input[type=checkbox] {
     display: none;
 }
 
-.z-menuitem-text {
+.z-menuitem-text, .z-menu-text {
     font-size: 14px;
 }
 
@@ -668,3 +668,17 @@ input[type=checkbox] {
 }
 
 
+.z-listheader,
+.z-listbox-header,
+.z-listhead-bar,
+.z-treecol,
+.z-tree-header,
+.z-listbox-footer .z-listfooter {
+    background: #fbfbfb;
+    border-color: transparent;
+}
+
+.z-listheader-content,
+.z-treecol-content {
+    color: #2d3238;
+}

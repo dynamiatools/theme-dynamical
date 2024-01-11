@@ -56,7 +56,7 @@
                             <img src="${userInfo.image}" alt="User" class="img-circle"/>
                             <p>${userInfo.fullName}
                                 <small>
-                                    Miembro desde
+                                    ${labels.memberSince}
                                     ${usuarioInfo.date}
                                 </small>
                             </p>
@@ -65,7 +65,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <z:a zclass="btn btn-success btn-flat" label=" Perfil" iconSclass="fa fa-user"
+                                <z:a zclass="btn btn-success btn-flat" label=" ${labels.profile}" iconSclass="fa fa-user"
                                      onClick='navManager.navigateTo(userInfo.profilePath)'/>
 
                             </div>
@@ -73,7 +73,7 @@
                                 <form action="${contextPath}/logout" method="POST">
                                     <button type="submit" class="btn btn-danger btn-flat">
                                         <i class="fa fa-power-off"/>
-                                        Salir
+                                        ${labels.logout}
                                     </button>
                                     <input type="hidden" name="${_csrf.parameterName}"
                                            value="${_csrf.token}"/>

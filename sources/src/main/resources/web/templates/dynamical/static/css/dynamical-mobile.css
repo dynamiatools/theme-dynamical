@@ -120,7 +120,7 @@
     }
 
     .crudview-header, .actiontb {
-        min-height: 40px !important;
+        min-height: 30px !important;
         height: auto !important;
     }
 
@@ -141,7 +141,6 @@
     .flexit {
         flex: 1;
         display: flex;
-
     }
 
     .flexit .z-combobox, .flexit.z-combobox, .flexit.z-datebox, .flexit .z-datebox {
@@ -155,8 +154,12 @@
     }
 
     .btn.actions {
-        padding: 2px 14px;
+        padding: 2px 10px;
 
+    }
+
+    input.flexit{
+        height: 20px
     }
 
     .modal-dialog .z-window-content {

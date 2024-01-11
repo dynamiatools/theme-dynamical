@@ -12,7 +12,7 @@
 <?meta name="build" content="${applicationInfo.build}"?>
 
 <?link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css" rel="stylesheet" type="text/css"?>
+
 <!--
   ~ Copyright (C) 2023 Dynamia Soluciones IT S.A.S - NIT 900302344-1
   ~ Colombia / South America
