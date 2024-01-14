@@ -19,7 +19,7 @@
 <?page id="messagebox" language="xul/html"?>
 
 <window zclass="modal-dialog fade-in-top" border="none" closable="true"
-        use="tools.dynamia.zk.app.bstemplate.BootstrapMessageboxDlg"
+        use="tools.dynamia.zk.viewers.BootstrapMessageboxDlg"
         xmlns:n="native">
 
     <div id="msgbox" sclass="hack"></div>

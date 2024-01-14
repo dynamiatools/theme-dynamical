@@ -38,8 +38,8 @@
 <?link rel="shortcut icon" href="${contextPath}/favicon.ico"?>
 <?link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico"?>
 
-<?link href="${contextPath}/css/skins/${appTemplate.skin.filename}" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/skins/dynamical-${appTemplate.skin.id}.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/skins/${appTemplate.applicationTemplateSkin.filename}" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/skins/dynamical-${appTemplate.applicationTemplateSkin.id}.css" rel="stylesheet" type="text/css"?>
 
 
 <?link href="${contextPath}/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"?>

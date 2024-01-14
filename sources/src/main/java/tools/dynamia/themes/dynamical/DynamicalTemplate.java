@@ -21,17 +21,15 @@ package tools.dynamia.themes.dynamical;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.zkoss.lang.Library;
 import org.zkoss.zul.Messagebox;
-import tools.dynamia.app.template.ApplicationTemplate;
-import tools.dynamia.app.template.InstallTemplate;
-import tools.dynamia.app.template.Skin;
-import tools.dynamia.app.template.TemplateContext;
+import tools.dynamia.templates.ApplicationTemplateSkin;
+import tools.dynamia.templates.ApplicationTemplate;
+import tools.dynamia.templates.InstallApplicationTemplate;
 import tools.dynamia.commons.MapBuilder;
-import tools.dynamia.themes.dynamical.viewers.DynamicalCrudViewRenderer;
 import tools.dynamia.viewers.ViewTypeFactory;
-import tools.dynamia.zk.app.bstemplate.BootstrapConfigViewRender;
-import tools.dynamia.zk.app.bstemplate.BootstrapCrudViewRenderer;
-import tools.dynamia.zk.app.bstemplate.BootstrapFormViewRenderer;
-import tools.dynamia.zk.app.bstemplate.BootstrapTableViewRenderer;
+import tools.dynamia.zk.viewers.BootstrapConfigViewRender;
+import tools.dynamia.zk.viewers.BootstrapCrudViewRenderer;
+import tools.dynamia.zk.viewers.BootstrapFormViewRenderer;
+import tools.dynamia.zk.viewers.BootstrapTableViewRenderer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +38,7 @@ import java.util.Map;
 /**
  * @author Mario A. Serrano Leones
  */
-@InstallTemplate
+@InstallApplicationTemplate
 public class DynamicalTemplate implements ApplicationTemplate {
 
     /**
@@ -48,13 +46,13 @@ public class DynamicalTemplate implements ApplicationTemplate {
      */
     private static final long serialVersionUID = -8646000381813253072L;
 
-    private static final Skin DEFAULT_SKIN = newSkin("Blue", "Default blue skin", "#367fa9");
+    private static final ApplicationTemplateSkin DEFAULT_APPLICATION_SKIN = newSkin("Blue", "Default blue skin", "#367fa9");
 
     @Autowired
     private ViewTypeFactory viewTypeFactory;
 
 
-    private List<Skin> skins = new ArrayList<>();
+    private List<ApplicationTemplateSkin> applicationTemplateSkins = new ArrayList<>();
 
     private Map<String, Object> properties;
 
@@ -77,7 +75,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
     }
 
     @Override
-    public void init(TemplateContext context) {
+    public void init() {
 
         Library.setProperty("org.zkoss.theme.preferred", "iceblue_c");
 
@@ -90,34 +88,34 @@ public class DynamicalTemplate implements ApplicationTemplate {
 
 
     @Override
-    public List<Skin> getSkins() {
-        return skins;
+    public List<ApplicationTemplateSkin> getSkins() {
+        return applicationTemplateSkins;
     }
 
     @Override
-    public Skin getDefaultSkin() {
-        return DEFAULT_SKIN;
+    public ApplicationTemplateSkin getDefaultSkin() {
+        return DEFAULT_APPLICATION_SKIN;
     }
 
     private void createSkins() {
-        skins.add(DEFAULT_SKIN);
-        skins.add(newSkin("Black", null, "#808080"));
-        skins.add(newSkin("Green", null, "#00a65a"));
-        skins.add(newSkin("Purple", null, "#605ca8"));
-        skins.add(newSkin("Red", null, "#dd4b39"));
-        skins.add(newSkin("Yellow", null, "#FFC200"));
-        skins.add(newSkin("Orange", null, "#f39c12"));
-        skins.add(newSkin("DarkOrange", null, "#ff5722"));
-        skins.add(newSkin("Olive", null, "#8FB442"));
-        skins.add(newSkin("Dynamia", null, "#00709c"));
+        applicationTemplateSkins.add(DEFAULT_APPLICATION_SKIN);
+        applicationTemplateSkins.add(newSkin("Black", null, "#808080"));
+        applicationTemplateSkins.add(newSkin("Green", null, "#00a65a"));
+        applicationTemplateSkins.add(newSkin("Purple", null, "#605ca8"));
+        applicationTemplateSkins.add(newSkin("Red", null, "#dd4b39"));
+        applicationTemplateSkins.add(newSkin("Yellow", null, "#FFC200"));
+        applicationTemplateSkins.add(newSkin("Orange", null, "#f39c12"));
+        applicationTemplateSkins.add(newSkin("DarkOrange", null, "#ff5722"));
+        applicationTemplateSkins.add(newSkin("Olive", null, "#8FB442"));
+        applicationTemplateSkins.add(newSkin("Dynamia", null, "#00709c"));
     }
 
-    private static Skin newSkin(String name, String description, String color) {
+    private static ApplicationTemplateSkin newSkin(String name, String description, String color) {
 
         String n = name.toLowerCase();
-        Skin skin = new Skin("skin-" + n, name, "skin-" + n + ".min.css", description);
-        skin.setBaseBackgroundColor(color);
-        skin.setBaseColor(color);
-        return skin;
+        ApplicationTemplateSkin applicationTemplateSkin = new ApplicationTemplateSkin("skin-" + n, name, "skin-" + n + ".min.css", description);
+        applicationTemplateSkin.setBaseBackgroundColor(color);
+        applicationTemplateSkin.setBaseColor(color);
+        return applicationTemplateSkin;
     }
 }

@@ -22,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item search-form hidden-xs">
                     <z:combobox placeholder="Buscar" sclass="form-zcontrol"
-                                use="tools.dynamia.zk.app.GlobalSearchBox"/>
+                                use="tools.dynamia.zk.ui.Searchbox"/>
                 </li>
 
                 <z:zk forEach="${applicationInfo.globalActions}">
