@@ -2,7 +2,9 @@
 background-color: #8FB442
 color: 
 */
-
+.skin-olive .bg-body{
+	background: #8FB442 !important;
+}
 
 .skin-olive .z-listitem.z-listitem-selected >.z-listcell,
 .skin-olive .z-listitem.z-listitem-selected:hover >.z-listcell,

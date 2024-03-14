@@ -58,7 +58,7 @@
     <properties>
         <dynamiatools.version>5.1.0</dynamiatools.version>
         <java.version>17</java.version>
-        <maven.compiler>3.11.0</maven.compiler>
+        <maven.compiler>3.12.1</maven.compiler>
         <source.encoding>UTF-8</source.encoding>
     </properties>
 
@@ -115,7 +115,7 @@
         <dependency>
             <groupId>org.zkoss.theme</groupId>
             <artifactId>iceblue_c</artifactId>
-            <version>9.6.0.2</version>
+            <version>10.0.0</version>
         </dependency>
     </dependencies>
 

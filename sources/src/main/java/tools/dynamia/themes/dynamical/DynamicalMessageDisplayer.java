@@ -22,54 +22,10 @@ import org.zkoss.zk.ui.util.Clients;
 import tools.dynamia.commons.StringUtils;
 import tools.dynamia.ui.MessageType;
 import tools.dynamia.ui.UIMessages;
-import tools.dynamia.zk.ui.MessageDialog;
+import tools.dynamia.zk.ui.MessageDialog;import tools.dynamia.zk.ui.MessageNotification;
 
 @Component
-public class DynamicalMessageDisplayer extends MessageDialog {
+public class DynamicalMessageDisplayer extends MessageNotification {
 
-    @Override
-    public void showMessage(String message, String title, MessageType type) {
-
-        String method = "notice";
-
-        if (title == null) {
-            title = "Message";
-            if (type != MessageType.NORMAL) {
-                title = StringUtils.capitalize(type.name());
-            }
-        }
-
-        title = UIMessages.getLocalizedMessage(title);
-        String icon = "";
-
-        switch (type) {
-            case NORMAL:
-                method = "bg-success";
-                icon = "check";
-                break;
-            case INFO:
-                method = "bg-info";
-                icon = "info-circle";
-                break;
-            case ERROR:
-                method = "bg-danger";
-                icon = "exclamation-circle";
-                break;
-            case WARNING:
-                method = "bg-warning";
-                icon = "exclamation-triangle";
-                break;
-            case CRITICAL:
-                method = "bg-danger";
-                icon = "bomb";
-                break;
-            default:
-                break;
-        }
-
-        String script = String.format("toast('%s','%s','%s','%s');", method + " m-3", title, message, "fas fa-" + icon);
-        Clients.evalJavaScript(script);
-
-    }
 
 }

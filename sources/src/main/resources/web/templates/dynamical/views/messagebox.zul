@@ -21,18 +21,16 @@
 <window zclass="modal-dialog fade-in-top" border="none" closable="true"
         use="tools.dynamia.zk.viewers.BootstrapMessageboxDlg"
         xmlns:n="native">
-
     <div id="msgbox" sclass="hack"></div>
 
     <n:div class="modal-content">
         <n:div class="modal-header">
-            <n:h4 class="modal-title">
+            <n:h5 class="modal-title">
                 <n:div class="${arg.icon}"/>
                 ${arg.title}
-            </n:h4>
-            <a zclass="close"  onClick="msgbox.parent.detach()"	>
-                <n:span aria-hidden="true">x</n:span>
-            </a>
+            </n:h5>
+            <button zclass="btn-close"  onClick="msgbox.parent.detach()"/>
+
         </n:div>
         <n:div class="modal-body">
             <n:p>${arg.message}</n:p>

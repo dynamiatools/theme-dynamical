@@ -2,6 +2,9 @@
 background-color: #dd4b39
 color: 
 */
+.skin-red .bg-body{
+	background: #dd4b39 !important;
+}
 
 
 .skin-red .z-listitem.z-listitem-selected >.z-listcell,

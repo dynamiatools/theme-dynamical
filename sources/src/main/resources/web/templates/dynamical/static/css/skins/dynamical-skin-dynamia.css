@@ -2,6 +2,10 @@
 background-color: #f39c12
 color: 
 */
+.skin-dynamia .bg-body{
+    background: #0067b9 !important;
+}
+
 
 .skin-dynamia .z-listitem.z-listitem-selected > .z-listcell,
 .skin-dynamia .z-listitem.z-listitem-selected:hover > .z-listcell,
@@ -23,11 +27,11 @@ color:
 }
 
 .baseBackgroundColor {
-    background-color: #00709c
+    background-color: #0067b9
 }
 
 .baseColor {
-    color: #00709c
+    color: #0067b9
 }
 
 .skin-dynamia .content-wrapper {
@@ -43,7 +47,7 @@ color:
 
 .skin-dynamia .table-view .z-listheader-hover,
 .skin-dynamia .tree-view .z-treecol-hover {
-    background: #00709c !important;
+    background: #0067b9 !important;
 }
 
 .skin-dynamia .table-view .z-listheader-content,

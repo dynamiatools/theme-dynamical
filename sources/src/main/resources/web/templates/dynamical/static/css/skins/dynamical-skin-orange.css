@@ -2,6 +2,9 @@
 background-color: #f39c12
 color: 
 */
+.skin-orange .bg-body{
+    background: #f39c12 !important;
+}
 
 .skin-orange .z-listitem.z-listitem-selected > .z-listcell,
 .skin-orange .z-listitem.z-listitem-selected:hover > .z-listcell,

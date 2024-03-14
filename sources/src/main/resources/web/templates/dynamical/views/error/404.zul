@@ -10,13 +10,13 @@
 <?meta name="author" content="${applicationInfo.author}"?>
 <?meta name="version" content="${applicationInfo.version}"?>
 <?meta name="build" content="${applicationInfo.build}"?>
-<?meta name="applicationTemplateSkin" content="${appTemplate.applicationTemplateSkin.id}"?>
+<?meta name="skin" content="${appTemplate.skin.id}"?>
 
 <?link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"?>
 
 <?link href="${contextPath}/static/css/adminlte.min.css?v=5.1.0" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/${appTemplate.applicationTemplateSkin.filename}?v=5.1.0" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.applicationTemplateSkin.id}.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/dynamical.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>

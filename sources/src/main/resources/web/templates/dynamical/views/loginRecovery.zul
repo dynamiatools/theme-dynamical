@@ -116,10 +116,10 @@
     <!-- AdminLTE App -->
     <script src="${contextPath}/js/adminlte.min.js"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" type="text/javascript"/>
+    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" />
 
     <!-- Tooltipster -->
-    <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
+    <script src="${contextPath}/js/tooltipster.bundle.min.js"/>
 
     <script>
         $(document).ready(function () {

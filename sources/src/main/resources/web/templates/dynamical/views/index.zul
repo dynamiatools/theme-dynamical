@@ -21,7 +21,6 @@
 <?page title="${applicationInfo.name} ${accountContext.account.name}"?>
 
 <?meta charset="utf-8"?>
-<?meta http-equiv="X-UA-Compatible" content="IE=edge"?>
 <?meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"?>
 <?meta name="name" content="${applicationInfo.name}"?>
 <?meta name="description" content="${applicationInfo.description}"?>
@@ -30,10 +29,7 @@
 <?meta name="build" content="${applicationInfo.build}"?>
 <?meta name="skin" content="${appTemplate.skin.id}"?>
 
-<?link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"?>
-
 <?link href="${contextPath}/static/css/adminlte.min.css?v=5.1.0" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/dynamical.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.1.0" rel="stylesheet" type="text/css"?>
@@ -44,18 +40,13 @@
 <?link rel="icon" type="image/png" sizes="32x32" href="${contextPath}/static/favicon-32x32.png"?>
 <?link rel="icon" type="image/png" sizes="16x16" href="${contextPath}/static/favicon-16x16.png"?>
 
+<?script src="${contextPath}/static/js/bootstrap.min.js?v=5.1.0"?>
+<?script src="${contextPath}/static/js/adminlte.min.js?v=5.1.0"?>
+<?script src="${contextPath}/static/js/dynamical.js?v=5.1.0"?>
+
+
 <zk>
-
     <import src="classpath:/zk/dynamical/index-main.zul"/>
-
-
-    <script src="${contextPath}/static/js/jquery.min.js?v=5.1.0" type="text/javascript"/>
-    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.1.0" type="text/javascript"/>
-    <script src="${contextPath}/static/js/adminlte.min.js?v=5.1.0" type="text/javascript"/>
-    <script src="${contextPath}/static/js/dynamical.js?v=5.1.0" type="text/javascript"/>
-
-
-    <script>applyJqueryStuff();</script>
 
 
 </zk>

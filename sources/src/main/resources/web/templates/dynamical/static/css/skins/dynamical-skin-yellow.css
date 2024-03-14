@@ -2,6 +2,9 @@
 background-color: #FFC200
 color: 
 */
+.skin-yellow .bg-body{
+    background: #FFC107 !important;
+}
 
 .skin-yellow .z-listitem.z-listitem-selected > .z-listcell,
 .skin-yellow .z-listitem.z-listitem-selected:hover > .z-listcell,
