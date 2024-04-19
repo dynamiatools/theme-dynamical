@@ -5,10 +5,6 @@ html, body {
     overflow: hidden;
 }
 
-span, a, label, p, h1, h2, h3, h4 {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
 .search-form a {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
