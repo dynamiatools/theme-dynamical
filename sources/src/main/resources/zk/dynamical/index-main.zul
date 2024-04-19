@@ -42,45 +42,49 @@
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown user user-menu">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <img src="${userInfo.image}" class="user-image"/>
-                            <span class="hidden-xs">${userInfo.fullName}</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="${userInfo.image}" alt="User" class="img-circle"/>
-                                <p>${userInfo.fullName}
-                                    <small>
-                                        ${labels.memberSince}
-                                        ${usuarioInfo.date}
-                                    </small>
-                                </p>
-                            </li>
+                    <z:zk if="${userInfo.enabled}">
 
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <z:a zclass="btn btn-success btn-flat" label=" ${labels.profile}"
-                                         iconSclass="fa fa-user"
-                                         onClick='navManager.navigateTo(userInfo.profilePath)'/>
 
-                                </div>
-                                <div class="pull-right">
-                                    <form action="${contextPath}/logout" method="POST">
-                                        <button type="submit" class="btn btn-danger btn-flat">
-                                            <i class="fa fa-power-off"/>
-                                            ${labels.logout}
-                                        </button>
-                                        <input type="hidden" name="${_csrf.parameterName}"
-                                               value="${_csrf.token}"/>
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="nav-item dropdown user user-menu">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <img src="${userInfo.image}" class="user-image"/>
+                                <span class="hidden-xs">${userInfo.fullName}</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="${userInfo.image}" alt="User" class="img-circle"/>
+                                    <p>${userInfo.fullName}
+                                        <small>
+                                            ${labels.memberSince}
+                                            ${usuarioInfo.date}
+                                        </small>
+                                    </p>
+                                </li>
+
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <z:a zclass="btn btn-success btn-flat" label=" ${labels.profile}"
+                                             iconSclass="fa fa-user"
+                                             onClick='navManager.navigateTo(userInfo.profilePath)'/>
+
+                                    </div>
+                                    <div class="pull-right">
+                                        <form action="${contextPath}/logout" method="POST">
+                                            <button type="submit" class="btn btn-danger btn-flat">
+                                                <i class="fa fa-power-off"/>
+                                                ${labels.logout}
+                                            </button>
+                                            <input type="hidden" name="${_csrf.parameterName}"
+                                                   value="${_csrf.token}"/>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </z:zk>
 
                 </ul>
             </div>

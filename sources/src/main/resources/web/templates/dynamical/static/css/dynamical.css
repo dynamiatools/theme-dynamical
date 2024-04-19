@@ -111,10 +111,6 @@ li.title-menu a span {
 
 .crudview .table-view .z-listheader-content,
 .crudview .tree-view .z-treecol-content {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 14px !important;
-    font-weight: bold;
-    text-align: left;
     color: #212529 !important;
     padding: 8px;
 }
@@ -352,19 +348,23 @@ input[type=checkbox] {
 }
 
 .z-messagebox-information {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/info-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/information.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-question {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/question-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/question.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-error {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/error-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/error.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-exclamation {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/exclamation-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/warning.webp") !important;
+    background-size: contain;
 }
 
 .card-box {
