@@ -46,7 +46,7 @@
 
     <div class="logo m-auto" style="max-width: 50%">
         <img src="${appTemplate.logoURL}" class="img-fluid"
-               title="${applicationInfo.name} - ${accountContext.account.name}"/>
+             title="${applicationInfo.name} - ${accountContext.account.name}"/>
     </div>
 
     <div class="login-box m-auto">
@@ -65,34 +65,29 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control"
                                name="username" placeholder="${labels.username}"/>
-                        <span class="input-group-append">
-                            <div class="input-group-text">
+
+                            <span class="input-group-text">
                                 <i class="fa fa-user fa-fw"/>
-                            </div>
-                        </span>
+                            </span>
+
                     </div>
 
                     <div class="input-group  mb-3">
                         <input type="password" class="form-control"
                                name="password" placeholder="${labels.password}"/>
-                        <span class="input-group-append">
-                            <div class="input-group-text">
+                            <span class="input-group-text">
                                 <i class="fa fa-lock fa-fw"/>
-                            </div>
-                        </span>
+                            </span>
                     </div>
 
 
-                    <div class="row">
+                    <div class="d-grid">
 
-                        <!-- /.col -->
-                        <div class="col">
-                            <button type="submit"
-                                    class="btn btn-primary btn-block btn-flat mb-5">
-                                ${labels.login}
-                            </button>
-                        </div>
-                        <!-- /.col -->
+                        <button type="submit"
+                                class="btn btn-primary mb-5">
+                            ${labels.login}
+                        </button>
+
                     </div>
                     <input type="hidden"
                            name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -125,7 +120,7 @@
 
     <script>
         $(document).ready(function () {
-            $("body").attr("class", "login-page");
+        $("body").attr("class", "login-page");
         });
     </script>
 
