@@ -1,4 +1,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.themes/tools.dynamia.themes.dynamical.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tools.dynamia.themes%22%20AND%20a:%22tools.dynamia.themes.dynamical%22)
+[![Maven Build](https://github.com/dynamiatools/theme-dynamical/actions/workflows/maven.yml/badge.svg)](https://github.com/dynamiatools/theme-dynamical/actions/workflows/maven.yml)
+[![Release and Deploy](https://github.com/dynamiatools/theme-dynamical/actions/workflows/release.yml/badge.svg)](https://github.com/dynamiatools/theme-dynamical/actions/workflows/release.yml)
 ![Java Version Required](https://img.shields.io/badge/java-17-blue)
 
 # Bootstrap theme for DynamiaTools
