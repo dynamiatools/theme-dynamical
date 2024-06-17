@@ -47,16 +47,16 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
     public DynamicalMenuBuilder() {
         sidebar = new Ul();
-        sidebar.setSclass("nav nav-pills nav-sidebar flex-column");
-        sidebar.setClientDataAttribute("widget", "treeview");
+        sidebar.setSclass("nav sidebar-menu flex-column");
+        sidebar.setClientDataAttribute("lte-toggle", "treeview");
         sidebar.setClientDataAttribute("accordion", "false");
+        sidebar.setClientAttribute("role","menu");
 
     }
 
 
     @Override
     public Component getNavigationView() {
-        Clients.evalJavaScript("applyJqueryStuff();");
         return sidebar;
     }
 
@@ -73,11 +73,6 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
             Li menu = new Li();
             menu.setSclass("nav-item");
             menu.setParent(sidebar);
-
-            if (firstModule == module) {
-                menu.setSclass("nav-item menu-is-opening menu-open");
-            }
-
 
             A a = new A();
             a.setSclass("nav-link");
@@ -99,7 +94,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
             label.setParent(a);
 
             I angle = new I();
-            angle.setSclass("right fas fa-angle-left");
+            angle.setSclass("nav-arrow fas fa-angle-right");
             angle.setParent(a);
 
             Ul submenu = new Ul();
@@ -136,7 +131,7 @@ public class DynamicalMenuBuilder implements NavigationViewBuilder<Component>, S
 
 
             I pgAngle = new I();
-            pgAngle.setSclass("fa fa-angle-left pull-right");
+            pgAngle.setSclass("nav-arrow fas fa-angle-right");
             pgAngle.setParent(pgItem);
 
             Li pgLi = new Li();

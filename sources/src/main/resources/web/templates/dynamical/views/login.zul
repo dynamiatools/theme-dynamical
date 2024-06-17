@@ -29,16 +29,12 @@
 <?meta name="build" content="${applicationInfo.build}"?>
 <?meta name="skin" content="${appTemplate.skin.id}"?>
 
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap-5.0.0.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/zkau/web/tools/css/listbox-colors.css" rel="stylesheet" type="text/css"?>
 
-<?link href="${contextPath}/static/css/adminlte.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.components.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/adminlte.extra-components.min.css?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical.css?v=5.0.4" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.0.4" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/adminlte.min.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/${appTemplate.skin.filename}?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical.css?v=5.1.0" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/static/css/dynamical-mobile.css?v=5.1.0" rel="stylesheet" type="text/css"?>
 <?link href="${contextPath}/static/fonts/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"?>
 
 <?link rel="shortcut icon" href="${contextPath}/static/favicon.ico"?>
@@ -50,7 +46,7 @@
 
     <div class="logo m-auto" style="max-width: 50%">
         <img src="${appTemplate.logoURL}" class="img-fluid"
-               title="${applicationInfo.name} - ${accountContext.account.name}"/>
+             title="${applicationInfo.name} - ${accountContext.account.name}"/>
     </div>
 
     <div class="login-box m-auto">
@@ -63,47 +59,42 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-box-body">
-                <p class="login-box-msg">Inicio de Sesion</p>
+                <p class="login-box-msg">${labels.loginTitle}</p>
                 <form action="${contextPath}/login" method="post">
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control"
-                               name="username" placeholder="Usuario"/>
-                        <span class="input-group-append">
-                            <div class="input-group-text">
+                               name="username" placeholder="${labels.username}"/>
+
+                            <span class="input-group-text">
                                 <i class="fa fa-user fa-fw"/>
-                            </div>
-                        </span>
+                            </span>
+
                     </div>
 
                     <div class="input-group  mb-3">
                         <input type="password" class="form-control"
-                               name="password" placeholder="Password"/>
-                        <span class="input-group-append">
-                            <div class="input-group-text">
+                               name="password" placeholder="${labels.password}"/>
+                            <span class="input-group-text">
                                 <i class="fa fa-lock fa-fw"/>
-                            </div>
-                        </span>
+                            </span>
                     </div>
 
 
-                    <div class="row">
+                    <div class="d-grid">
 
-                        <!-- /.col -->
-                        <div class="col">
-                            <button type="submit"
-                                    class="btn btn-primary btn-block btn-flat mb-5">
-                                Login
-                            </button>
-                        </div>
-                        <!-- /.col -->
+                        <button type="submit"
+                                class="btn btn-primary mb-5">
+                            ${labels.login}
+                        </button>
+
                     </div>
                     <input type="hidden"
                            name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
 
                 <a href="${contextPath}/login/recovery">
-                    No recuerdo mi clave
+                    ${labels.passwordLost}
                 </a>
                 <p>
                     <div sclass="callout callout-danger"
@@ -120,16 +111,16 @@
     <!-- /.login-box -->
 
 
-    <script src="${contextPath}/static/js/jquery.min.js?v=5.0.4" type="text/javascript"/>
-    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.0.4" type="text/javascript"/>
-    <script src="${contextPath}/static/js/adminlte.min.js?v=5.0.4" type="text/javascript"/>
+    <script src="${contextPath}/static/js/jquery.min.js?v=5.1.0" type="text/javascript"/>
+    <script src="${contextPath}/static/js/bootstrap.min.js?v=5.1.0" type="text/javascript"/>
+    <script src="${contextPath}/static/js/adminlte.min.js?v=5.1.0" type="text/javascript"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/static/js/dynamical-login.js?v=5.0.4" type="text/javascript"/>
+    <script src="${contextPath}/static/js/dynamical-login.js?v=5.1.0" type="text/javascript"/>
 
 
     <script>
         $(document).ready(function () {
-            $("body").attr("class", "login-page");
+        $("body").attr("class", "login-page");
         });
     </script>
 

@@ -1,5 +1,10 @@
-function applyJqueryStuff() {
+zk.afterMount(function () {
 
+
+    var skin = $("meta[name=skin]");
+    $("body").attr("class", skin[0].content + " layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary sidebar-open");
+
+    console.log("starting template");
 
     setTimeout(function () {
         zWatch.fireDown("onSize", '');
@@ -11,31 +16,7 @@ function applyJqueryStuff() {
         }, 300)
     });
 
-}
-
-function onPageLoaded() {
-
-}
-
-
-zk.afterMount(function () {
-    var skin = $("meta[name=skin]");
-
-    $("body").attr("class", skin[0].content + " sidebar-mini layout-fixed layout-navbar-fixed");
-    applyJqueryStuff();
+    const customEvent = new Event('DOMContentLoaded');
+    document.dispatchEvent(customEvent);
 });
 
-
-function toast(type,title,message,icon){
-    $(document).Toasts('create', {
-        title: title,
-        body: message,
-        autohide: true,
-        autoremove: true,
-        close: true,
-        class: type,
-        delay: 4000,
-        position: 'bottomRight',
-        icon: icon
-    })
-}

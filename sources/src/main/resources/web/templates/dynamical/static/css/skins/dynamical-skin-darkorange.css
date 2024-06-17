@@ -3,6 +3,10 @@ background-color: #f39c12
 color: 
 */
 
+.skin-darkorange .bg-body{
+    background: #ff5722 !important;
+}
+
 .skin-darkorange .z-listitem.z-listitem-selected > .z-listcell,
 .skin-darkorange .z-listitem.z-listitem-selected:hover > .z-listcell,
 .skin-darkorange .z-comboitem-selected,

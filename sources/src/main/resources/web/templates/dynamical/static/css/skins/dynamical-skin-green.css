@@ -2,7 +2,9 @@
 background-color: #00a65a
 color: 
 */
-
+.skin-green .bg-body{
+	background: #00a65a !important;
+}
 
 .skin-green .z-listitem.z-listitem-selected >.z-listcell,
 .skin-green .z-listitem.z-listitem-selected:hover >.z-listcell,

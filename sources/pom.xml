@@ -23,7 +23,7 @@
 
     <groupId>tools.dynamia.themes</groupId>
     <artifactId>tools.dynamia.themes.dynamical</artifactId>
-    <version>5.0.8</version>
+    <version>5.1.2</version>
     <name>Themes - ZK Dynamical</name>
     <url>https://www.dynamia.tools/themes/dynamical</url>
     <description>Boostrap theme for DynamiaTools apps</description>
@@ -56,9 +56,9 @@
     </scm>
 
     <properties>
-        <dynamiatools.version>5.0.8</dynamiatools.version>
+        <dynamiatools.version>5.1.2</dynamiatools.version>
         <java.version>17</java.version>
-        <maven.compiler>3.11.0</maven.compiler>
+        <maven.compiler>3.13.0</maven.compiler>
         <source.encoding>UTF-8</source.encoding>
     </properties>
 
@@ -73,21 +73,10 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${source.encoding}</encoding>
+                    <parameters>true</parameters>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>1.20</version>
-                <configuration>
-                    <verbose>false</verbose>
-                    <licenseName>lgpl_v3</licenseName>
-                    <roots>
-                        <root>src/main/java</root>
-                        <root>src/test</root>
-                    </roots>
-                </configuration>
-            </plugin>
+
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -115,7 +104,7 @@
         <dependency>
             <groupId>org.zkoss.theme</groupId>
             <artifactId>iceblue_c</artifactId>
-            <version>9.6.0.2</version>
+            <version>10.0.0</version>
         </dependency>
     </dependencies>
 

@@ -12,7 +12,7 @@
 <?meta name="build" content="${applicationInfo.build}"?>
 
 <?link href="${contextPath}/css/bootstrap.min.css" rel="stylesheet"?>
-<?link href="${contextPath}/zkau/web/tools/app/css/zkbootstrap.css" rel="stylesheet" type="text/css"?>
+
 <!--
   ~ Copyright (C) 2023 Dynamia Soluciones IT S.A.S - NIT 900302344-1
   ~ Colombia / South America
@@ -85,10 +85,10 @@
     <!-- AdminLTE App -->
     <script src="${contextPath}/js/adminlte.min.js"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" type="text/javascript"/>
+    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" />
 
     <!-- Tooltipster -->
-    <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
+    <script src="${contextPath}/js/tooltipster.bundle.min.js" />
 
     <script>
         $(document).ready(function () {

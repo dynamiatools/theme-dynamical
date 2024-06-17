@@ -6,6 +6,10 @@
     color: #367fa9
 }
 
+.skin-blue .bg-body{
+    background: #335e86 !important;
+}
+
 .skin-blue .table-view .z-listheader,
 .skin-blue .table-view .z-listbox-header,
 .skin-blue .tree-view .z-treecol,

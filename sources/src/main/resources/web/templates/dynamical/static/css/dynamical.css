@@ -5,10 +5,6 @@ html, body {
     overflow: hidden;
 }
 
-span, a, label, p, h1, h2, h3, h4 {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
 .search-form a {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -65,13 +61,24 @@ span, a, label, p, h1, h2, h3, h4 {
     overflow: auto;
 }
 
-.logo .imglogo {
+
+.sidebar-brand .brand-link img{
     vertical-align: middle;
     text-align: center;
     padding-top: 2px;
     margin-left: auto;
     margin-right: auto;
-    max-height: 45px;
+    max-height: 45px !important;
+    position: unset !important;
+    float: unset !important;
+}
+
+.sidebar-open .brand-image-xs.logo{
+    display: none;
+}
+
+.sidebar-collapse .brand-image-xl.logo{
+    display: none;
 }
 
 li.title-menu {
@@ -100,10 +107,6 @@ li.title-menu a span {
 
 .crudview .table-view .z-listheader-content,
 .crudview .tree-view .z-treecol-content {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 14px !important;
-    font-weight: bold;
-    text-align: left;
     color: #212529 !important;
     padding: 8px;
 }
@@ -189,7 +192,31 @@ li.title-menu a span {
 }
 
 .modal-dialog .crudview-body, .modal-dialog .crudview-body .table-view {
-    height: calc(100% - 40px);
+    height: calc(100% - 35px);
+}
+
+.modal-dialog{
+        --bs-modal-zindex: 1055;
+        --bs-modal-width: 500px;
+        --bs-modal-padding: 1rem;
+        --bs-modal-margin: 0.5rem;
+        --bs-modal-color: ;
+        --bs-modal-bg: var(--bs-body-bg);
+        --bs-modal-border-color: var(--bs-border-color-translucent);
+        --bs-modal-border-width: var(--bs-border-width);
+        --bs-modal-border-radius: var(--bs-border-radius-lg);
+        --bs-modal-box-shadow: var(--bs-box-shadow-sm);
+        --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) -(var(--bs-border-width)));
+        --bs-modal-header-padding-x: 1rem;
+        --bs-modal-header-padding-y: 1rem;
+        --bs-modal-header-padding: 1rem 1rem;
+        --bs-modal-header-border-color: var(--bs-border-color);
+        --bs-modal-header-border-width: var(--bs-border-width);
+        --bs-modal-title-line-height: 1.5;
+        --bs-modal-footer-gap: 0.5rem;
+        --bs-modal-footer-bg: ;
+        --bs-modal-footer-border-color: var(--bs-border-color);
+        --bs-modal-footer-border-width: var(--bs-border-width);
 }
 
 .viewer-actions-reg {
@@ -258,13 +285,13 @@ input[type=checkbox] {
 }
 
 .crudview-header, .actiontb {
-    height: 40px !important;
+    height: 35px !important;
     background: rgba(255, 255, 255, 0.4) !important;
 }
 
 .actiontb-container input, .actiontb-container .z-datebox-button,
 .actiontb-container .z-combobox-button {
-    height: 33px;
+    height: 30px;
 }
 
 .actiontb-container .z-datebox-button, .actiontb-container .z-combobox-button {
@@ -293,8 +320,8 @@ input[type=checkbox] {
 }
 
 .actiontb-a.btn {
-    padding: 5px 7px;
-    height: 33px;
+    padding: 2px 7px;
+    height: 30px;
 }
 
 .actiontb-a .z-toolbarbutton-content {
@@ -317,19 +344,23 @@ input[type=checkbox] {
 }
 
 .z-messagebox-information {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/info-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/information.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-question {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/question-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/question.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-error {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/error-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/error.webp") !important;
+    background-size: contain;
 }
 
 .z-messagebox-exclamation {
-    background-image: url("../../../../../zkau/web/templates/bootstrap/img/exclamation-icon.png") !important;
+    background-image: url("/static/dynamia-tools/images/warning.webp") !important;
+    background-size: contain;
 }
 
 .card-box {
@@ -435,7 +466,7 @@ input[type=checkbox] {
     display: none;
 }
 
-.z-menuitem-text {
+.z-menuitem-text, .z-menu-text {
     font-size: 14px;
 }
 
@@ -668,3 +699,17 @@ input[type=checkbox] {
 }
 
 
+.z-listheader,
+.z-listbox-header,
+.z-listhead-bar,
+.z-treecol,
+.z-tree-header,
+.z-listbox-footer .z-listfooter {
+    background: #fbfbfb;
+    border-color: transparent;
+}
+
+.z-listheader-content,
+.z-treecol-content {
+    color: #2d3238;
+}
