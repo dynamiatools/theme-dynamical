@@ -18,13 +18,12 @@
 
 package tools.dynamia.themes.dynamical;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.zkoss.lang.Library;
 import org.zkoss.zul.Messagebox;
-import tools.dynamia.templates.ApplicationTemplateSkin;
-import tools.dynamia.templates.ApplicationTemplate;
-import tools.dynamia.templates.InstallApplicationTemplate;
 import tools.dynamia.commons.MapBuilder;
+import tools.dynamia.templates.ApplicationTemplate;
+import tools.dynamia.templates.ApplicationTemplateSkin;
+import tools.dynamia.templates.InstallApplicationTemplate;
 import tools.dynamia.viewers.ViewTypeFactory;
 import tools.dynamia.zk.viewers.BootstrapConfigViewRender;
 import tools.dynamia.zk.viewers.BootstrapCrudViewRenderer;
@@ -48,19 +47,20 @@ public class DynamicalTemplate implements ApplicationTemplate {
 
     private static final ApplicationTemplateSkin DEFAULT_APPLICATION_SKIN = newSkin("Blue", "Default blue skin", "#367fa9");
 
-    @Autowired
-    private ViewTypeFactory viewTypeFactory;
+
+    private final ViewTypeFactory viewTypeFactory;
 
 
     private List<ApplicationTemplateSkin> applicationTemplateSkins = new ArrayList<>();
 
     private Map<String, Object> properties;
 
-    public DynamicalTemplate() {
+    public DynamicalTemplate(ViewTypeFactory viewTypeFactory) {
+        this.viewTypeFactory = viewTypeFactory;
         createSkins();
 
         properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2017", COPYRIGHT, "Dynamia Soluciones IT 2017",
-                VERSION, "4.1.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
+                VERSION, "5.1.3", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
     }
 
