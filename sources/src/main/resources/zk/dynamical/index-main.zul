@@ -37,28 +37,26 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                            <i class="fas fa-expand-arrows-alt"/>
+                        <a class="nav-link" data-lte-toggle="fullscreen" href="#">
+                            <i class="fas fa-expand-arrows-alt" data-lte-icon="maximize"/>
+                            <i class="fas fa-compress-arrows-alt" data-lte-icon="minimize" style="display: none"/>
                         </a>
                     </li>
 
                     <z:zk if="${userInfo.enabled}">
-
-
-                        <li class="nav-item dropdown user user-menu">
-                            <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                <img src="${userInfo.image}" class="user-image"/>
-                                <span class="hidden-xs">${userInfo.fullName}</span>
+                        <li class="nav-item dropdown user-menu">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <img src="${userInfo.image}" class="user-image shadow"/>
+                                <span class="d-none d-md-inline">${userInfo.fullName}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="${userInfo.image}" alt="User" class="img-circle"/>
+                                    <img src="${userInfo.image}" alt="User" class="rounded-circle shadow"/>
                                     <p>${userInfo.fullName}
                                         <small>
                                             ${labels.memberSince}
-                                            ${usuarioInfo.date}
+                                            ${userInfo.date}
                                         </small>
                                     </p>
                                 </li>
@@ -66,7 +64,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <z:a zclass="btn btn-success btn-flat" label=" ${labels.profile}"
+                                        <z:a zclass="btn btn-primary btn-flat" label=" ${labels.profile}"
                                              iconSclass="fa fa-user"
                                              onClick='navManager.navigateTo(userInfo.profilePath)'/>
 

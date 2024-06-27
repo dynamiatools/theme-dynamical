@@ -4,8 +4,6 @@ zk.afterMount(function () {
     var skin = $("meta[name=skin]");
     $("body").attr("class", skin[0].content + " layout-fixed sidebar-expand-lg sidebar-mini bg-body-tertiary sidebar-open");
 
-    console.log("starting template");
-
     setTimeout(function () {
         zWatch.fireDown("onSize", '');
     }, 500)
