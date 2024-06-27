@@ -26,13 +26,13 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>5.1.2</version>
+  <version>5.1.3</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:5.1.2'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:5.1.3'
 ```
 
 Edit Spring Boot properties ```application.properties```
