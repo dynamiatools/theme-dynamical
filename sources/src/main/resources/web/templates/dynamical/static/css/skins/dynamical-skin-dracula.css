@@ -1,0 +1,190 @@
+.skin-dracula {
+    --dt-primary-color: #282a36;
+    --dt-primary-color-light: #323744;
+    --dt-primary-color-dark: #22232d;
+    --dt-ascent-color: #0073b7;
+    --dt-text-color: #9fa4b6;
+    --dt-placehoder-color: #4d5465;
+    --dt-focus: #22232d;
+
+    background-color: var(--dt-primary-color) !important;
+}
+
+
+.baseBackgroundColor {
+    background-color: var(--dt-primary-color);
+}
+
+.baseColor {
+    color: var(--dt-primary-color);
+}
+
+.skin-dracula .bg-body {
+    background: var(--dt-primary-color-light) !important;
+}
+
+
+.skin-dracula .table-view .z-listheader-hover,
+.skin-dracula .tree-view .z-treecol-hover {
+    background: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .table-view .z-listheader-content,
+.skin-dracula .tree-view .z-treecol-content {
+    color: var(--dt-text-color) !important;
+}
+
+
+.skin-dracula.login-page, .skin-dracula .register-page, .skin-dracula .card, .skin-dracula .panel,
+.skin-dracula .z-tabpanel, .skin-dracula .pageContent .z-window-content, .skin-dracula .z-window,
+.skin-dracula .z-tabs, .skin-dracula .z-toolbar.z-toolbar-tabs, .skin-dracula .z-tabbox,
+.skin-dracula .crudview-header, .skin-dracula .actiontb {
+    background: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .z-tabbox, .skin-dracula .app-header {
+    border-color: var(--dt-primary-color-light);
+}
+
+.skin-dracula input, .skin-dracula textarea {
+    background: var(--dt-primary-color) !important;
+    border-color: var(--dt-primary-color-light);
+    color: var(--dt-text-color);
+}
+
+.skin-dracula input:focus, .skin-dracula textarea:focus {
+    color: var(--dt-text-color);
+}
+
+.skin-dracula ::placeholder {
+    color: var(--dt-placehoder-color);
+}
+
+.skin-dracula .input-group-text {
+    color: var(--dt-text-color);
+    background-color: var(--dt-primary-color-light);
+    border-color: var(--dt-primary-color-light);
+}
+
+.skin-dracula .z-window {
+    border-color: var(--dt-primary-color);
+}
+
+.skin-dracula .z-label, .skin-dracula .form-view-lbl, .skin-dracula label {
+    color: var(--dt-text-color);
+}
+
+.skin-dracula .bg-body-secondary {
+    background-color: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .tabpage.z-tab-selected {
+    background-color: var(--dt-primary-color) !important;
+    border-color: var(--dt-primary-color-light) !important;
+    box-shadow: none !important;
+}
+
+.skin-dracula .tabpage.z-tab {
+    background-color: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .tabpage .z-tab-text {
+    color: var(--dt-placehoder-color);
+}
+
+.skin-dracula .tabpage.z-tab-selected .z-tab-text {
+    color: var(--dt-ascent-color);
+}
+
+.skin-dracula .btn.btn-default {
+    background-color: var(--dt-primary-color-light);
+    color: var(--dt-text-color);
+}
+
+
+.skin-dracula .crudview .table-view .z-listheader,
+.skin-dracula .crudview .table-view .z-listbox-header,
+.skin-dracula .crudview .tree-view .z-treecol, .crudview .tree-view .z-tree-header,
+.skin-dracula .z-listheader, .skin-dracula .z-listbox-header, .skin-dracula .z-listhead-bar,
+.skin-dracula .z-treecol, .skin-dracula .z-tree-header, .skin-dracula .z-listbox-footer .skin-dracula .z-listfooter {
+    background: var(--dt-primary-color-light);
+    border-left: 1px solid var(--dt-primary-color);
+    border-color: var(--dt-primary-color);
+}
+
+.skin-dracula .crudview .table-view .z-listheader:hover,
+.skin-dracula .crudview .table-view .z-listbox-header:hover,
+.skin-dracula .crudview .tree-view .z-treecol:hover,
+.skin-dracula .crudview .tree-view .z-tree-header:hover {
+    background: var(--dt-primary-color) !important;
+    border-left: 1px solid var(--dt-primary-color) !important;
+}
+
+.skin-dracula .z-listbox, .skin-dracula .table-view .z-listbox-body, .skin-dracula .tree-view .z-tree-body, .skin-dracula .z-tree {
+    background: var(--dt-primary-color);
+    border-color: var(--dt-primary-color);
+}
+
+.skin-dracula .z-listbox .z-listcell, .skin-dracula .z-listitem .z-listcell, .skin-dracula .z-treerow .z-treecell  {
+    background: var(--dt-primary-color);
+    border-color: var(--dt-primary-color-light);
+}
+
+
+.skin-dracula .z-listitem .z-listitem-selected .z-listcell {
+    background: var(--dt-ascent-color);
+}
+
+
+.skin-dracula .multi-view .multi-view-tab {
+    background: var(--dt-primary-color-light);
+}
+
+.skin-dracula .multi-view .multi-view-tab .z-tab-text {
+    color: var(--dt-text-color);
+}
+
+.skin-dracula .multi-view .multi-view-tab.z-tab-selected {
+    background: var(--dt-primary-color) !important;
+    border-color: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .multi-view .multi-view-tab.z-tab-selected .z-tab-text {
+    color: var(--dt-ascent-color);
+}
+
+.skin-dracula .z-menupopup {
+    background: var(--dt-primary-color-light);
+    border-color: var(--dt-primary-color-dark);
+}
+
+.skin-dracula .z-menupopup .z-menu-content, .skin-dracula .z-menupopup .z-menuitem-content {
+    background: var(--dt-primary-color-light);
+    border-color: var(--dt-primary-color-light);;
+}
+
+.skin-dracula .z-menuitem-content {
+    color: var(--dt-text-color);
+}
+
+.skin-dracula .z-menuitem-content:hover, .skin-dracula .z-caption-content, .skin-dracula .z-tree-icon {
+    color: whitesmoke;
+}
+
+.skin-dracula .z-menupopup .z-menuseparator {
+    color: var(--dt-primary-color-dark);
+}
+
+.skin-dracula .z-window-content {
+    background: var(--dt-primary-color);
+}
+
+
+.skin-dracula .z-east-splitter, .skin-dracula .z-west-splitter, .skin-dracula .z-north-splitter, .skin-dracula .z-south-splitter{
+    background: var(--dt-primary-color);
+}
+
+.skin-dracula .z-north, .skin-dracula .z-south, .skin-dracula .z-west, .skin-dracula .z-center, .skin-dracula .z-east{
+    border-color: var(--dt-primary-color);
+    background: var(--dt-primary-color);
+}

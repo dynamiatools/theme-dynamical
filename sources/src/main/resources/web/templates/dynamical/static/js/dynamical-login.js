@@ -9,6 +9,7 @@ function onPageLoaded() {
 
 
 zk.afterMount(function () {
-    $("body").attr("class", "login-page");
+    var skin = $("meta[name=skin]");
+    $("body").attr("class", skin[0].content + " login-page");
     applyJqueryStuff();
 });
