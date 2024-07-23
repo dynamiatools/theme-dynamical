@@ -1,18 +1,21 @@
 .skin-dracula {
     --dt-primary-color: #282a36;
-    --dt-primary-color-light: #323744;
+    --dt-primary-color-light: #3a3f4f;
     --dt-primary-color-dark: #22232d;
-    --dt-ascent-color: #0073b7;
-    --dt-text-color: #9fa4b6;
+    --dt-ascent-color: #0093F9;
+    --dt-text-color: #b1b6c5;
     --dt-placehoder-color: #4d5465;
     --dt-focus: #22232d;
+    --dt-background-color: #282a36;
+    --dt-text-highlight: #f5f4f4;
+    --dt-danger-color: #fb394b;
 
     background-color: var(--dt-primary-color) !important;
 }
 
 
 .baseBackgroundColor {
-    background-color: var(--dt-primary-color);
+    background-color: var(--dt-background-color);
 }
 
 .baseColor {
@@ -20,18 +23,28 @@
 }
 
 .skin-dracula .bg-body {
-    background: var(--dt-primary-color-light) !important;
+    background: var(--dt-primary-color) !important;
+}
+
+.skin-dracula .sidebar-brand {
+    background: var(--dt-primary-color-dark) !important;
 }
 
 
 .skin-dracula .table-view .z-listheader-hover,
 .skin-dracula .tree-view .z-treecol-hover {
-    background: var(--dt-primary-color) !important;
+    background: var(--dt-background-color) !important;
 }
 
 .skin-dracula .table-view .z-listheader-content,
-.skin-dracula .tree-view .z-treecol-content {
+.skin-dracula .tree-view .z-treecol-content,
+.skin-dracula .z-listheader-content,
+.skin-dracula .z-treecol-content {
     color: var(--dt-text-color) !important;
+}
+
+.skin-dracula .app-header .fa, .skin-dracula .app-header .fas {
+    color: var(--dt-text-color);
 }
 
 
@@ -39,7 +52,15 @@
 .skin-dracula .z-tabpanel, .skin-dracula .pageContent .z-window-content, .skin-dracula .z-window,
 .skin-dracula .z-tabs, .skin-dracula .z-toolbar.z-toolbar-tabs, .skin-dracula .z-tabbox,
 .skin-dracula .crudview-header, .skin-dracula .actiontb {
-    background: var(--dt-primary-color) !important;
+    background: var(--dt-background-color) !important;
+}
+
+.skin-dracula .z-tab-selected .z-tab-button{
+    color: var(--dt-ascent-color);
+}
+
+.skin-dracula .card {
+    border-color: var(--dt-primary-color-light) !important;
 }
 
 .skin-dracula .z-tabbox, .skin-dracula .app-header {
@@ -47,13 +68,21 @@
 }
 
 .skin-dracula input, .skin-dracula textarea {
-    background: var(--dt-primary-color) !important;
+    background: var(--dt-background-color) !important;
     border-color: var(--dt-primary-color-light);
     color: var(--dt-text-color);
 }
 
 .skin-dracula input:focus, .skin-dracula textarea:focus {
     color: var(--dt-text-color);
+}
+
+.skin-dracula .z-textbox-inplace,
+.skin-dracula .z-decimalbox-inplace,
+.skin-dracula .z-intbox-inplace,
+.skin-dracula .z-longbox-inplace,
+.skin-dracula .z-doublebox-inplace {
+    border-color: transparent !important;
 }
 
 .skin-dracula ::placeholder {
@@ -79,7 +108,7 @@
 }
 
 .skin-dracula .tabpage.z-tab-selected {
-    background-color: var(--dt-primary-color) !important;
+    background-color: var(--dt-background-color) !important;
     border-color: var(--dt-primary-color-light) !important;
     box-shadow: none !important;
 }
@@ -96,18 +125,29 @@
     color: var(--dt-ascent-color);
 }
 
-.skin-dracula .btn.btn-default {
+.skin-dracula .btn.btn-default, .skin-dracula .z-toolbarbutton {
     background-color: var(--dt-primary-color-light);
+    color: var(--dt-text-color);
+}
+
+.skin-dracula .btn.btn-default:hover, .skin-dracula .z-toolbarbutton:hover {
+    background-color: var(--dt-primary-color-dark);
     color: var(--dt-text-color);
 }
 
 
 .skin-dracula .crudview .table-view .z-listheader,
 .skin-dracula .crudview .table-view .z-listbox-header,
-.skin-dracula .crudview .tree-view .z-treecol, .crudview .tree-view .z-tree-header,
-.skin-dracula .z-listheader, .skin-dracula .z-listbox-header, .skin-dracula .z-listhead-bar,
-.skin-dracula .z-treecol, .skin-dracula .z-tree-header, .skin-dracula .z-listbox-footer .skin-dracula .z-listfooter {
-    background: var(--dt-primary-color-light);
+.skin-dracula .crudview .tree-view .z-treecol,
+.skin-dracula .crudview .tree-view .z-tree-header,
+.skin-dracula .z-listheader,
+.skin-dracula .z-listbox-header,
+.skin-dracula .z-listhead-bar,
+.skin-dracula .z-treecol,
+.skin-dracula .z-tree-header,
+.skin-dracula .z-listbox-footer,
+.skin-dracula .z-listfooter {
+    background: var(--dt-background-color) !important;
     border-left: 1px solid var(--dt-primary-color);
     border-color: var(--dt-primary-color);
 }
@@ -116,44 +156,62 @@
 .skin-dracula .crudview .table-view .z-listbox-header:hover,
 .skin-dracula .crudview .tree-view .z-treecol:hover,
 .skin-dracula .crudview .tree-view .z-tree-header:hover {
-    background: var(--dt-primary-color) !important;
+    background: var(--dt-background-color) !important;
     border-left: 1px solid var(--dt-primary-color) !important;
 }
 
-.skin-dracula .z-listbox, .skin-dracula .table-view .z-listbox-body, .skin-dracula .tree-view .z-tree-body, .skin-dracula .z-tree {
-    background: var(--dt-primary-color);
-    border-color: var(--dt-primary-color);
-}
-
-.skin-dracula .z-listbox .z-listcell, .skin-dracula .z-listitem .z-listcell, .skin-dracula .z-treerow .z-treecell  {
+.skin-dracula .z-listbox,
+.skin-dracula .table-view .z-listbox-body,
+.skin-dracula .tree-view .z-tree-body,
+.skin-dracula .z-tree {
     background: var(--dt-primary-color);
     border-color: var(--dt-primary-color-light);
 }
 
+.skin-dracula .z-listbox .z-listcell, .skin-dracula .z-listitem .z-listcell, .skin-dracula .z-treerow .z-treecell {
+    background: var(--dt-background-color);
+    border-color: var(--dt-primary-color-light);
+}
 
-.skin-dracula .z-listitem .z-listitem-selected .z-listcell {
+
+.skin-dracula .z-listitem-selected .z-listcell,
+.skin-dracula .z-treerow-selected .z-treecell {
     background: var(--dt-ascent-color);
 }
 
-
-.skin-dracula .multi-view .multi-view-tab {
-    background: var(--dt-primary-color-light);
+.skin-dracula .z-listcell-content, .skin-dracula  .z-listgroup-content, .skin-dracula  .z-listgroupfoot-content, .skin-dracula .z-listfooter-content{
+    color: var(--dt-text-color);
 }
 
-.skin-dracula .multi-view .multi-view-tab .z-tab-text {
+.skin-dracula .z-listitem-selected .z-listcell .z-listcell-content,
+.skin-dracula .z-listitem-selected .z-listcell .z-listcell-content .z-label,
+.skin-dracula .z-treerow-selected .z-treecell .z-treecell-content,
+.skin-dracula .z-treerow-selected .z-treecell .z-treecell-content .z-label {
+    color: var(--dt-text-highlight) !important;
+}
+
+
+.skin-dracula .multi-view .multi-view-tab, .skin-dracula .z-tab {
+    background: var(--dt-primary-color-light);
+    border-color: var(--dt-primary-color-light) !important;;
+}
+
+.skin-dracula .multi-view .multi-view-tab .z-tab-text, .skin-dracula .z-tab-text {
     color: var(--dt-text-color);
 }
 
 .skin-dracula .multi-view .multi-view-tab.z-tab-selected {
-    background: var(--dt-primary-color) !important;
+    background: var(--dt-background-color) !important;
     border-color: var(--dt-primary-color) !important;
 }
 
-.skin-dracula .multi-view .multi-view-tab.z-tab-selected .z-tab-text {
+.skin-dracula .multi-view .multi-view-tab.z-tab-selected .z-tab-text,
+.skin-dracula .z-tab-selected .z-tab-text {
     color: var(--dt-ascent-color);
 }
 
-.skin-dracula .z-menupopup {
+.skin-dracula .z-menupopup,
+.skin-dracula .z-combobox-popup, .skin-dracula .z-bandbox-popup, .skin-dracula .z-datebox-popup, .skin-dracula .z-timebox-popup {
     background: var(--dt-primary-color-light);
     border-color: var(--dt-primary-color-dark);
 }
@@ -161,6 +219,7 @@
 .skin-dracula .z-menupopup .z-menu-content, .skin-dracula .z-menupopup .z-menuitem-content {
     background: var(--dt-primary-color-light);
     border-color: var(--dt-primary-color-light);;
+    color: var(--dt-text-highlight);
 }
 
 .skin-dracula .z-menuitem-content {
@@ -168,7 +227,7 @@
 }
 
 .skin-dracula .z-menuitem-content:hover, .skin-dracula .z-caption-content, .skin-dracula .z-tree-icon {
-    color: whitesmoke;
+    color: var(--dt-text-highlight);
 }
 
 .skin-dracula .z-menupopup .z-menuseparator {
@@ -180,11 +239,72 @@
 }
 
 
-.skin-dracula .z-east-splitter, .skin-dracula .z-west-splitter, .skin-dracula .z-north-splitter, .skin-dracula .z-south-splitter{
+.skin-dracula .z-east-splitter, .skin-dracula .z-west-splitter, .skin-dracula .z-north-splitter, .skin-dracula .z-south-splitter {
+    background: var(--dt-primary-color-light);
+}
+
+.skin-dracula .z-north, .skin-dracula .z-south, .skin-dracula .z-west, .skin-dracula .z-center, .skin-dracula .z-east {
+    border-color: var(--dt-background-color);
     background: var(--dt-primary-color);
 }
 
-.skin-dracula .z-north, .skin-dracula .z-south, .skin-dracula .z-west, .skin-dracula .z-center, .skin-dracula .z-east{
-    border-color: var(--dt-primary-color);
-    background: var(--dt-primary-color);
+.skin-dracula .z-tree-icon i {
+    color: var(--dt-primary-color-light) !important;
+}
+
+.skin-dracula .z-treecell-content i {
+    color: var(--dt-text-highlight);
+}
+
+.skin-dracula .z-north-header, .skin-dracula .z-south-header,
+.skin-dracula .z-west-header, .skin-dracula .z-center-header, .skin-dracula .z-east-header {
+    background: var(--dt-primary-color-dark);
+    color: var(--dt-text-color);
+}
+
+.skin-dracula .z-east-title, .skin-dracula .z-west-title, .skin-dracula .z-north-title, .skin-dracula .z-south-title,
+.skin-dracula .z-window-header, .skin-dracula .z-window-icon {
+    color: var(--dt-text-highlight);
+}
+
+.skin-dracula .z-north-collapsed,
+.skin-dracula .z-south-collapsed,
+.skin-dracula .z-west-collapsed,
+.skin-dracula .z-center-collapsed,
+.skin-dracula .z-east-collapsed {
+    background: var(--dt-ascent-color);
+}
+
+.skin-dracula .user-menu, .skin-dracula .user-menu a.nav-link,
+.skin-dracula .user-menu p, .skin-dracula .user-menu small {
+    color: var(--dt-text-color);
+}
+
+
+.skin-dracula .user-menu .user-header {
+    background-color: var(--dt-primary-color-dark) !important;
+}
+
+.skin-dracula .user-menu .user-footer {
+    background-color: var(--dt-primary-color-dark) !important;
+}
+
+.skin-dracula .navbar-nav .nav-link.active, .skin-dracula .navbar-nav .nav-link.show {
+    color: var(--dt-text-highlight);;
+}
+
+.skin-dracula .text-danger {
+    color: var(--dt-danger-color);
+}
+
+.skin-dracula .modal-dialog {
+    --bs-modal-bg: var(--dt-background-color);
+    --bs-modal-color: var(--dt-text-highlight);
+
+}
+
+.skin-dracula .btn-close {
+    background: var(--dt-danger-color);
+    padding: 2px;
+    border-radius: 50%
 }
