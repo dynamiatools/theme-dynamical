@@ -124,9 +124,7 @@ li.title-menu a span {
     border-left: 1px solid #f3f3f3 !important;
 }
 
-.crudview .z-icon-caret-down, .crudview .z-icon-caret-up {
-    color: black;
-}
+
 
 .table-view .z-listbox-body, .tree-view .z-tree-body {
     background: white;
