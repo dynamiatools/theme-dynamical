@@ -60,7 +60,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
         createSkins();
 
         properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2017", COPYRIGHT, "Dynamia Soluciones IT 2017",
-                VERSION, "5.1.3", ORIGINAL_AUTHOR, "Almsaeed Studio");
+                VERSION, "5.2.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
     }
 
@@ -108,6 +108,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
         applicationTemplateSkins.add(newSkin("DarkOrange", null, "#ff5722"));
         applicationTemplateSkins.add(newSkin("Olive", null, "#8FB442"));
         applicationTemplateSkins.add(newSkin("Dynamia", null, "#00709c"));
+        applicationTemplateSkins.add(newSkin("Dark", null, "#282a36"));
     }
 
     private static ApplicationTemplateSkin newSkin(String name, String description, String color) {

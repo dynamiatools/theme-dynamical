@@ -105,15 +105,11 @@ li.title-menu a span {
     border-color: gray;
 }
 
-.crudview .table-view .z-listheader-content,
-.crudview .tree-view .z-treecol-content {
-    color: #212529 !important;
-    padding: 8px;
-}
+
 
 .crudview .table-view .z-listheader, .crudview .table-view .z-listbox-header, .crudview .tree-view .z-treecol, .crudview .tree-view .z-tree-header {
-    background: #fbfbfb !important;
-    border-left: 1px solid #f3f3f3 !important;
+    background: #fbfbfb ;
+    border-left: 1px solid #f3f3f3;
     border-bottom-color: #f3f3f3;
 }
 
@@ -128,9 +124,7 @@ li.title-menu a span {
     border-left: 1px solid #f3f3f3 !important;
 }
 
-.crudview .z-icon-caret-down, .crudview .z-icon-caret-up {
-    color: black;
-}
+
 
 .table-view .z-listbox-body, .tree-view .z-tree-body {
     background: white;
@@ -243,8 +237,8 @@ li.title-menu a span {
 }
 
 .z-listitem .z-listcell {
-    border-left: none !important;
-    border-bottom: 1px solid #F2F2F2 !important;
+    border-left: none;
+    border-bottom: 1px solid #F2F2F2;
 }
 
 .z-label, .z-radio-content, .z-checkbox-content, .z-loading {
