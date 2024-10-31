@@ -57,10 +57,9 @@
     </div>
     <!-- /.login-box -->
 
-
-    <script src="${contextPath}/js/jquery.min.js"/>
-    <script src="${contextPath}/js/bootstrap.min.js"/>
-    <script src="${contextPath}/js/adminlte.min.js"/>
+    <script src="${contextPath}/static/js/jquery.min.js"/>
+    <script src="${contextPath}/static/js/bootstrap.min.js"/>
+    <script src="${contextPath}/static/js/adminlte.min.js"/>
 
 
     <script>
