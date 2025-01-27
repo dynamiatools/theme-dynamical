@@ -99,9 +99,7 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         actionsButton.setPopup(menuId + ", after_start");
         ZKUtil.configureComponentIcon("process", actionsButton, IconSize.NORMAL);
 
-        addCrudStateChangedListener(evt -> {
-            controlChangedState(evt);
-        });
+        addCrudStateChangedListener(this::controlChangedState);
     }
 
     @Override
@@ -313,7 +311,8 @@ public class DynamicalCrudView<T> extends CrudView<T> {
         }
     }
 
-    private void controlChangedState(ChangedStateEvent evt) {
+
+    protected void controlChangedState(ChangedStateEvent evt) {
         CrudState crudState = evt.newState();
 
         switch (crudState) {
