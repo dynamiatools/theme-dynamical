@@ -18,9 +18,9 @@
 package tools.dynamia.themes.dynamical.viewers;
 
 import tools.dynamia.zk.crud.CrudView;
-import tools.dynamia.zk.crud.CrudViewRenderer;
+import tools.dynamia.zk.viewers.BootstrapCrudViewRenderer;
 
-public class DynamicalCrudViewRenderer<T> extends CrudViewRenderer<T> {
+public class DynamicalCrudViewRenderer<T> extends BootstrapCrudViewRenderer<T> {
 
     public DynamicalCrudViewRenderer() {
         System.out.println("Starting " + getClass().getName());

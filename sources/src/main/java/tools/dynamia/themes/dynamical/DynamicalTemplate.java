@@ -24,6 +24,7 @@ import tools.dynamia.commons.MapBuilder;
 import tools.dynamia.templates.ApplicationTemplate;
 import tools.dynamia.templates.ApplicationTemplateSkin;
 import tools.dynamia.templates.InstallApplicationTemplate;
+import tools.dynamia.themes.dynamical.viewers.DynamicalCrudViewRenderer;
 import tools.dynamia.viewers.ViewTypeFactory;
 import tools.dynamia.zk.viewers.BootstrapConfigViewRender;
 import tools.dynamia.zk.viewers.BootstrapCrudViewRenderer;
@@ -60,7 +61,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
         createSkins();
 
         properties = MapBuilder.put(AUTHOR, "Mario Serrano", DATE, "2017", COPYRIGHT, "Dynamia Soluciones IT 2017",
-                VERSION, "5.3.1", ORIGINAL_AUTHOR, "Almsaeed Studio");
+                VERSION, "5.4.0", ORIGINAL_AUTHOR, "Almsaeed Studio");
 
     }
 
@@ -79,7 +80,7 @@ public class DynamicalTemplate implements ApplicationTemplate {
 
         Library.setProperty("org.zkoss.theme.preferred", "iceblue_c");
 
-        viewTypeFactory.setCustomViewRenderer("crud", BootstrapCrudViewRenderer.class);
+        viewTypeFactory.setCustomViewRenderer("crud", DynamicalCrudViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("table", BootstrapTableViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("form", BootstrapFormViewRenderer.class);
         viewTypeFactory.setCustomViewRenderer("config", BootstrapConfigViewRender.class);
