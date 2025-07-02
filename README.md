@@ -1,7 +1,7 @@
 [![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.themes/tools.dynamia.themes.dynamical.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tools.dynamia.themes%22%20AND%20a:%22tools.dynamia.themes.dynamical%22)
 [![Maven Build](https://github.com/dynamiatools/theme-dynamical/actions/workflows/maven.yml/badge.svg)](https://github.com/dynamiatools/theme-dynamical/actions/workflows/maven.yml)
 [![Release and Deploy](https://github.com/dynamiatools/theme-dynamical/actions/workflows/release.yml/badge.svg)](https://github.com/dynamiatools/theme-dynamical/actions/workflows/release.yml)
-![Java Version Required](https://img.shields.io/badge/java-17-blue)
+![Java Version Required](https://img.shields.io/badge/java-21-blue)
 
 # Bootstrap theme for DynamiaTools
 
@@ -26,13 +26,13 @@ This template is based on https://adminlte.io/ free (MIT) admin template. Which 
 <dependency>
   <groupId>tools.dynamia.themes</groupId>
   <artifactId>tools.dynamia.themes.dynamical</artifactId>
-  <version>5.1.3</version>
+  <version>5.4.0</version>
 </dependency>
 ```
 
 **Gradle**
 ```groovy
-compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:5.1.3'
+compile 'tools.dynamia.themes:tools.dynamia.themes.dynamical:5.4.0'
 ```
 
 Edit Spring Boot properties ```application.properties```

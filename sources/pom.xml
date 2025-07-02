@@ -23,7 +23,7 @@
 
     <groupId>tools.dynamia.themes</groupId>
     <artifactId>tools.dynamia.themes.dynamical</artifactId>
-    <version>5.3.6</version>
+    <version>5.4.0</version>
     <name>Themes - ZK Dynamical</name>
     <url>https://www.dynamia.tools/themes/dynamical</url>
     <description>Boostrap theme for DynamiaTools apps</description>
@@ -56,9 +56,9 @@
     </scm>
 
     <properties>
-        <dynamiatools.version>5.3.6</dynamiatools.version>
-        <java.version>17</java.version>
-        <maven.compiler>3.13.0</maven.compiler>
+        <dynamiatools.version>5.4.0</dynamiatools.version>
+        <java.version>21</java.version>
+        <maven.compiler>3.14.0</maven.compiler>
         <source.encoding>UTF-8</source.encoding>
     </properties>
 
@@ -122,7 +122,7 @@
         <dependency>
             <groupId>org.zkoss.theme</groupId>
             <artifactId>iceblue_c</artifactId>
-            <version>10.0.0</version>
+            <version>10.0.0.1</version>
         </dependency>
     </dependencies>
 
@@ -136,6 +136,13 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>zkoss-ce</id>
+            <url>https://mavensync.zkoss.org/maven2/</url>
+        </repository>
+    </repositories>
 
     <profiles>
         <profile>
