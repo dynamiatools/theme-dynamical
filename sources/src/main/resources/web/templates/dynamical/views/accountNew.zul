@@ -31,19 +31,15 @@
   -->
 
 <!-- Custom fonts for this template-->
-<?link href="${contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/font-awesome.min.css?v=5.4.1" rel="stylesheet" type="text/css"?>
 <!-- Custom styles for this template-->
-<?link href="${contextPath}/css/AdminLTE.min.css" rel="stylesheet"?>
+<?link href="${contextPath}/css/adminlte.min.css?v=5.4.1" rel="stylesheet"?>
 
 <?link rel="shortcut icon" href="${contextPath}/favicon.ico"?>
 <?link rel="icon" type="image/vnd.microsoft.icon" href="${contextPath}/favicon.ico"?>
 
-<?link href="${contextPath}/css/skins/${appTemplate.skin.filename}" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/skins/dynamical-${appTemplate.skin.id}.css" rel="stylesheet" type="text/css"?>
-
-
-<?link href="${contextPath}/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css"?>
-<?link href="${contextPath}/css/jquery.growl.css" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/skins/${appTemplate.skin.filename}?v=5.4.1" rel="stylesheet" type="text/css"?>
+<?link href="${contextPath}/css/skins/dynamical-${appTemplate.skin.id}.css?v=5.4.1" rel="stylesheet" type="text/css"?>
 
 <?link href="${contextPath}/css/login.css" rel="stylesheet" type="text/css"?>
 
@@ -71,24 +67,11 @@
     </n:div>
     <!-- /.login-box -->
 
-
-    <!-- jQuery 3 -->
-    <script src="${contextPath}/js/jquery-3.3.1.min.js"/>
-    <script src="${contextPath}/js/jquery.growl.js"/>
-
-    <!-- Bootstrap 3.3.7 -->
-    <script src="${contextPath}/js/bootstrap.min.js"/>
-    <!-- SlimScroll -->
-    <script src="${contextPath}/js/jquery.slimscroll.min.js"/>
-    <!-- FastClick -->
-    <script src="${contextPath}/js/fastclick.min.js"/>
     <!-- AdminLTE App -->
-    <script src="${contextPath}/js/adminlte.min.js"/>
+    <script src="${contextPath}/js/adminlte.min.js?v=5.4.1"/>
     <!-- Dynamical -->
-    <script src="${contextPath}/js/dynamical-login-3.1.0.Final.js" type="text/javascript"/>
+    <script src="${contextPath}/js/dynamical-login.js?v=5.4.1" type="text/javascript"/>
 
-    <!-- Tooltipster -->
-    <script src="${contextPath}/js/tooltipster.bundle.min.js" type="text/javascript"/>
 
     <script>
         $(document).ready(function () {
