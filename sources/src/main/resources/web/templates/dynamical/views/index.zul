@@ -46,6 +46,7 @@
 <?script src="${contextPath}/static/js/bootstrap.min.js?v=5.4.12"?>
 <?script src="${contextPath}/static/js/adminlte.min.js?v=5.4.12"?>
 <?script src="${contextPath}/static/js/dynamical.js?v=5.4.12"?>
+<?script src="${contextPath}/static/js/dark-mode.js?v=5.4.12"?>
 
 <zk >
     <import src="classpath:/zk/dynamical/index-main.zul"/>

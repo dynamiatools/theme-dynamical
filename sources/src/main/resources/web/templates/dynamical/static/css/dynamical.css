@@ -200,7 +200,7 @@ li.title-menu a span {
         --bs-modal-border-width: var(--bs-border-width);
         --bs-modal-border-radius: var(--bs-border-radius-lg);
         --bs-modal-box-shadow: var(--bs-box-shadow-sm);
-        --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) -(var(--bs-border-width)));
+        --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
         --bs-modal-header-padding-x: 1rem;
         --bs-modal-header-padding-y: 1rem;
         --bs-modal-header-padding: 1rem 1rem;
@@ -308,6 +308,13 @@ input[type=checkbox] {
 
 .actiontb-a.z-toolbarbutton {
     background: #ededed;
+    height: 30px !important;
+    min-width: 30px;
+    text-align: center;
+}
+
+.dark-mode .actiontb-a.z-toolbarbutton {
+    background: var(--dt-background-dark-hover);
     height: 30px !important;
     min-width: 30px;
     text-align: center;
@@ -703,7 +710,30 @@ input[type=checkbox] {
     border-color: transparent;
 }
 
+
+
 .z-listheader-content,
 .z-treecol-content {
     color: #2d3238;
+}
+
+body.dark-mode img[src="/static/dynamia-tools/images/no-photo.jpg"] {
+    filter: brightness(0.7) invert(1);
+}
+
+.dark-mode .z-listbox-footer .z-listfooter {
+    background: var(--dt-background-dark);
+    border-color: transparent;
+}
+
+.dark-mode .dark-mode-switch .dark-icon {
+    display: none;
+}
+
+.dark-mode-switch .light-icon{
+    display: none;
+}
+
+.dark-mode .dark-mode-switch .light-icon{
+    display: inline;
 }
