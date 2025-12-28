@@ -43,9 +43,10 @@
                         </a>
                     </li>
 
+                    <!-- User Account: style can be found in dropdown.less -->
                     <z:zk if="${userInfo.enabled}">
                         <li class="nav-item dropdown user-menu">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="${userInfo.image}" class="user-image shadow"/>
                                 <span class="d-none d-md-inline">${userInfo.fullName}</span>
                             </a>
