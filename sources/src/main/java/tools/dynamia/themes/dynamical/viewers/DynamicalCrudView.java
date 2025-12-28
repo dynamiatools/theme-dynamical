@@ -17,9 +17,7 @@
 
 package tools.dynamia.themes.dynamical.viewers;
 
-import tools.dynamia.ui.icons.IconSize;
 import tools.dynamia.zk.crud.CrudViewRenderer;
-import tools.dynamia.zk.util.ZKUtil;
 import tools.dynamia.zk.viewers.BootstrapCrudView;
 
 public class DynamicalCrudView<T> extends BootstrapCrudView<T> {

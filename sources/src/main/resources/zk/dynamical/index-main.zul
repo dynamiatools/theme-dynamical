@@ -35,6 +35,12 @@
                         </li>
                     </z:zk>
 
+                    <li class="nav-item">
+                        <a class="nav-link dark-mode-switch" href="#">
+                            <i class="fa fa-moon dark-icon"/>
+                            <i class="fa fa-sun light-icon"/>
+                        </a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" data-lte-toggle="fullscreen" href="#">
@@ -43,9 +49,11 @@
                         </a>
                     </li>
 
+                    <!-- User Account: style can be found in dropdown.less -->
                     <z:zk if="${userInfo.enabled}">
                         <li class="nav-item dropdown user-menu">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                               aria-expanded="false">
                                 <img src="${userInfo.image}" class="user-image shadow"/>
                                 <span class="d-none d-md-inline">${userInfo.fullName}</span>
                             </a>
@@ -65,7 +73,7 @@
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <z:a zclass="btn btn-primary btn-flat" label=" ${labels.profile}"
-                                             iconSclass="fa fa-user"
+                                             iconSclass="fa fa-user" if="${userInfo.profilePath != null}"
                                              onClick='navManager.navigateTo(userInfo.profilePath)'/>
 
                                     </div>
